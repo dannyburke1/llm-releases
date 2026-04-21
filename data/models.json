@@ -1,0 +1,114 @@
+[
+  {
+    "id": "bc8791acc88539f0",
+    "provider": "AWS Bedrock",
+    "title": "SageMaker JumpStart now offers optimized deployments for foundation models",
+    "description": "SageMaker JumpStart now offers optimized deployments, enabling customers to deploy foundation models with pre-configured settings tailored to specific use cases and performance constraints. SageMaker JumpStart optimized deployments simplify model deployment by offering task-aware configurations that optimize for cost, throughput, or latency based on your workload requirements - whether content generation, summarization, or Q&A. This launch includes support for 30+ popular models from Meta, Micro",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/04/sagemaker-jumpstart-optimized-deployments/",
+    "date": "2026-04-17"
+  },
+  {
+    "id": "8fa20c19f0261a38",
+    "provider": "Azure OpenAI",
+    "title": "[Launched] Generally available: Anthropic Claude Opus 4.7 on Azure Databricks",
+    "description": "Azure Databricks now supports Anthropic Claude Opus 4.7\nthrough Azure Databricks AI Model Serving. Claude Opus 4.7\nis Anthropic's most capable hybrid reasoning model, delivering\nstronger performance on complex extraction and agentic reasoning tasks while",
+    "link": "https://azure.microsoft.com/updates?id=560590",
+    "date": "2026-04-17"
+  },
+  {
+    "id": "33e6927a7e586c29",
+    "provider": "AWS Bedrock",
+    "title": "Claude Opus 4.7 is now available in Amazon Bedrock",
+    "description": "Amazon Bedrock, the platform for building AI applications and agents at production scale, now offers Claude Opus 4.7--\u00a0Anthropic's\u00a0most capable Opus model to date\u00a0--\u00a0delivering meaningful improvements across agentic coding,\u00a0professional\u00a0work, and long-running tasks for developers and enterprises building production AI applications.\u00a0 \nClaude Opus 4.7 is an\u00a0upgrade from Claude Opus 4.6, with stronger performance across the workflows teams\u00a0run\u00a0in production.\u00a0Opus 4.7 works better through ambiguity,",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/04/claude-opus-4.7-amazon-bedrock/",
+    "date": "2026-04-16"
+  },
+  {
+    "id": "7755760c6304663b",
+    "provider": "AWS Bedrock",
+    "title": "Amazon Bedrock now offers Claude Mythos Preview (Gated Research Preview)",
+    "description": "Amazon Bedrock, the platform for building generative AI applications and agents at production scale, now offers Claude Mythos Preview in gated research preview as part of Project Glasswing. Claude Mythos Preview is Anthropic's most advanced AI model to date, representing a fundamentally new model class with state-of-the-art capabilities across cybersecurity, software coding, and complex reasoning tasks. The model can identify sophisticated security vulnerabilities in software and demonstrate exp",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/04/amazon-bedrock-claude-mythos/",
+    "date": "2026-04-07"
+  },
+  {
+    "id": "fc5a619d0c00b9a7",
+    "provider": "Azure OpenAI",
+    "title": "[Launched] Generally Available: Anthropic Claude Sonnet 4.6 is now available on Azure Databricks",
+    "description": "Azure Databricks now supports Anthropic Claude Sonnet 4.6\nthrough Azure Databricks AI\nModel Serving. Claude Sonnet 4.6\ndelivers frontier-level performance on complex coding, agentic\nworkflows, and professional knowledge work including reasoning at a\nlower",
+    "link": "https://azure.microsoft.com/updates?id=557595",
+    "date": "2026-02-18"
+  },
+  {
+    "id": "50f48388e546fdab",
+    "provider": "Azure OpenAI",
+    "title": "[Launched] \u200bGenerally Available: Claude Opus 4.6 now available on Azure Databricks",
+    "description": "Azure Databricks now supports Anthropic Claude Opus 4.6 through Mosaic AI Model serving. Claude Opus 4.6 is Anthropic's most advanced model, delivering state-of-the-art performance on agentic coding, complex reasoning, and knowledge work tasks. The model",
+    "link": "https://azure.microsoft.com/updates?id=555981",
+    "date": "2026-02-06"
+  },
+  {
+    "id": "cd06a14bcc9e6bac",
+    "provider": "Vertex AI",
+    "title": "DeepSeek-V3.2-Exp is available through Model Garden.",
+    "description": "DeepSeek-V3.2-Exp is available through Model Garden.",
+    "link": "https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_30_2025",
+    "date": "2025-09-30"
+  },
+  {
+    "id": "d89bc2bdd33fddfb",
+    "provider": "Vertex AI",
+    "title": "DeepSeek-V3.1-Terminus is available through Model Garden.",
+    "description": "DeepSeek-V3.1-Terminus is available through Model Garden.",
+    "link": "https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_22_2025",
+    "date": "2025-09-22"
+  },
+  {
+    "id": "61122dccb8d9ed8b",
+    "provider": "Vertex AI",
+    "title": "EmbeddingGemma and DeepSeek-V3.1 models are available through Model Garden.",
+    "description": "EmbeddingGemma and DeepSeek-V3.1 models are available through Model Garden.",
+    "link": "https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_09_2025",
+    "date": "2025-09-09"
+  },
+  {
+    "id": "9f1df194449a4375",
+    "provider": "Vertex AI",
+    "title": "Gemma 3 270M, Wan 2.2 and Wan 2.1 models are available through Model Garden.",
+    "description": "Gemma 3 270M, Wan 2.2 and Wan 2.1 models are available through Model Garden.",
+    "link": "https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_14_2025",
+    "date": "2025-08-14"
+  },
+  {
+    "id": "4d43fbb3e27b9eea",
+    "provider": "Vertex AI",
+    "title": "OpenAI's gpt-oss-120b and gpt-oss-20b are available as Model as a Service (MaaS) models in Model Garden.",
+    "description": "OpenAI's gpt-oss-120b and gpt-oss-20b are available as Model as a Service (MaaS) models in Model Garden.",
+    "link": "https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_13_2025",
+    "date": "2025-08-13"
+  },
+  {
+    "id": "1761b8b21b57b929",
+    "provider": "Vertex AI",
+    "title": "OpenAI's gpt-oss models are available through Model Garden.",
+    "description": "OpenAI's gpt-oss models are available through Model Garden.",
+    "link": "https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_06_2025",
+    "date": "2025-08-06"
+  },
+  {
+    "id": "c47c0bde17ad2fb3",
+    "provider": "Vertex AI",
+    "title": "The global endpoint is generally available (GA) for Anthropic's Claude Opus 4. For details, see Global endpoint.",
+    "description": "The global endpoint is generally available (GA) for Anthropic's Claude Opus 4. For details, see Global endpoint.",
+    "link": "https://docs.cloud.google.com/vertex-ai/docs/release-notes#July_01_2025",
+    "date": "2025-07-01"
+  },
+  {
+    "id": "b251eb777be88b0c",
+    "provider": "Vertex AI",
+    "title": "Gemma 3n models are available through Model Garden.",
+    "description": "Gemma 3n models are available through Model Garden.",
+    "link": "https://docs.cloud.google.com/vertex-ai/docs/release-notes#June_27_2025",
+    "date": "2025-06-27"
+  }
+]
