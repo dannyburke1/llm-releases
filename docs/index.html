@@ -137,6 +137,88 @@
       font-weight: 400;
       margin-left: 0.15rem;
     }
+    .toolbar {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .search-row {
+      position: relative;
+    }
+    .search-icon {
+      position: absolute;
+      left: 0.7rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 15px;
+      height: 15px;
+      color: var(--text-3);
+      pointer-events: none;
+    }
+    .search-input {
+      width: 100%;
+      padding: 0.5rem 0.75rem 0.5rem 2.1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--bg);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .search-input:focus {
+      border-color: var(--text-3);
+    }
+    .search-input::placeholder {
+      color: var(--text-3);
+    }
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      align-items: center;
+    }
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.3rem 0.6rem 0.3rem 0.3rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text-3);
+      font-size: 0.72rem;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.15s;
+      opacity: 0.45;
+    }
+    .filter-btn.active {
+      opacity: 1;
+      color: var(--text-2);
+      border-color: var(--text-3);
+    }
+    .filter-btn:hover {
+      opacity: 0.85;
+    }
+    .filter-btn .pi {
+      width: 18px;
+      height: 18px;
+    }
+    .no-results {
+      text-align: center;
+      color: var(--text-3);
+      padding: 2.5rem 1rem;
+      font-size: 0.85rem;
+      display: none;
+    }
     .empty {
       text-align: center;
       color: var(--text-3);
@@ -154,6 +236,8 @@
       .card-title { font-size: 0.9rem; }
       .chip-label { display: none; }
       .provider-chip { padding: 0.3rem; }
+      .filter-label { display: none; }
+      .filter-btn { padding: 0.3rem; }
     }
   </style>
 </head>
@@ -168,8 +252,21 @@
       </a>
     </div>
   </header>
-  <main>
-      <article class="card">
+  <div class="toolbar">
+    <div class="search-row">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" class="search-input" placeholder="Search models..." id="search">
+    </div>
+    <div class="filter-row">
+      <button class="filter-btn active" data-provider="OpenAI" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="filter-label">OpenAI</span></button>
+        <button class="filter-btn active" data-provider="Google" title="Google"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#fff" stroke="#dadce0"/><circle cx="14" cy="14" r="5" fill="#4285f4"/><circle cx="26" cy="14" r="5" fill="#ea4335"/><circle cx="14" cy="26" r="5" fill="#34a853"/><circle cx="26" cy="26" r="5" fill="#fbbc05"/></svg><span class="filter-label">Google</span></button>
+        <button class="filter-btn active" data-provider="AWS Bedrock" title="AWS Bedrock"><svg class="pi" viewBox="0 0 40 40"><path d="M20 4L4 12v16l16 8 16-8V12L20 4z" fill="#232f3e"/><path d="M20 4L4 12l16 8 16-8L20 4z" fill="#ff9900"/><path d="M20 20v16l16-8V12L20 20z" fill="#f90" opacity=".35"/></svg><span class="filter-label">AWS Bedrock</span></button>
+        <button class="filter-btn active" data-provider="Vertex AI" title="Vertex AI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#4285f4"/><path d="M11 28l9-18 9 18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="14" r="2" fill="#fff"/></svg><span class="filter-label">Vertex AI</span></button>
+        <button class="filter-btn active" data-provider="Azure OpenAI" title="Azure OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#0078d4"/><path d="M10 26L20 10l10 16H10z" fill="#50e6ff" opacity=".9"/><path d="M14 26l6-10 6 10H14z" fill="#fff" opacity=".5"/></svg><span class="filter-label">Azure OpenAI</span></button>
+    </div>
+  </div>
+  <main id="cards">
+      <article class="card" data-providers="AWS Bedrock Azure OpenAI">
         <div class="card-header">
           <h2 class="card-title">Claude Opus 4.7 is now available in Amazon Bedrock</h2>
           <time class="card-date" datetime="2026-04-17" title="2026-04-17">4d ago</time>
@@ -180,7 +277,7 @@ is Anthropic&#x27;s most capable hybrid reasoning model, delivering
 stronger performanc...</p>
         <div class="card-providers"><a href="https://aws.amazon.com/about-aws/whats-new/2026/04/claude-opus-4.7-amazon-bedrock/" class="provider-chip" title="AWS Bedrock"><svg class="pi" viewBox="0 0 40 40"><path d="M20 4L4 12v16l16 8 16-8V12L20 4z" fill="#232f3e"/><path d="M20 4L4 12l16 8 16-8L20 4z" fill="#ff9900"/><path d="M20 20v16l16-8V12L20 20z" fill="#f90" opacity=".35"/></svg><span class="chip-label">AWS Bedrock</span></a> <a href="https://azure.microsoft.com/updates?id=560590" class="provider-chip" title="Azure OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#0078d4"/><path d="M10 26L20 10l10 16H10z" fill="#50e6ff" opacity=".9"/><path d="M14 26l6-10 6 10H14z" fill="#fff" opacity=".5"/></svg><span class="chip-label">Azure OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="AWS Bedrock">
         <div class="card-header">
           <h2 class="card-title">Amazon Bedrock now offers Claude Mythos Preview (Gated Research Preview)</h2>
           <time class="card-date" datetime="2026-04-07" title="2026-04-07">2w ago</time>
@@ -188,7 +285,7 @@ stronger performanc...</p>
         <p class="card-desc">Amazon Bedrock, the platform for building generative AI applications and agents at production scale, now offers Claude Mythos Preview in gated research preview as part of Project Glasswing. Claude ...</p>
         <div class="card-providers"><a href="https://aws.amazon.com/about-aws/whats-new/2026/04/amazon-bedrock-claude-mythos/" class="provider-chip" title="AWS Bedrock"><svg class="pi" viewBox="0 0 40 40"><path d="M20 4L4 12v16l16 8 16-8V12L20 4z" fill="#232f3e"/><path d="M20 4L4 12l16 8 16-8L20 4z" fill="#ff9900"/><path d="M20 20v16l16-8V12L20 20z" fill="#f90" opacity=".35"/></svg><span class="chip-label">AWS Bedrock</span><span class="chip-region">US East (N. Virginia)</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">Introducing GPT-5.4 mini and nano</h2>
           <time class="card-date" datetime="2026-03-17" title="2026-03-17">1mo ago</time>
@@ -196,7 +293,7 @@ stronger performanc...</p>
         <p class="card-desc">GPT-5.4 mini and nano are smaller, faster versions of GPT-5.4 optimized for coding, tool use, multimodal reasoning, and high-volume API and sub-agent workloads.</p>
         <div class="card-providers"><a href="https://openai.com/index/introducing-gpt-5-4-mini-and-nano" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">Introducing GPT-5.4</h2>
           <time class="card-date" datetime="2026-03-05" title="2026-03-05">1mo ago</time>
@@ -204,7 +301,7 @@ stronger performanc...</p>
         <p class="card-desc">Introducing GPT-5.4, OpenAI’s most most capable and efficient frontier model for professional work, with state-of-the-art coding, computer use, tool search, and 1M-token context.</p>
         <div class="card-providers"><a href="https://openai.com/index/introducing-gpt-5-4" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Google">
         <div class="card-header">
           <h2 class="card-title">Gemini 3.1 Pro: A smarter model for your most complex tasks</h2>
           <time class="card-date" datetime="2026-02-19" title="2026-02-19">2mo ago</time>
@@ -212,7 +309,7 @@ stronger performanc...</p>
         <p class="card-desc">Building on the Gemini 3 series, we&#x27;re releasing 3.1 Pro, a smarter and more capable model for complex problem-solving. 3.1 Pro is designed for tasks where a simple answer isn&#x27;t enough, taking adva...</p>
         <div class="card-providers"><a href="https://gemini.google/release-notes/" class="provider-chip" title="Google"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#fff" stroke="#dadce0"/><circle cx="14" cy="14" r="5" fill="#4285f4"/><circle cx="26" cy="14" r="5" fill="#ea4335"/><circle cx="14" cy="26" r="5" fill="#34a853"/><circle cx="26" cy="26" r="5" fill="#fbbc05"/></svg><span class="chip-label">Google</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Azure OpenAI">
         <div class="card-header">
           <h2 class="card-title">[Launched] Generally Available: Anthropic Claude Sonnet 4.6 is now available on Azure Databricks</h2>
           <time class="card-date" datetime="2026-02-18" title="2026-02-18">2mo ago</time>
@@ -224,7 +321,7 @@ delivers frontier-level performance on complex coding, agentic
 workflows, and ...</p>
         <div class="card-providers"><a href="https://azure.microsoft.com/updates?id=557595" class="provider-chip" title="Azure OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#0078d4"/><path d="M10 26L20 10l10 16H10z" fill="#50e6ff" opacity=".9"/><path d="M14 26l6-10 6 10H14z" fill="#fff" opacity=".5"/></svg><span class="chip-label">Azure OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Google">
         <div class="card-header">
           <h2 class="card-title">Solve modern science, research and engineering challenges with Gemini 3 Deep Think</h2>
           <time class="card-date" datetime="2026-02-12" title="2026-02-12">2mo ago</time>
@@ -232,7 +329,7 @@ workflows, and ...</p>
         <p class="card-desc">We’re releasing a major upgrade to Gemini 3 Deep Think, our specialized reasoning mode, built to push the frontier of intelligence and solve modern challenges across science, research, and engineer...</p>
         <div class="card-providers"><a href="https://gemini.google/release-notes/" class="provider-chip" title="Google"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#fff" stroke="#dadce0"/><circle cx="14" cy="14" r="5" fill="#4285f4"/><circle cx="26" cy="14" r="5" fill="#ea4335"/><circle cx="14" cy="26" r="5" fill="#34a853"/><circle cx="26" cy="26" r="5" fill="#fbbc05"/></svg><span class="chip-label">Google</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">Introducing GPT-5.3-Codex-Spark</h2>
           <time class="card-date" datetime="2026-02-12" title="2026-02-12">2mo ago</time>
@@ -240,7 +337,7 @@ workflows, and ...</p>
         <p class="card-desc">Introducing GPT-5.3-Codex-Spark—our first real-time coding model. 15x faster generation, 128k context, now in research preview for ChatGPT Pro users.</p>
         <div class="card-providers"><a href="https://openai.com/index/introducing-gpt-5-3-codex-spark" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Azure OpenAI">
         <div class="card-header">
           <h2 class="card-title">[Launched] ​Generally Available: Claude Opus 4.6 now available on Azure Databricks</h2>
           <time class="card-date" datetime="2026-02-06" title="2026-02-06">2mo ago</time>
@@ -248,7 +345,7 @@ workflows, and ...</p>
         <p class="card-desc">Azure Databricks now supports Anthropic Claude Opus 4.6 through Mosaic AI Model serving. Claude Opus 4.6 is Anthropic&#x27;s most advanced model, delivering state-of-the-art performance on agentic codin...</p>
         <div class="card-providers"><a href="https://azure.microsoft.com/updates?id=555981" class="provider-chip" title="Azure OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#0078d4"/><path d="M10 26L20 10l10 16H10z" fill="#50e6ff" opacity=".9"/><path d="M14 26l6-10 6 10H14z" fill="#fff" opacity=".5"/></svg><span class="chip-label">Azure OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">Introducing GPT-5.3-Codex</h2>
           <time class="card-date" datetime="2026-02-05" title="2026-02-05">2mo ago</time>
@@ -256,7 +353,7 @@ workflows, and ...</p>
         <p class="card-desc">GPT-5.3-Codex is a Codex-native agent that pairs frontier coding performance with general reasoning to support long-horizon, real-world technical work.</p>
         <div class="card-providers"><a href="https://openai.com/index/introducing-gpt-5-3-codex" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">Introducing GPT-5.2-Codex</h2>
           <time class="card-date" datetime="2025-12-18" title="2025-12-18">4mo ago</time>
@@ -264,7 +361,7 @@ workflows, and ...</p>
         <p class="card-desc">GPT-5.2-Codex is OpenAI’s most advanced coding model, offering long-horizon reasoning, large-scale code transformations, and enhanced cybersecurity capabilities.</p>
         <div class="card-providers"><a href="https://openai.com/index/gpt-5-2-codex" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Google">
         <div class="card-header">
           <h2 class="card-title">Introducing Gemini 3 Flash, a major upgrade to your everyday AI</h2>
           <time class="card-date" datetime="2025-12-17" title="2025-12-17">4mo ago</time>
@@ -272,7 +369,7 @@ workflows, and ...</p>
         <p class="card-desc">Gemini 3 Flash is now the new default model in the Gemini app. It offers next-generation intelligence at lightning speed and represents a major capability upgrade over Gemini 2.5 Flash. This model ...</p>
         <div class="card-providers"><a href="https://gemini.google/release-notes/" class="provider-chip" title="Google"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#fff" stroke="#dadce0"/><circle cx="14" cy="14" r="5" fill="#4285f4"/><circle cx="26" cy="14" r="5" fill="#ea4335"/><circle cx="14" cy="26" r="5" fill="#34a853"/><circle cx="26" cy="26" r="5" fill="#fbbc05"/></svg><span class="chip-label">Google</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">Introducing GPT-5.2</h2>
           <time class="card-date" datetime="2025-12-11" title="2025-12-11">4mo ago</time>
@@ -280,7 +377,7 @@ workflows, and ...</p>
         <p class="card-desc">GPT-5.2 is our most advanced frontier model for everyday professional work, with state-of-the-art reasoning, long-context understanding, coding, and vision. Use it in ChatGPT and the OpenAI API to ...</p>
         <div class="card-providers"><a href="https://openai.com/index/introducing-gpt-5-2" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Google">
         <div class="card-header">
           <h2 class="card-title">Gemini 3, our most intelligent model yet, is available to everyone in the app</h2>
           <time class="card-date" datetime="2025-11-18" title="2025-11-18">5mo ago</time>
@@ -288,7 +385,7 @@ workflows, and ...</p>
         <p class="card-desc">Gemini 3 Pro is rolling out to everyone in the Gemini app starting today, with higher limits for users in the Google AI Plus, Pro and Ultra plans. It brings state-of-the-art reasoning to your most ...</p>
         <div class="card-providers"><a href="https://gemini.google/release-notes/" class="provider-chip" title="Google"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#fff" stroke="#dadce0"/><circle cx="14" cy="14" r="5" fill="#4285f4"/><circle cx="26" cy="14" r="5" fill="#ea4335"/><circle cx="14" cy="26" r="5" fill="#34a853"/><circle cx="26" cy="26" r="5" fill="#fbbc05"/></svg><span class="chip-label">Google</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">Introducing GPT-5.1 for developers</h2>
           <time class="card-date" datetime="2025-11-13" title="2025-11-13">5mo ago</time>
@@ -296,7 +393,7 @@ workflows, and ...</p>
         <p class="card-desc">GPT-5.1 is now available in the API, bringing faster adaptive reasoning, extended prompt caching, improved coding performance, and new apply_patch and shell tools.</p>
         <div class="card-providers"><a href="https://openai.com/index/gpt-5-1-for-developers" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">Introducing gpt-oss-safeguard</h2>
           <time class="card-date" datetime="2025-10-29" title="2025-10-29">5mo ago</time>
@@ -304,7 +401,7 @@ workflows, and ...</p>
         <p class="card-desc">OpenAI introduces gpt-oss-safeguard—open-weight reasoning models for safety classification that let developers apply and iterate on custom policies.</p>
         <div class="card-providers"><a href="https://openai.com/index/introducing-gpt-oss-safeguard" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Vertex AI">
         <div class="card-header">
           <h2 class="card-title">DeepSeek-V3.2-Exp is available through Model Garden.</h2>
           <time class="card-date" datetime="2025-09-30" title="2025-09-30">6mo ago</time>
@@ -312,7 +409,7 @@ workflows, and ...</p>
         <p class="card-desc">DeepSeek-V3.2-Exp is available through Model Garden.</p>
         <div class="card-providers"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_30_2025" class="provider-chip" title="Vertex AI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#4285f4"/><path d="M11 28l9-18 9 18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="14" r="2" fill="#fff"/></svg><span class="chip-label">Vertex AI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">Sora 2 is here</h2>
           <time class="card-date" datetime="2025-09-30" title="2025-09-30">6mo ago</time>
@@ -320,7 +417,7 @@ workflows, and ...</p>
         <p class="card-desc">Our latest video generation model is more physically accurate, realistic, and controllable than prior systems. It also features synchronized dialogue and sound effects. Create with it in the new So...</p>
         <div class="card-providers"><a href="https://openai.com/index/sora-2" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Google">
         <div class="card-header">
           <h2 class="card-title">Update to 2.5 Flash in Gemini</h2>
           <time class="card-date" datetime="2025-09-25" title="2025-09-25">6mo ago</time>
@@ -328,7 +425,7 @@ workflows, and ...</p>
         <p class="card-desc">An enhanced version of Gemini 2.5 Flash is now available to Gemini app users. Responses are now better organised with improved formatting. Gemini 2.5 Flash uses elements like headers, lists and tab...</p>
         <div class="card-providers"><a href="https://gemini.google/release-notes/" class="provider-chip" title="Google"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#fff" stroke="#dadce0"/><circle cx="14" cy="14" r="5" fill="#4285f4"/><circle cx="26" cy="14" r="5" fill="#ea4335"/><circle cx="14" cy="26" r="5" fill="#34a853"/><circle cx="26" cy="26" r="5" fill="#fbbc05"/></svg><span class="chip-label">Google</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Vertex AI">
         <div class="card-header">
           <h2 class="card-title">DeepSeek-V3.1-Terminus is available through Model Garden.</h2>
           <time class="card-date" datetime="2025-09-22" title="2025-09-22">7mo ago</time>
@@ -336,7 +433,7 @@ workflows, and ...</p>
         <p class="card-desc">DeepSeek-V3.1-Terminus is available through Model Garden.</p>
         <div class="card-providers"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_22_2025" class="provider-chip" title="Vertex AI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#4285f4"/><path d="M11 28l9-18 9 18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="14" r="2" fill="#fff"/></svg><span class="chip-label">Vertex AI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Vertex AI">
         <div class="card-header">
           <h2 class="card-title">EmbeddingGemma and DeepSeek-V3.1 models are available through Model Garden.</h2>
           <time class="card-date" datetime="2025-09-09" title="2025-09-09">7mo ago</time>
@@ -344,7 +441,7 @@ workflows, and ...</p>
         <p class="card-desc">EmbeddingGemma and DeepSeek-V3.1 models are available through Model Garden.</p>
         <div class="card-providers"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_09_2025" class="provider-chip" title="Vertex AI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#4285f4"/><path d="M11 28l9-18 9 18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="14" r="2" fill="#fff"/></svg><span class="chip-label">Vertex AI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Vertex AI">
         <div class="card-header">
           <h2 class="card-title">Gemma 3 270M, Wan 2.2 and Wan 2.1 models are available through Model Garden.</h2>
           <time class="card-date" datetime="2025-08-14" title="2025-08-14">8mo ago</time>
@@ -352,7 +449,7 @@ workflows, and ...</p>
         <p class="card-desc">Gemma 3 270M, Wan 2.2 and Wan 2.1 models are available through Model Garden.</p>
         <div class="card-providers"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_14_2025" class="provider-chip" title="Vertex AI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#4285f4"/><path d="M11 28l9-18 9 18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="14" r="2" fill="#fff"/></svg><span class="chip-label">Vertex AI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Vertex AI">
         <div class="card-header">
           <h2 class="card-title">OpenAI&#x27;s gpt-oss-120b and gpt-oss-20b are available as Model as a Service (MaaS) models in Model Garden.</h2>
           <time class="card-date" datetime="2025-08-13" title="2025-08-13">8mo ago</time>
@@ -360,7 +457,7 @@ workflows, and ...</p>
         <p class="card-desc">OpenAI&#x27;s gpt-oss-120b and gpt-oss-20b are available as Model as a Service (MaaS) models in Model Garden.</p>
         <div class="card-providers"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_13_2025" class="provider-chip" title="Vertex AI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#4285f4"/><path d="M11 28l9-18 9 18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="14" r="2" fill="#fff"/></svg><span class="chip-label">Vertex AI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">Introducing GPT-5 for developers</h2>
           <time class="card-date" datetime="2025-08-07" title="2025-08-07">8mo ago</time>
@@ -368,7 +465,7 @@ workflows, and ...</p>
         <p class="card-desc">Introducing GPT-5 in our API platform—offering high reasoning performance, new controls for devs, and best-in-class results on real coding tasks.</p>
         <div class="card-providers"><a href="https://openai.com/index/introducing-gpt-5-for-developers" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">Introducing GPT-5</h2>
           <time class="card-date" datetime="2025-08-07" title="2025-08-07">8mo ago</time>
@@ -376,7 +473,7 @@ workflows, and ...</p>
         <p class="card-desc">We are introducing GPT‑5, our best AI system yet. GPT‑5 is a significant leap in intelligence over all our previous models, featuring state-of-the-art performance across coding, math, writing, heal...</p>
         <div class="card-providers"><a href="https://openai.com/index/introducing-gpt-5" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Vertex AI">
         <div class="card-header">
           <h2 class="card-title">OpenAI&#x27;s gpt-oss models are available through Model Garden.</h2>
           <time class="card-date" datetime="2025-08-06" title="2025-08-06">8mo ago</time>
@@ -384,7 +481,7 @@ workflows, and ...</p>
         <p class="card-desc">OpenAI&#x27;s gpt-oss models are available through Model Garden.</p>
         <div class="card-providers"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_06_2025" class="provider-chip" title="Vertex AI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#4285f4"/><path d="M11 28l9-18 9 18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="14" r="2" fill="#fff"/></svg><span class="chip-label">Vertex AI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">Introducing gpt-oss</h2>
           <time class="card-date" datetime="2025-08-05" title="2025-08-05">8mo ago</time>
@@ -392,7 +489,7 @@ workflows, and ...</p>
         <p class="card-desc">We’re releasing gpt-oss-120b and gpt-oss-20b—two state-of-the-art open-weight language models that deliver strong real-world performance at low cost. Available under the flexible Apache 2.0 license...</p>
         <div class="card-providers"><a href="https://openai.com/index/introducing-gpt-oss" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Vertex AI">
         <div class="card-header">
           <h2 class="card-title">The global endpoint is generally available (GA) for Anthropic&#x27;s Claude Opus 4. For details, see Global endpoint.</h2>
           <time class="card-date" datetime="2025-07-01" title="2025-07-01">9mo ago</time>
@@ -400,7 +497,7 @@ workflows, and ...</p>
         <p class="card-desc">The global endpoint is generally available (GA) for Anthropic&#x27;s Claude Opus 4. For details, see Global endpoint.</p>
         <div class="card-providers"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#July_01_2025" class="provider-chip" title="Vertex AI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#4285f4"/><path d="M11 28l9-18 9 18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="14" r="2" fill="#fff"/></svg><span class="chip-label">Vertex AI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Vertex AI">
         <div class="card-header">
           <h2 class="card-title">Gemma 3n models are available through Model Garden.</h2>
           <time class="card-date" datetime="2025-06-27" title="2025-06-27">9mo ago</time>
@@ -408,7 +505,7 @@ workflows, and ...</p>
         <p class="card-desc">Gemma 3n models are available through Model Garden.</p>
         <div class="card-providers"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#June_27_2025" class="provider-chip" title="Vertex AI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#4285f4"/><path d="M11 28l9-18 9 18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="14" r="2" fill="#fff"/></svg><span class="chip-label">Vertex AI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Google">
         <div class="card-header">
           <h2 class="card-title">2.5 Pro (experimental) got a major upgrade for coding</h2>
           <time class="card-date" datetime="2025-05-06" title="2025-05-06">11mo ago</time>
@@ -416,7 +513,7 @@ workflows, and ...</p>
         <p class="card-desc">We&#x27;re rolling out an updated version of Gemini 2.5 Pro with improved capabilities for coding. This model more intuitively understands coding prompts and produces stronger outputs, enabling users to...</p>
         <div class="card-providers"><a href="https://gemini.google/release-notes/" class="provider-chip" title="Google"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#fff" stroke="#dadce0"/><circle cx="14" cy="14" r="5" fill="#4285f4"/><circle cx="26" cy="14" r="5" fill="#ea4335"/><circle cx="14" cy="26" r="5" fill="#34a853"/><circle cx="26" cy="26" r="5" fill="#fbbc05"/></svg><span class="chip-label">Google</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Google">
         <div class="card-header">
           <h2 class="card-title">Create and share videos with Veo 2 in Gemini Advanced</h2>
           <time class="card-date" datetime="2025-04-22" title="2025-04-22">12mo ago</time>
@@ -424,7 +521,7 @@ workflows, and ...</p>
         <p class="card-desc">Starting today, Gemini Advanced subscribers can generate high-quality, 8-second videos using Veo 2. Simply describe what you have in mind and watch your ideas come to life in motion - whether you&#x27;r...</p>
         <div class="card-providers"><a href="https://gemini.google/release-notes/" class="provider-chip" title="Google"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#fff" stroke="#dadce0"/><circle cx="14" cy="14" r="5" fill="#4285f4"/><circle cx="26" cy="14" r="5" fill="#ea4335"/><circle cx="14" cy="26" r="5" fill="#34a853"/><circle cx="26" cy="26" r="5" fill="#fbbc05"/></svg><span class="chip-label">Google</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Google">
         <div class="card-header">
           <h2 class="card-title">Update to 2.0 Flash in Gemini</h2>
           <time class="card-date" datetime="2025-04-19" title="2025-04-19">Apr 2025</time>
@@ -432,7 +529,7 @@ workflows, and ...</p>
         <p class="card-desc">An enhanced version of Gemini 2.0 Flash is now available to Gemini app users. This update enables a more natural, collaborative and adaptive conversational style, providing users with more fluid an...</p>
         <div class="card-providers"><a href="https://gemini.google/release-notes/" class="provider-chip" title="Google"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#fff" stroke="#dadce0"/><circle cx="14" cy="14" r="5" fill="#4285f4"/><circle cx="26" cy="14" r="5" fill="#ea4335"/><circle cx="14" cy="26" r="5" fill="#34a853"/><circle cx="26" cy="26" r="5" fill="#fbbc05"/></svg><span class="chip-label">Google</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">Introducing OpenAI o3 and o4-mini</h2>
           <time class="card-date" datetime="2025-04-16" title="2025-04-16">Apr 2025</time>
@@ -440,7 +537,7 @@ workflows, and ...</p>
         <p class="card-desc">Our smartest and most capable models to date with full tool access</p>
         <div class="card-providers"><a href="https://openai.com/index/introducing-o3-and-o4-mini" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">Introducing GPT-4.1 in the API</h2>
           <time class="card-date" datetime="2025-04-14" title="2025-04-14">Apr 2025</time>
@@ -448,7 +545,7 @@ workflows, and ...</p>
         <p class="card-desc">Introducing GPT-4.1 in the API—a new family of models with across-the-board improvements, including major gains in coding, instruction following, and long-context understanding. We’re also releasin...</p>
         <div class="card-providers"><a href="https://openai.com/index/gpt-4-1" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Google">
         <div class="card-header">
           <h2 class="card-title">Priority access with Gemini Advanced: Try our latest 2.5 Pro (experimental) model</h2>
           <time class="card-date" datetime="2025-03-25" title="2025-03-25">Mar 2025</time>
@@ -456,7 +553,7 @@ workflows, and ...</p>
         <p class="card-desc">Today, we&#x27;re introducing Gemini 2.5, our most intelligent AI model. Our first 2.5 release is a chat-optimised version of Gemini-2.5-Pro-Exp-03-25, which is state of the art on a wide range of bench...</p>
         <div class="card-providers"><a href="https://gemini.google/release-notes/" class="provider-chip" title="Google"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#fff" stroke="#dadce0"/><circle cx="14" cy="14" r="5" fill="#4285f4"/><circle cx="26" cy="14" r="5" fill="#ea4335"/><circle cx="14" cy="26" r="5" fill="#34a853"/><circle cx="26" cy="26" r="5" fill="#fbbc05"/></svg><span class="chip-label">Google</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Google">
         <div class="card-header">
           <h2 class="card-title">Update to Gemini 2.0 Flash Thinking (experimental) in Gemini</h2>
           <time class="card-date" datetime="2025-03-13" title="2025-03-13">Mar 2025</time>
@@ -464,7 +561,7 @@ workflows, and ...</p>
         <p class="card-desc">Starting today, an improved version of Gemini 2.0 Flash Thinking (experimental) will become available to Gemini app users. Built on the foundation of 2.0 Flash, this model delivers improved perform...</p>
         <div class="card-providers"><a href="https://gemini.google/release-notes/" class="provider-chip" title="Google"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#fff" stroke="#dadce0"/><circle cx="14" cy="14" r="5" fill="#4285f4"/><circle cx="26" cy="14" r="5" fill="#ea4335"/><circle cx="14" cy="26" r="5" fill="#34a853"/><circle cx="26" cy="26" r="5" fill="#fbbc05"/></svg><span class="chip-label">Google</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">Introducing GPT-4.5</h2>
           <time class="card-date" datetime="2025-02-27" title="2025-02-27">Feb 2025</time>
@@ -472,7 +569,7 @@ workflows, and ...</p>
         <p class="card-desc">We’re releasing a research preview of GPT‑4.5—our largest and best model for chat yet. GPT‑4.5 is a step forward in scaling up pre-training and post-training.</p>
         <div class="card-providers"><a href="https://openai.com/index/introducing-gpt-4-5" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Google">
         <div class="card-header">
           <h2 class="card-title">Introducing Gemini 2.0 Flash to Gemini</h2>
           <time class="card-date" datetime="2025-01-30" title="2025-01-30">Jan 2025</time>
@@ -480,7 +577,7 @@ workflows, and ...</p>
         <p class="card-desc">Gemini is now powered by 2.0 Flash, our latest model that is designed for the agentic era, delivering fast responses and stronger performance across a number of key benchmarks for everyday help wit...</p>
         <div class="card-providers"><a href="https://gemini.google/release-notes/" class="provider-chip" title="Google"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#fff" stroke="#dadce0"/><circle cx="14" cy="14" r="5" fill="#4285f4"/><circle cx="26" cy="14" r="5" fill="#ea4335"/><circle cx="14" cy="26" r="5" fill="#34a853"/><circle cx="26" cy="26" r="5" fill="#fbbc05"/></svg><span class="chip-label">Google</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Google">
         <div class="card-header">
           <h2 class="card-title">Introducing Gemini 2.0 Flash as an experimental model in Gemini</h2>
           <time class="card-date" datetime="2024-12-11" title="2024-12-11">Dec 2024</time>
@@ -488,7 +585,7 @@ workflows, and ...</p>
         <p class="card-desc">Gemini users now have access to our latest experimental model, a chat-optimised version of 2.0 Flash Experimental with improvements on a number of key academic benchmarks and speed. This experiment...</p>
         <div class="card-providers"><a href="https://gemini.google/release-notes/" class="provider-chip" title="Google"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#fff" stroke="#dadce0"/><circle cx="14" cy="14" r="5" fill="#4285f4"/><circle cx="26" cy="14" r="5" fill="#ea4335"/><circle cx="14" cy="26" r="5" fill="#34a853"/><circle cx="26" cy="26" r="5" fill="#fbbc05"/></svg><span class="chip-label">Google</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">Sora is here</h2>
           <time class="card-date" datetime="2024-12-09" title="2024-12-09">Dec 2024</time>
@@ -496,7 +593,7 @@ workflows, and ...</p>
         <p class="card-desc">Our video generation model, Sora, is now available to use at sora.com. Users can generate videos up to 1080p resolution, up to 20 sec long, and in widescreen, vertical or square aspect ratios. You ...</p>
         <div class="card-providers"><a href="https://openai.com/index/sora-is-here" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Google">
         <div class="card-header">
           <h2 class="card-title">Introducing Imagen 3</h2>
           <time class="card-date" datetime="2024-10-09" title="2024-10-09">Oct 2024</time>
@@ -504,7 +601,7 @@ workflows, and ...</p>
         <p class="card-desc">Create stunning images in Gemini with Imagen 3, our highest quality text-to-image model yet. Simply describe what you imagine, and watch as your ideas transform into visuals, bursting with vivid de...</p>
         <div class="card-providers"><a href="https://gemini.google/release-notes/" class="provider-chip" title="Google"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#fff" stroke="#dadce0"/><circle cx="14" cy="14" r="5" fill="#4285f4"/><circle cx="26" cy="14" r="5" fill="#ea4335"/><circle cx="14" cy="26" r="5" fill="#34a853"/><circle cx="26" cy="26" r="5" fill="#fbbc05"/></svg><span class="chip-label">Google</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">Introducing OpenAI o1</h2>
           <time class="card-date" datetime="2024-09-12" title="2024-09-12">Sep 2024</time>
@@ -512,7 +609,7 @@ workflows, and ...</p>
         <p class="card-desc"></p>
         <div class="card-providers"><a href="https://openai.com/index/introducing-openai-o1-preview" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Google">
         <div class="card-header">
           <h2 class="card-title">Introducing Gemini 1.5 Flash to Gemini</h2>
           <time class="card-date" datetime="2024-07-25" title="2024-07-25">Jul 2024</time>
@@ -520,7 +617,7 @@ workflows, and ...</p>
         <p class="card-desc">Gemini now gives you access to 1.5 Flash, our model optimised for speed and efficiency. 1.5 Flash provides a 4x longer context window (from 8k tokens to 32k tokens) compared to 1.0 Pro and improved...</p>
         <div class="card-providers"><a href="https://gemini.google/release-notes/" class="provider-chip" title="Google"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#fff" stroke="#dadce0"/><circle cx="14" cy="14" r="5" fill="#4285f4"/><circle cx="26" cy="14" r="5" fill="#ea4335"/><circle cx="14" cy="26" r="5" fill="#34a853"/><circle cx="26" cy="26" r="5" fill="#fbbc05"/></svg><span class="chip-label">Google</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="Google">
         <div class="card-header">
           <h2 class="card-title">Introducing Gemini 1.5 Pro to Gemini Advanced</h2>
           <time class="card-date" datetime="2024-05-14" title="2024-05-14">May 2024</time>
@@ -528,7 +625,7 @@ workflows, and ...</p>
         <p class="card-desc">Gemini Advanced gives you direct access to Google’s next-generation model, 1.5 Pro. With 1.5 Pro, Gemini Advanced can process significantly more information, running up to 1 million tokens – that&#x27;s...</p>
         <div class="card-providers"><a href="https://gemini.google/release-notes/" class="provider-chip" title="Google"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#fff" stroke="#dadce0"/><circle cx="14" cy="14" r="5" fill="#4285f4"/><circle cx="26" cy="14" r="5" fill="#ea4335"/><circle cx="14" cy="26" r="5" fill="#34a853"/><circle cx="26" cy="26" r="5" fill="#fbbc05"/></svg><span class="chip-label">Google</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">Hello GPT-4o</h2>
           <time class="card-date" datetime="2024-05-13" title="2024-05-13">May 2024</time>
@@ -536,7 +633,7 @@ workflows, and ...</p>
         <p class="card-desc">We’re announcing GPT-4 Omni, our new flagship model which can reason across audio, vision, and text in real time.</p>
         <div class="card-providers"><a href="https://openai.com/index/hello-gpt-4o" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">Introducing GPT-4o and more tools to ChatGPT free users</h2>
           <time class="card-date" datetime="2024-05-13" title="2024-05-13">May 2024</time>
@@ -545,7 +642,7 @@ workflows, and ...</p>
 We are launching our newest flagship model and making more capabilities available for free in ChatGPT.</p>
         <div class="card-providers"><a href="https://openai.com/index/gpt-4o-and-more-tools-to-chatgpt-free" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">Introducing Whisper</h2>
           <time class="card-date" datetime="2022-09-21" title="2022-09-21">Sep 2022</time>
@@ -553,7 +650,7 @@ We are launching our newest flagship model and making more capabilities availabl
         <p class="card-desc"></p>
         <div class="card-providers"><a href="https://openai.com/index/whisper" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
-      <article class="card">
+      <article class="card" data-providers="OpenAI">
         <div class="card-header">
           <h2 class="card-title">New GPT-3 capabilities: Edit &amp; insert</h2>
           <time class="card-date" datetime="2022-03-15" title="2022-03-15">Mar 2022</time>
@@ -562,6 +659,45 @@ We are launching our newest flagship model and making more capabilities availabl
         <div class="card-providers"><a href="https://openai.com/index/gpt-3-edit-insert" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
       </article>
   </main>
-  <footer>Updated 2026-04-21 20:40 UTC</footer>
+  <p class="no-results" id="no-results">No matching releases found.</p>
+  <footer>Updated 2026-04-21 20:48 UTC</footer>
+  <script>
+  (function() {
+    var btns = document.querySelectorAll('.filter-btn');
+    var cards = document.querySelectorAll('.card');
+    var search = document.getElementById('search');
+    var noResults = document.getElementById('no-results');
+
+    function activeProviders() {
+      var s = new Set();
+      btns.forEach(function(b) { if (b.classList.contains('active')) s.add(b.dataset.provider); });
+      return s;
+    }
+
+    function applyFilters() {
+      var q = search.value.toLowerCase().trim();
+      var providers = activeProviders();
+      var visible = 0;
+      cards.forEach(function(card) {
+        var cp = card.dataset.providers.split(' ');
+        var providerMatch = cp.some(function(p) { return providers.has(p); });
+        var textMatch = !q || card.textContent.toLowerCase().indexOf(q) !== -1;
+        var show = providerMatch && textMatch;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      noResults.style.display = visible === 0 ? '' : 'none';
+    }
+
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        btn.classList.toggle('active');
+        applyFilters();
+      });
+    });
+
+    search.addEventListener('input', applyFilters);
+  })();
+  </script>
 </body>
 </html>

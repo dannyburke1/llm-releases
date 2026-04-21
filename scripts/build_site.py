@@ -159,7 +159,10 @@ def build_html(models: list[dict]) -> str:
         if len(desc) > 200:
             desc = desc[:197] + "..."
 
-        cards.append(f"""      <article class="card">
+        all_providers = sorted(set(e["provider"] for e in entries))
+        data_providers = " ".join(escape(p) for p in all_providers)
+
+        cards.append(f"""      <article class="card" data-providers="{data_providers}">
         <div class="card-header">
           <h2 class="card-title">{escape(title)}</h2>
           <time class="card-date" datetime="{escape(date)}" title="{escape(date)}">{escape(relative)}</time>
@@ -169,6 +172,25 @@ def build_html(models: list[dict]) -> str:
       </article>""")
 
     cards_html = "\n".join(cards) if cards else '      <p class="empty">No releases tracked yet.</p>'
+
+    all_providers_in_data = []
+    seen = set()
+    for group in grouped:
+        for e in group["entries"]:
+            if e["provider"] not in seen:
+                seen.add(e["provider"])
+                all_providers_in_data.append(e["provider"])
+    all_providers_in_data.sort(key=lambda p: PROVIDER_ORDER.index(p) if p in PROVIDER_ORDER else 99)
+
+    filter_buttons = []
+    for p in all_providers_in_data:
+        svg = PROVIDER_SVGS.get(p, "")
+        label = PROVIDER_LABELS.get(p, p)
+        filter_buttons.append(
+            f'<button class="filter-btn active" data-provider="{escape(p)}" title="{escape(p)}">'
+            f'{svg}<span class="filter-label">{escape(label)}</span></button>'
+        )
+    filters_html = "\n        ".join(filter_buttons)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -309,6 +331,88 @@ def build_html(models: list[dict]) -> str:
       font-weight: 400;
       margin-left: 0.15rem;
     }}
+    .toolbar {{
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }}
+    .search-row {{
+      position: relative;
+    }}
+    .search-icon {{
+      position: absolute;
+      left: 0.7rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 15px;
+      height: 15px;
+      color: var(--text-3);
+      pointer-events: none;
+    }}
+    .search-input {{
+      width: 100%;
+      padding: 0.5rem 0.75rem 0.5rem 2.1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--bg);
+      outline: none;
+      transition: border-color 0.15s;
+    }}
+    .search-input:focus {{
+      border-color: var(--text-3);
+    }}
+    .search-input::placeholder {{
+      color: var(--text-3);
+    }}
+    .filter-row {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      align-items: center;
+    }}
+    .filter-btn {{
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.3rem 0.6rem 0.3rem 0.3rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text-3);
+      font-size: 0.72rem;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.15s;
+      opacity: 0.45;
+    }}
+    .filter-btn.active {{
+      opacity: 1;
+      color: var(--text-2);
+      border-color: var(--text-3);
+    }}
+    .filter-btn:hover {{
+      opacity: 0.85;
+    }}
+    .filter-btn .pi {{
+      width: 18px;
+      height: 18px;
+    }}
+    .no-results {{
+      text-align: center;
+      color: var(--text-3);
+      padding: 2.5rem 1rem;
+      font-size: 0.85rem;
+      display: none;
+    }}
     .empty {{
       text-align: center;
       color: var(--text-3);
@@ -326,6 +430,8 @@ def build_html(models: list[dict]) -> str:
       .card-title {{ font-size: 0.9rem; }}
       .chip-label {{ display: none; }}
       .provider-chip {{ padding: 0.3rem; }}
+      .filter-label {{ display: none; }}
+      .filter-btn {{ padding: 0.3rem; }}
     }}
   </style>
 </head>
@@ -340,10 +446,58 @@ def build_html(models: list[dict]) -> str:
       </a>
     </div>
   </header>
-  <main>
+  <div class="toolbar">
+    <div class="search-row">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" class="search-input" placeholder="Search models..." id="search">
+    </div>
+    <div class="filter-row">
+      {filters_html}
+    </div>
+  </div>
+  <main id="cards">
 {cards_html}
   </main>
+  <p class="no-results" id="no-results">No matching releases found.</p>
   <footer>Updated {datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")}</footer>
+  <script>
+  (function() {{
+    var btns = document.querySelectorAll('.filter-btn');
+    var cards = document.querySelectorAll('.card');
+    var search = document.getElementById('search');
+    var noResults = document.getElementById('no-results');
+
+    function activeProviders() {{
+      var s = new Set();
+      btns.forEach(function(b) {{ if (b.classList.contains('active')) s.add(b.dataset.provider); }});
+      return s;
+    }}
+
+    function applyFilters() {{
+      var q = search.value.toLowerCase().trim();
+      var providers = activeProviders();
+      var visible = 0;
+      cards.forEach(function(card) {{
+        var cp = card.dataset.providers.split(' ');
+        var providerMatch = cp.some(function(p) {{ return providers.has(p); }});
+        var textMatch = !q || card.textContent.toLowerCase().indexOf(q) !== -1;
+        var show = providerMatch && textMatch;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      }});
+      noResults.style.display = visible === 0 ? '' : 'none';
+    }}
+
+    btns.forEach(function(btn) {{
+      btn.addEventListener('click', function() {{
+        btn.classList.toggle('active');
+        applyFilters();
+      }});
+    }});
+
+    search.addEventListener('input', applyFilters);
+  }})();
+  </script>
 </body>
 </html>
 """
