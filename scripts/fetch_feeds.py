@@ -30,6 +30,11 @@ FEEDS = {
         "type": "rss",
         "provider": "Azure OpenAI",
     },
+    "anthropic": {
+        "url": "https://www.anthropic.com/rss.xml",
+        "type": "rss",
+        "provider": "Anthropic",
+    },
 }
 
 MODEL_KEYWORDS = [
@@ -77,12 +82,20 @@ EXCLUDE_PATTERNS = [
     r"retir(?:e|ing|ement)",
     r"deprecat",
     r"end[\s\-]of[\s\-](?:life|support)",
+    r"\bsagemaker\b",
 ]
 
 MODEL_PATTERN = re.compile("|".join(MODEL_KEYWORDS), re.IGNORECASE)
 NAME_PATTERN = re.compile("|".join(MODEL_NAMES), re.IGNORECASE)
 EXCLUDE_PATTERN = re.compile("|".join(EXCLUDE_PATTERNS), re.IGNORECASE)
 TAG_RE = re.compile(r"<[^>]+>")
+
+REGION_PATTERNS = [
+    re.compile(r"(?:US (?:East|West)\s*\([^)]+\)|EU \([^)]+\)|Asia Pacific\s*\([^)]+\)|Canada\s*\([^)]+\)|South America\s*\([^)]+\)|Middle East\s*\([^)]+\)|Africa\s*\([^)]+\)|Europe\s*\([^)]+\))"),
+    re.compile(r"(?:us-east-\d|us-west-\d|eu-west-\d|eu-central-\d|ap-southeast-\d|ap-northeast-\d|ap-south-\d|sa-east-\d|ca-central-\d|me-south-\d|af-south-\d)[a-z]?"),
+    re.compile(r"(?:us-central1|europe-west[1-9]|asia-east[12]|asia-northeast[1-3]|asia-southeast[12]|australia-southeast[12]|northamerica-northeast[12]|southamerica-east1)"),
+    re.compile(r"(?:eastus|westus|northeurope|westeurope|uksouth|eastasia|southeastasia|japaneast|australiaeast|canadacentral|centralindia|koreacentral|francecentral|germanywestcentral|swedencentral|switzerlandnorth)\d?"),
+]
 
 
 def strip_html(text: str) -> str:
@@ -103,99 +116,37 @@ def is_model_release(title: str, description: str) -> bool:
     return has_keyword and has_name
 
 
+def extract_regions(text: str) -> list[str]:
+    regions = []
+    for pattern in REGION_PATTERNS:
+        for match in pattern.finditer(text):
+            regions.append(match.group(0).strip())
+    return sorted(set(regions)) if regions else []
+
+
 def fetch_url(url: str) -> bytes:
     req = urllib.request.Request(url, headers={"User-Agent": "llm-releases-bot/1.0"})
     with urllib.request.urlopen(req, timeout=30) as resp:
         return resp.read()
 
 
-def parse_rss_items(xml_bytes: bytes, provider: str) -> list[dict]:
-    root = ET.fromstring(xml_bytes)
-    items = []
-    for item in root.iter("item"):
-        title = item.findtext("title", "").strip()
-        description = strip_html(item.findtext("description", ""))
-        link = item.findtext("link", "").strip()
-        pub_date = item.findtext("pubDate", "").strip()
-        categories = [c.text for c in item.findall("category") if c.text]
-        cat_text = " ".join(categories)
-
-        if not is_model_release(title, f"{description} {cat_text}"):
-            continue
-
-        try:
-            dt = parsedate_to_datetime(pub_date)
-            date_str = dt.strftime("%Y-%m-%d")
-        except Exception:
-            date_str = pub_date
-
-        items.append({
-            "id": make_id(provider, title),
-            "provider": provider,
-            "title": title,
-            "description": description[:500],
-            "link": link,
-            "date": date_str,
-        })
-    return items
-
-
 VERTEX_SECTION_RE = re.compile(r"(?:Feature|Changed|Announcement)\s*\n", re.IGNORECASE)
 
 
 def split_vertex_sections(content: str) -> list[str]:
-    """Split a Vertex AI release note into individual announcement sections."""
     parts = VERTEX_SECTION_RE.split(content)
     return [p.strip() for p in parts if p.strip()]
 
 
 def extract_vertex_title(section: str) -> str:
-    """Extract a short title from the first sentence of a section."""
     first_line = section.split("\n")[0].strip()
     if len(first_line) <= 120:
         return first_line
     return first_line[:117] + "..."
 
 
-def parse_atom_entries(xml_bytes: bytes, provider: str) -> list[dict]:
-    root = ET.fromstring(xml_bytes)
-    ns = {"atom": "http://www.w3.org/2005/Atom"}
-    items = []
-    for entry in root.findall("atom:entry", ns):
-        entry_title = entry.findtext("atom:title", "", ns).strip()
-        content_el = entry.find("atom:content", ns)
-        content = strip_html(content_el.text or "") if content_el is not None else ""
-        link_el = entry.find("atom:link", ns)
-        link = link_el.get("href", "") if link_el is not None else ""
-        updated = entry.findtext("atom:updated", "", ns).strip()
-
-        try:
-            dt = datetime.fromisoformat(updated)
-            date_str = dt.strftime("%Y-%m-%d")
-        except Exception:
-            date_str = updated
-
-        sections = split_vertex_sections(content)
-        if not sections:
-            sections = [content]
-
-        for section in sections:
-            if not is_model_release(entry_title, section):
-                continue
-            title = extract_vertex_title(section)
-            items.append({
-                "id": make_id(provider, f"{entry_title}:{title}"),
-                "provider": provider,
-                "title": title,
-                "description": section[:500],
-                "link": link,
-                "date": date_str,
-            })
-    return items
-
-
 AWS_AI_CATEGORIES = re.compile(
-    r"bedrock|sagemaker|artificial.intelligence|machine.learning|generative.ai",
+    r"bedrock|artificial.intelligence|machine.learning|generative.ai",
     re.IGNORECASE,
 )
 
@@ -225,6 +176,8 @@ def fetch_aws_bedrock() -> list[dict]:
         except Exception:
             date_str = pub_date
 
+        regions = extract_regions(description)
+
         items.append({
             "id": make_id(cfg["provider"], title),
             "provider": cfg["provider"],
@@ -232,6 +185,7 @@ def fetch_aws_bedrock() -> list[dict]:
             "description": description[:500],
             "link": link,
             "date": date_str,
+            "regions": regions,
         })
     return items
 
@@ -239,17 +193,120 @@ def fetch_aws_bedrock() -> list[dict]:
 def fetch_vertex_ai() -> list[dict]:
     cfg = FEEDS["vertex_ai"]
     data = fetch_url(cfg["url"])
-    return parse_atom_entries(data, cfg["provider"])
+    root = ET.fromstring(data)
+    ns = {"atom": "http://www.w3.org/2005/Atom"}
+    items = []
+    for entry in root.findall("atom:entry", ns):
+        entry_title = entry.findtext("atom:title", "", ns).strip()
+        content_el = entry.find("atom:content", ns)
+        content = strip_html(content_el.text or "") if content_el is not None else ""
+        link_el = entry.find("atom:link", ns)
+        link = link_el.get("href", "") if link_el is not None else ""
+        updated = entry.findtext("atom:updated", "", ns).strip()
+
+        try:
+            dt = datetime.fromisoformat(updated)
+            date_str = dt.strftime("%Y-%m-%d")
+        except Exception:
+            date_str = updated
+
+        sections = split_vertex_sections(content)
+        if not sections:
+            sections = [content]
+
+        for section in sections:
+            if not is_model_release(entry_title, section):
+                continue
+            title = extract_vertex_title(section)
+            regions = extract_regions(section)
+            items.append({
+                "id": make_id(cfg["provider"], f"{entry_title}:{title}"),
+                "provider": cfg["provider"],
+                "title": title,
+                "description": section[:500],
+                "link": link,
+                "date": date_str,
+                "regions": regions,
+            })
+    return items
 
 
 def fetch_azure_openai() -> list[dict]:
     cfg = FEEDS["azure_openai"]
     data = fetch_url(cfg["url"])
-    items = parse_rss_items(data, cfg["provider"])
-    return [
-        i for i in items
-        if re.search(r"azure\s+openai|openai|azure\s+ai|azure\s+databricks", i["title"] + i["description"], re.IGNORECASE)
-    ]
+    root = ET.fromstring(data)
+    items = []
+    for item in root.iter("item"):
+        title = item.findtext("title", "").strip()
+        description = strip_html(item.findtext("description", ""))
+        link = item.findtext("link", "").strip()
+        pub_date = item.findtext("pubDate", "").strip()
+        categories = [c.text for c in item.findall("category") if c.text]
+        cat_text = " ".join(categories)
+
+        if not re.search(r"azure\s+openai|openai|azure\s+ai|azure\s+databricks", f"{title} {description} {cat_text}", re.IGNORECASE):
+            continue
+
+        if not is_model_release(title, f"{description} {cat_text}"):
+            continue
+
+        try:
+            dt = parsedate_to_datetime(pub_date)
+            date_str = dt.strftime("%Y-%m-%d")
+        except Exception:
+            date_str = pub_date
+
+        regions = extract_regions(description)
+
+        items.append({
+            "id": make_id(cfg["provider"], title),
+            "provider": cfg["provider"],
+            "title": title,
+            "description": description[:500],
+            "link": link,
+            "date": date_str,
+            "regions": regions,
+        })
+    return items
+
+
+ANTHROPIC_MODEL_RE = re.compile(
+    r"\bclaude\b", re.IGNORECASE
+)
+
+
+def fetch_anthropic() -> list[dict]:
+    cfg = FEEDS["anthropic"]
+    data = fetch_url(cfg["url"])
+    root = ET.fromstring(data)
+    items = []
+    for item in root.iter("item"):
+        title = item.findtext("title", "").strip()
+        description = strip_html(item.findtext("description", ""))
+        link = item.findtext("link", "").strip()
+        pub_date = item.findtext("pubDate", "").strip()
+
+        if not ANTHROPIC_MODEL_RE.search(f"{title} {description}"):
+            continue
+        if not is_model_release(title, description):
+            continue
+
+        try:
+            dt = parsedate_to_datetime(pub_date)
+            date_str = dt.strftime("%Y-%m-%d")
+        except Exception:
+            date_str = pub_date
+
+        items.append({
+            "id": make_id(cfg["provider"], title),
+            "provider": cfg["provider"],
+            "title": title,
+            "description": description[:500],
+            "link": link,
+            "date": date_str,
+            "regions": [],
+        })
+    return items
 
 
 def main() -> None:
@@ -257,7 +314,7 @@ def main() -> None:
     existing_ids = {m["id"] for m in existing}
 
     new_items = []
-    fetchers = [fetch_aws_bedrock, fetch_vertex_ai, fetch_azure_openai]
+    fetchers = [fetch_aws_bedrock, fetch_vertex_ai, fetch_azure_openai, fetch_anthropic]
 
     for fetcher in fetchers:
         try:

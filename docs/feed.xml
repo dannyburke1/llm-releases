@@ -3,17 +3,9 @@
   <channel>
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
-    <description>New model releases across AWS Bedrock, Vertex AI, and Azure OpenAI</description>
-    <lastBuildDate>Tue, 21 Apr 2026 20:13:57 +0000</lastBuildDate>
+    <description>New model releases across AWS Bedrock, Vertex AI, Azure OpenAI, and Anthropic</description>
+    <lastBuildDate>Tue, 21 Apr 2026 20:21:40 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
-    <item>
-      <title>SageMaker JumpStart now offers optimized deployments for foundation models</title>
-      <link>https://aws.amazon.com/about-aws/whats-new/2026/04/sagemaker-jumpstart-optimized-deployments/</link>
-      <description>SageMaker JumpStart now offers optimized deployments, enabling customers to deploy foundation models with pre-configured settings tailored to specific use cases and performance constraints. SageMaker JumpStart optimized deployments simplify model deployment by offering task-aware configurations that optimize for cost, throughput, or latency based on your workload requirements - whether content generation, summarization, or Q&amp;A. This launch includes support for 30+ popular models from Meta, Micro</description>
-      <pubDate>Fri, 17 Apr 2026 00:00:00 +0000</pubDate>
-      <category>AWS Bedrock</category>
-      <guid isPermaLink="false">bc8791acc88539f0</guid>
-    </item>
     <item>
       <title>[Launched] Generally available: Anthropic Claude Opus 4.7 on Azure Databricks</title>
       <link>https://azure.microsoft.com/updates?id=560590</link>
