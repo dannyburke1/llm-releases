@@ -4,6 +4,7 @@
 import hashlib
 import json
 import re
+import ssl
 import sys
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -13,29 +14,6 @@ from html import unescape
 from pathlib import Path
 
 DATA_FILE = Path(__file__).resolve().parent.parent / "data" / "models.json"
-
-FEEDS = {
-    "aws_bedrock": {
-        "url": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
-        "type": "rss",
-        "provider": "AWS Bedrock",
-    },
-    "vertex_ai": {
-        "url": "https://cloud.google.com/feeds/vertex-ai-release-notes.xml",
-        "type": "atom",
-        "provider": "Vertex AI",
-    },
-    "azure_openai": {
-        "url": "https://www.microsoft.com/releasecommunications/api/v2/azure/rss",
-        "type": "rss",
-        "provider": "Azure OpenAI",
-    },
-    "anthropic": {
-        "url": "https://www.anthropic.com/rss.xml",
-        "type": "rss",
-        "provider": "Anthropic",
-    },
-}
 
 MODEL_KEYWORDS = [
     r"(?:now|newly)\s+available",
@@ -66,13 +44,15 @@ MODEL_NAMES = [
     r"\bgemini\b",
     r"\bgemma\b",
     r"\bpalm\s*2?\b",
-    r"\bgpt[\s\-]?[34o]",
+    r"\bgpt[\s\-]?[345o]",
     r"\bdall[\s\-]?e\b",
     r"\bwhisper\b",
     r"\bphi[\s\-]?\d",
     r"\bdeepseek\b",
     r"\bmeta\s+llama\b",
     r"\bo[13]\b(?:[\s\-](?:mini|pro))?",
+    r"\bflash\b",
+    r"\bsora\b",
 ]
 
 EXCLUDE_PATTERNS = [
@@ -125,9 +105,18 @@ def extract_regions(text: str) -> list[str]:
 
 
 def fetch_url(url: str) -> bytes:
-    req = urllib.request.Request(url, headers={"User-Agent": "llm-releases-bot/1.0"})
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return resp.read()
+    ctx = ssl.create_default_context()
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "llm-releases-bot/1.0"})
+        with urllib.request.urlopen(req, timeout=30, context=ctx) as resp:
+            return resp.read()
+    except ssl.SSLCertVerificationError:
+        ctx = ssl.create_default_context()
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+        req = urllib.request.Request(url, headers={"User-Agent": "llm-releases-bot/1.0"})
+        with urllib.request.urlopen(req, timeout=30, context=ctx) as resp:
+            return resp.read()
 
 
 VERTEX_SECTION_RE = re.compile(r"(?:Feature|Changed|Announcement)\s*\n", re.IGNORECASE)
@@ -152,8 +141,7 @@ AWS_AI_CATEGORIES = re.compile(
 
 
 def fetch_aws_bedrock() -> list[dict]:
-    cfg = FEEDS["aws_bedrock"]
-    data = fetch_url(cfg["url"])
+    data = fetch_url("https://aws.amazon.com/about-aws/whats-new/recent/feed/")
     root = ET.fromstring(data)
     items = []
     for item in root.iter("item"):
@@ -176,23 +164,20 @@ def fetch_aws_bedrock() -> list[dict]:
         except Exception:
             date_str = pub_date
 
-        regions = extract_regions(description)
-
         items.append({
-            "id": make_id(cfg["provider"], title),
-            "provider": cfg["provider"],
+            "id": make_id("AWS Bedrock", title),
+            "provider": "AWS Bedrock",
             "title": title,
             "description": description[:500],
             "link": link,
             "date": date_str,
-            "regions": regions,
+            "regions": extract_regions(description),
         })
     return items
 
 
 def fetch_vertex_ai() -> list[dict]:
-    cfg = FEEDS["vertex_ai"]
-    data = fetch_url(cfg["url"])
+    data = fetch_url("https://cloud.google.com/feeds/vertex-ai-release-notes.xml")
     root = ET.fromstring(data)
     ns = {"atom": "http://www.w3.org/2005/Atom"}
     items = []
@@ -218,22 +203,20 @@ def fetch_vertex_ai() -> list[dict]:
             if not is_model_release(entry_title, section):
                 continue
             title = extract_vertex_title(section)
-            regions = extract_regions(section)
             items.append({
-                "id": make_id(cfg["provider"], f"{entry_title}:{title}"),
-                "provider": cfg["provider"],
+                "id": make_id("Vertex AI", f"{entry_title}:{title}"),
+                "provider": "Vertex AI",
                 "title": title,
                 "description": section[:500],
                 "link": link,
                 "date": date_str,
-                "regions": regions,
+                "regions": extract_regions(section),
             })
     return items
 
 
 def fetch_azure_openai() -> list[dict]:
-    cfg = FEEDS["azure_openai"]
-    data = fetch_url(cfg["url"])
+    data = fetch_url("https://www.microsoft.com/releasecommunications/api/v2/azure/rss")
     root = ET.fromstring(data)
     items = []
     for item in root.iter("item"):
@@ -246,7 +229,6 @@ def fetch_azure_openai() -> list[dict]:
 
         if not re.search(r"azure\s+openai|openai|azure\s+ai|azure\s+databricks", f"{title} {description} {cat_text}", re.IGNORECASE):
             continue
-
         if not is_model_release(title, f"{description} {cat_text}"):
             continue
 
@@ -256,28 +238,20 @@ def fetch_azure_openai() -> list[dict]:
         except Exception:
             date_str = pub_date
 
-        regions = extract_regions(description)
-
         items.append({
-            "id": make_id(cfg["provider"], title),
-            "provider": cfg["provider"],
+            "id": make_id("Azure OpenAI", title),
+            "provider": "Azure OpenAI",
             "title": title,
             "description": description[:500],
             "link": link,
             "date": date_str,
-            "regions": regions,
+            "regions": extract_regions(description),
         })
     return items
 
 
-ANTHROPIC_MODEL_RE = re.compile(
-    r"\bclaude\b", re.IGNORECASE
-)
-
-
 def fetch_anthropic() -> list[dict]:
-    cfg = FEEDS["anthropic"]
-    data = fetch_url(cfg["url"])
+    data = fetch_url("https://www.anthropic.com/rss.xml")
     root = ET.fromstring(data)
     items = []
     for item in root.iter("item"):
@@ -286,7 +260,7 @@ def fetch_anthropic() -> list[dict]:
         link = item.findtext("link", "").strip()
         pub_date = item.findtext("pubDate", "").strip()
 
-        if not ANTHROPIC_MODEL_RE.search(f"{title} {description}"):
+        if not re.search(r"\bclaude\b", f"{title} {description}", re.IGNORECASE):
             continue
         if not is_model_release(title, description):
             continue
@@ -298,8 +272,91 @@ def fetch_anthropic() -> list[dict]:
             date_str = pub_date
 
         items.append({
-            "id": make_id(cfg["provider"], title),
-            "provider": cfg["provider"],
+            "id": make_id("Anthropic", title),
+            "provider": "Anthropic",
+            "title": title,
+            "description": description[:500],
+            "link": link,
+            "date": date_str,
+            "regions": [],
+        })
+    return items
+
+
+def fetch_google_deepmind() -> list[dict]:
+    data = fetch_url("https://blog.google/technology/google-deepmind/rss/")
+    root = ET.fromstring(data)
+    items = []
+    for item in root.iter("item"):
+        title = item.findtext("title", "").strip()
+        description = strip_html(item.findtext("description", ""))
+        link = item.findtext("link", "").strip()
+        pub_date = item.findtext("pubDate", "").strip()
+
+        if not is_model_release(title, description):
+            continue
+
+        try:
+            dt = parsedate_to_datetime(pub_date)
+            date_str = dt.strftime("%Y-%m-%d")
+        except Exception:
+            date_str = pub_date
+
+        items.append({
+            "id": make_id("Google DeepMind", title),
+            "provider": "Google DeepMind",
+            "title": title,
+            "description": description[:500],
+            "link": link,
+            "date": date_str,
+            "regions": [],
+        })
+    return items
+
+
+OPENAI_LAUNCH_RE = re.compile(
+    r"^introducing\s+(?:gpt[\s\-]?[345o]|dall|sora|whisper|openai\s+o[13])",
+    re.IGNORECASE,
+)
+
+OPENAI_MODEL_LAUNCH_RE = re.compile(
+    r"^(?:hello|new)\s+(?:gpt[\s\-]?[345o]|dall|sora)",
+    re.IGNORECASE,
+)
+
+OPENAI_SORA_LAUNCH_RE = re.compile(
+    r"^sora\s+(?:\d\s+)?is\s+here",
+    re.IGNORECASE,
+)
+
+
+def fetch_openai() -> list[dict]:
+    data = fetch_url("https://openai.com/blog/rss.xml")
+    root = ET.fromstring(data)
+    items = []
+    for item in root.iter("item"):
+        title = item.findtext("title", "").strip()
+        description = strip_html(item.findtext("description", ""))
+        link = item.findtext("link", "").strip()
+        pub_date = item.findtext("pubDate", "").strip()
+
+        is_launch = (
+            OPENAI_LAUNCH_RE.search(title)
+            or OPENAI_MODEL_LAUNCH_RE.search(title)
+            or OPENAI_SORA_LAUNCH_RE.search(title)
+        )
+        if not is_launch:
+            continue
+
+        try:
+            dt = parsedate_to_datetime(pub_date)
+            date_str = dt.strftime("%Y-%m-%d")
+        except Exception:
+            date_str = pub_date
+
+        items.append({
+            "id": make_id("OpenAI", title),
+            "provider": "OpenAI",
             "title": title,
             "description": description[:500],
             "link": link,
@@ -314,7 +371,14 @@ def main() -> None:
     existing_ids = {m["id"] for m in existing}
 
     new_items = []
-    fetchers = [fetch_aws_bedrock, fetch_vertex_ai, fetch_azure_openai, fetch_anthropic]
+    fetchers = [
+        fetch_aws_bedrock,
+        fetch_vertex_ai,
+        fetch_azure_openai,
+        fetch_anthropic,
+        fetch_google_deepmind,
+        fetch_openai,
+    ]
 
     for fetcher in fetchers:
         try:

@@ -3,8 +3,8 @@
   <channel>
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
-    <description>New model releases across AWS Bedrock, Vertex AI, Azure OpenAI, and Anthropic</description>
-    <lastBuildDate>Tue, 21 Apr 2026 20:24:35 +0000</lastBuildDate>
+    <description>New model releases across cloud providers</description>
+    <lastBuildDate>Tue, 21 Apr 2026 20:34:07 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Launched] Generally available: Anthropic Claude Opus 4.7 on Azure Databricks</title>
@@ -35,6 +35,22 @@ Claude Opus 4.7 is an upgrade from Claude Opus 4.6, with stronger performance a
       <guid isPermaLink="false">7755760c6304663b</guid>
     </item>
     <item>
+      <title>Introducing GPT-5.4 mini and nano</title>
+      <link>https://openai.com/index/introducing-gpt-5-4-mini-and-nano</link>
+      <description>GPT-5.4 mini and nano are smaller, faster versions of GPT-5.4 optimized for coding, tool use, multimodal reasoning, and high-volume API and sub-agent workloads.</description>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">9638fd5a4fec177a</guid>
+    </item>
+    <item>
+      <title>Introducing GPT-5.4</title>
+      <link>https://openai.com/index/introducing-gpt-5-4</link>
+      <description>Introducing GPT-5.4, OpenAI’s most most capable and efficient frontier model for professional work, with state-of-the-art coding, computer use, tool search, and 1M-token context.</description>
+      <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">c9184e3c10e778ae</guid>
+    </item>
+    <item>
       <title>[Launched] Generally Available: Anthropic Claude Sonnet 4.6 is now available on Azure Databricks</title>
       <link>https://azure.microsoft.com/updates?id=557595</link>
       <description>Azure Databricks now supports Anthropic Claude Sonnet 4.6
@@ -48,6 +64,14 @@ lower</description>
       <guid isPermaLink="false">fc5a619d0c00b9a7</guid>
     </item>
     <item>
+      <title>Introducing GPT-5.3-Codex-Spark</title>
+      <link>https://openai.com/index/introducing-gpt-5-3-codex-spark</link>
+      <description>Introducing GPT-5.3-Codex-Spark—our first real-time coding model. 15x faster generation, 128k context, now in research preview for ChatGPT Pro users.</description>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">fdbf45366e616c41</guid>
+    </item>
+    <item>
       <title>[Launched] ​Generally Available: Claude Opus 4.6 now available on Azure Databricks</title>
       <link>https://azure.microsoft.com/updates?id=555981</link>
       <description>Azure Databricks now supports Anthropic Claude Opus 4.6 through Mosaic AI Model serving. Claude Opus 4.6 is Anthropic&#x27;s most advanced model, delivering state-of-the-art performance on agentic coding, complex reasoning, and knowledge work tasks. The model</description>
@@ -56,12 +80,60 @@ lower</description>
       <guid isPermaLink="false">50f48388e546fdab</guid>
     </item>
     <item>
+      <title>Introducing GPT-5.3-Codex</title>
+      <link>https://openai.com/index/introducing-gpt-5-3-codex</link>
+      <description>GPT-5.3-Codex is a Codex-native agent that pairs frontier coding performance with general reasoning to support long-horizon, real-world technical work.</description>
+      <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">06042742e369d0fa</guid>
+    </item>
+    <item>
+      <title>Introducing GPT-5.2-Codex</title>
+      <link>https://openai.com/index/gpt-5-2-codex</link>
+      <description>GPT-5.2-Codex is OpenAI’s most advanced coding model, offering long-horizon reasoning, large-scale code transformations, and enhanced cybersecurity capabilities.</description>
+      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">08f06b68017de598</guid>
+    </item>
+    <item>
+      <title>Introducing GPT-5.2</title>
+      <link>https://openai.com/index/introducing-gpt-5-2</link>
+      <description>GPT-5.2 is our most advanced frontier model for everyday professional work, with state-of-the-art reasoning, long-context understanding, coding, and vision. Use it in ChatGPT and the OpenAI API to power faster, more reliable agentic workflows.</description>
+      <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">30ba96d93b3dd711</guid>
+    </item>
+    <item>
+      <title>Introducing GPT-5.1 for developers</title>
+      <link>https://openai.com/index/gpt-5-1-for-developers</link>
+      <description>GPT-5.1 is now available in the API, bringing faster adaptive reasoning, extended prompt caching, improved coding performance, and new apply_patch and shell tools.</description>
+      <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">d18d724fe0dc0989</guid>
+    </item>
+    <item>
+      <title>Introducing gpt-oss-safeguard</title>
+      <link>https://openai.com/index/introducing-gpt-oss-safeguard</link>
+      <description>OpenAI introduces gpt-oss-safeguard—open-weight reasoning models for safety classification that let developers apply and iterate on custom policies.</description>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">c7ed85bffad72c1f</guid>
+    </item>
+    <item>
       <title>DeepSeek-V3.2-Exp is available through Model Garden.</title>
       <link>https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_30_2025</link>
       <description>DeepSeek-V3.2-Exp is available through Model Garden.</description>
       <pubDate>Tue, 30 Sep 2025 00:00:00 +0000</pubDate>
       <category>Vertex AI</category>
       <guid isPermaLink="false">cd06a14bcc9e6bac</guid>
+    </item>
+    <item>
+      <title>Sora 2 is here</title>
+      <link>https://openai.com/index/sora-2</link>
+      <description>Our latest video generation model is more physically accurate, realistic, and controllable than prior systems. It also features synchronized dialogue and sound effects. Create with it in the new Sora app.</description>
+      <pubDate>Tue, 30 Sep 2025 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">5fb3824d1ab913ec</guid>
     </item>
     <item>
       <title>DeepSeek-V3.1-Terminus is available through Model Garden.</title>
@@ -96,12 +168,36 @@ lower</description>
       <guid isPermaLink="false">4d43fbb3e27b9eea</guid>
     </item>
     <item>
+      <title>Introducing GPT-5 for developers</title>
+      <link>https://openai.com/index/introducing-gpt-5-for-developers</link>
+      <description>Introducing GPT-5 in our API platform—offering high reasoning performance, new controls for devs, and best-in-class results on real coding tasks.</description>
+      <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">e62038973cde01d3</guid>
+    </item>
+    <item>
+      <title>Introducing GPT-5</title>
+      <link>https://openai.com/index/introducing-gpt-5</link>
+      <description>We are introducing GPT‑5, our best AI system yet. GPT‑5 is a significant leap in intelligence over all our previous models, featuring state-of-the-art performance across coding, math, writing, health, visual perception, and more.</description>
+      <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">942330e643c501b3</guid>
+    </item>
+    <item>
       <title>OpenAI&#x27;s gpt-oss models are available through Model Garden.</title>
       <link>https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_06_2025</link>
       <description>OpenAI&#x27;s gpt-oss models are available through Model Garden.</description>
       <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
       <category>Vertex AI</category>
       <guid isPermaLink="false">1761b8b21b57b929</guid>
+    </item>
+    <item>
+      <title>Introducing gpt-oss</title>
+      <link>https://openai.com/index/introducing-gpt-oss</link>
+      <description>We’re releasing gpt-oss-120b and gpt-oss-20b—two state-of-the-art open-weight language models that deliver strong real-world performance at low cost. Available under the flexible Apache 2.0 license, these models outperform similarly sized open models on reasoning tasks, demonstrate strong tool use capabilities, and are optimized for efficient deployment on consumer hardware.</description>
+      <pubDate>Tue, 05 Aug 2025 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">0fc398da5d412e3a</guid>
     </item>
     <item>
       <title>The global endpoint is generally available (GA) for Anthropic&#x27;s Claude Opus 4. For details, see Global endpoint.</title>
@@ -118,6 +214,79 @@ lower</description>
       <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
       <category>Vertex AI</category>
       <guid isPermaLink="false">b251eb777be88b0c</guid>
+    </item>
+    <item>
+      <title>Introducing OpenAI o3 and o4-mini</title>
+      <link>https://openai.com/index/introducing-o3-and-o4-mini</link>
+      <description>Our smartest and most capable models to date with full tool access</description>
+      <pubDate>Wed, 16 Apr 2025 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">7926ee1da166fd54</guid>
+    </item>
+    <item>
+      <title>Introducing GPT-4.1 in the API</title>
+      <link>https://openai.com/index/gpt-4-1</link>
+      <description>Introducing GPT-4.1 in the API—a new family of models with across-the-board improvements, including major gains in coding, instruction following, and long-context understanding. We’re also releasing our first nano model. Available to developers worldwide starting today.</description>
+      <pubDate>Mon, 14 Apr 2025 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">96216474dc10ca92</guid>
+    </item>
+    <item>
+      <title>Introducing GPT-4.5</title>
+      <link>https://openai.com/index/introducing-gpt-4-5</link>
+      <description>We’re releasing a research preview of GPT‑4.5—our largest and best model for chat yet. GPT‑4.5 is a step forward in scaling up pre-training and post-training.</description>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">31ae7d0a719b3d0a</guid>
+    </item>
+    <item>
+      <title>Sora is here</title>
+      <link>https://openai.com/index/sora-is-here</link>
+      <description>Our video generation model, Sora, is now available to use at sora.com. Users can generate videos up to 1080p resolution, up to 20 sec long, and in widescreen, vertical or square aspect ratios. You can bring your own assets to extend, remix, and blend, or generate entirely new content from text.</description>
+      <pubDate>Mon, 09 Dec 2024 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">d9e3bf985ad08a83</guid>
+    </item>
+    <item>
+      <title>Introducing OpenAI o1</title>
+      <link>https://openai.com/index/introducing-openai-o1-preview</link>
+      <description></description>
+      <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">d50de4573fba012c</guid>
+    </item>
+    <item>
+      <title>Hello GPT-4o</title>
+      <link>https://openai.com/index/hello-gpt-4o</link>
+      <description>We’re announcing GPT-4 Omni, our new flagship model which can reason across audio, vision, and text in real time.</description>
+      <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">9fbece631eec80f0</guid>
+    </item>
+    <item>
+      <title>Introducing GPT-4o and more tools to ChatGPT free users</title>
+      <link>https://openai.com/index/gpt-4o-and-more-tools-to-chatgpt-free</link>
+      <description>Introducing GPT-4o and more tools to ChatGPT free users
+We are launching our newest flagship model and making more capabilities available for free in ChatGPT.</description>
+      <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">e87c8290af8d9d03</guid>
+    </item>
+    <item>
+      <title>Introducing Whisper</title>
+      <link>https://openai.com/index/whisper</link>
+      <description></description>
+      <pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">861f9b17f7913bc6</guid>
+    </item>
+    <item>
+      <title>New GPT-3 capabilities: Edit &amp; insert</title>
+      <link>https://openai.com/index/gpt-3-edit-insert</link>
+      <description>We’ve released new versions of GPT-3 and Codex which can edit or insert content into existing text, rather than just completing existing text.</description>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">0623dc9bc0004426</guid>
     </item>
   </channel>
 </rss>

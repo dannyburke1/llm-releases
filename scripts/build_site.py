@@ -13,21 +13,28 @@ DATA_FILE = ROOT / "data" / "models.json"
 DOCS_DIR = ROOT / "docs"
 SITE_TITLE = "LLM Releases"
 SITE_URL = "https://dannyburke1.github.io/llm-releases"
-SITE_DESCRIPTION = "New model releases across AWS Bedrock, Vertex AI, Azure OpenAI, and Anthropic"
+SITE_DESCRIPTION = "New model releases across cloud providers"
 
 PROVIDER_SVGS = {
-    "AWS Bedrock": '<svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z" fill="#ff9900"/><path d="M12 7v10M7 9.5l10 5M17 9.5l-10 5" stroke="#fff" stroke-width="1.2"/></svg>',
-    "Vertex AI": '<svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 19h20L12 2z" fill="#4285f4"/><path d="M12 2l4 8.5H8L12 2z" fill="#669df6"/><circle cx="12" cy="15" r="2.5" fill="#fff"/></svg>',
-    "Azure OpenAI": '<svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M2 15L12 2l10 13H2z" fill="#0078d4"/><path d="M5 15l7-9 7 9" fill="#50a0e6"/><rect x="8" y="17" width="8" height="3" rx="1" fill="#0078d4"/></svg>',
-    "Anthropic": '<svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 3L4 21h4l1.5-4h5L16 21h4L12 3zm0 6.5L14.5 15h-5L12 9.5z" fill="#d97757"/></svg>',
+    "AWS Bedrock": '<svg class="pi" viewBox="0 0 40 40"><path d="M20 4L4 12v16l16 8 16-8V12L20 4z" fill="#232f3e"/><path d="M20 4L4 12l16 8 16-8L20 4z" fill="#ff9900"/><path d="M20 20v16l16-8V12L20 20z" fill="#f90" opacity=".35"/></svg>',
+    "Vertex AI": '<svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#4285f4"/><path d="M11 28l9-18 9 18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="14" r="2" fill="#fff"/></svg>',
+    "Azure OpenAI": '<svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#0078d4"/><path d="M10 26L20 10l10 16H10z" fill="#50e6ff" opacity=".9"/><path d="M14 26l6-10 6 10H14z" fill="#fff" opacity=".5"/></svg>',
+    "Anthropic": '<svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#d97757"/><path d="M20 10l-8 20h4.5l1.8-5h7.4l1.8 5H32L20 10zm0 7l2.5 6.5h-5L20 17z" fill="#fff"/></svg>',
+    "Google DeepMind": '<svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#fff" stroke="#dadce0"/><circle cx="14" cy="14" r="5" fill="#4285f4"/><circle cx="26" cy="14" r="5" fill="#ea4335"/><circle cx="14" cy="26" r="5" fill="#34a853"/><circle cx="26" cy="26" r="5" fill="#fbbc05"/></svg>',
+    "OpenAI": '<svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg>',
 }
 
 PROVIDER_LABELS = {
-    "AWS Bedrock": "AWS",
-    "Vertex AI": "GCP",
-    "Azure OpenAI": "Azure",
+    "AWS Bedrock": "AWS Bedrock",
+    "Vertex AI": "Vertex AI",
+    "Azure OpenAI": "Azure OpenAI",
     "Anthropic": "Anthropic",
+    "Google DeepMind": "Google DeepMind",
+    "OpenAI": "OpenAI",
 }
+
+# Order for display (first-party providers first, then cloud)
+PROVIDER_ORDER = ["Anthropic", "OpenAI", "Google DeepMind", "AWS Bedrock", "Vertex AI", "Azure OpenAI"]
 
 
 def normalize_model_name(title: str) -> str:
@@ -42,6 +49,7 @@ def normalize_model_name(title: str) -> str:
     text = re.sub(r"\b(?:is |are )?(?:now |newly )?(?:available|launched?)\b.*", "", text)
     text = re.sub(r"anthropic'?s?\s*", "", text)
     text = re.sub(r"openai'?s?\s*", "", text)
+    text = re.sub(r"\bintroducing\s+", "", text)
     text = re.sub(r"[^a-z0-9.\-\s]", "", text)
     text = re.sub(r"\s+", " ", text).strip()
     return text
@@ -49,99 +57,116 @@ def normalize_model_name(title: str) -> str:
 
 def group_models(models: list[dict]) -> list[dict]:
     """Group entries that refer to the same model across providers."""
-    groups: dict[str, dict] = {}
-    ungrouped = []
+    groups: list[dict] = []
 
     for m in models:
         name = normalize_model_name(m["title"])
         if len(name) < 3:
-            ungrouped.append(m)
+            groups.append({
+                "name": name,
+                "entries": [m],
+                "date": m["date"],
+            })
             continue
 
-        key = f"{m['date']}:{name}"
-
         found = False
-        for existing_key, group in groups.items():
-            existing_date, existing_name = existing_key.split(":", 1)
-            if existing_name == name and abs(
-                (datetime.strptime(m["date"], "%Y-%m-%d") - datetime.strptime(existing_date, "%Y-%m-%d")).days
-            ) <= 7:
-                group["providers"].append(m["provider"])
-                group["links"].append({"provider": m["provider"], "link": m["link"]})
-                regions = m.get("regions", [])
-                if regions:
-                    group["regions"] = sorted(set(group.get("regions", []) + regions))
+        for group in groups:
+            if group["name"] == name and abs(
+                (datetime.strptime(m["date"], "%Y-%m-%d") - datetime.strptime(group["date"], "%Y-%m-%d")).days
+            ) <= 14:
+                group["entries"].append(m)
+                if m["date"] > group["date"]:
+                    group["date"] = m["date"]
                 found = True
                 break
 
         if not found:
-            groups[key] = {
-                "title": m["title"],
-                "description": m["description"],
+            groups.append({
+                "name": name,
+                "entries": [m],
                 "date": m["date"],
-                "providers": [m["provider"]],
-                "links": [{"provider": m["provider"], "link": m["link"]}],
-                "regions": m.get("regions", []),
-                "id": m["id"],
-            }
+            })
 
-    result = list(groups.values()) + [{
-        "title": m["title"],
-        "description": m["description"],
-        "date": m["date"],
-        "providers": [m["provider"]],
-        "links": [{"provider": m["provider"], "link": m["link"]}],
-        "regions": m.get("regions", []),
-        "id": m["id"],
-    } for m in ungrouped]
-
-    result.sort(key=lambda x: x["date"], reverse=True)
-    return result
+    groups.sort(key=lambda x: x["date"], reverse=True)
+    return groups
 
 
-def format_date_display(date_str: str) -> str:
+def pick_display_title(entries: list[dict]) -> str:
+    """Pick the cleanest title from grouped entries."""
+    ranked = []
+    for e in entries:
+        t = e["title"]
+        score = 0
+        if t.startswith("["):
+            score -= 10
+        if "amazon bedrock" in t.lower() or "azure databricks" in t.lower():
+            score -= 5
+        if "model garden" in t.lower():
+            score -= 5
+        if re.search(r"introduc", t, re.IGNORECASE):
+            score += 5
+        ranked.append((score, t))
+    ranked.sort(key=lambda x: x[0], reverse=True)
+    return ranked[0][1]
+
+
+def format_relative_date(date_str: str) -> str:
     try:
         dt = datetime.strptime(date_str, "%Y-%m-%d")
-        return f'<span class="date-month">{dt.strftime("%b")}</span><span class="date-day">{dt.day}</span><span class="date-year">{dt.year}</span>'
+        now = datetime.now()
+        delta = (now - dt).days
+        if delta == 0:
+            return "Today"
+        if delta == 1:
+            return "Yesterday"
+        if delta < 7:
+            return f"{delta}d ago"
+        if delta < 30:
+            weeks = delta // 7
+            return f"{weeks}w ago"
+        if delta < 365:
+            months = delta // 30
+            return f"{months}mo ago"
+        return dt.strftime("%b %Y")
     except Exception:
-        return escape(date_str)
+        return date_str
 
 
 def build_html(models: list[dict]) -> str:
     grouped = group_models(models)
 
-    rows = []
-    for m in grouped:
-        badges = []
-        for p in sorted(set(m["providers"])):
-            svg = PROVIDER_SVGS.get(p, "")
-            label = PROVIDER_LABELS.get(p, p)
-            badges.append(f'<span class="provider-badge" title="{escape(p)}">{svg}<span class="provider-label">{escape(label)}</span></span>')
-        provider_html = "".join(badges)
+    cards = []
+    for group in grouped:
+        entries = group["entries"]
+        title = pick_display_title(entries)
+        date = group["date"]
+        relative = format_relative_date(date)
 
-        if len(m["links"]) == 1:
-            title_html = f'<a href="{escape(m["links"][0]["link"])}" class="entry-link">{escape(m["title"])}</a>'
-        else:
-            link_parts = []
-            for lnk in m["links"]:
-                label = PROVIDER_LABELS.get(lnk["provider"], lnk["provider"])
-                link_parts.append(f'<a href="{escape(lnk["link"])}" class="source-link">{escape(label)}</a>')
-            title_html = f'<span class="entry-title">{escape(m["title"])}</span><span class="source-links">{" ".join(link_parts)}</span>'
+        providers_html = []
+        for e in sorted(entries, key=lambda x: PROVIDER_ORDER.index(x["provider"]) if x["provider"] in PROVIDER_ORDER else 99):
+            svg = PROVIDER_SVGS.get(e["provider"], "")
+            label = PROVIDER_LABELS.get(e["provider"], e["provider"])
+            regions = e.get("regions", [])
+            region_html = f'<span class="chip-region">{escape(", ".join(regions))}</span>' if regions else ""
+            providers_html.append(
+                f'<a href="{escape(e["link"])}" class="provider-chip" title="{escape(e["provider"])}">'
+                f'{svg}<span class="chip-label">{escape(label)}</span>{region_html}</a>'
+            )
 
-        regions = m.get("regions", [])
-        region_html = ""
-        if regions:
-            region_html = f'<span class="regions">{escape(", ".join(regions))}</span>'
+        desc = entries[0].get("description", "")
+        if len(desc) > 200:
+            desc = desc[:197] + "..."
 
-        date_html = format_date_display(m["date"])
+        cards.append(f"""      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">{escape(title)}</h2>
+          <time class="card-date" datetime="{escape(date)}" title="{escape(date)}">{escape(relative)}</time>
+        </div>
+        <p class="card-desc">{escape(desc)}</p>
+        <div class="card-providers">{" ".join(providers_html)}</div>
+      </article>""")
 
-        rows.append(f"""          <tr>
-            <td class="col-date"><div class="date-cell">{date_html}</div></td>
-            <td class="col-providers"><div class="providers-cell">{provider_html}</div></td>
-            <td class="col-announcement">{title_html}{region_html}</td>
-          </tr>""")
-
-    table_rows = "\n".join(rows) if rows else '          <tr><td colspan="3" class="empty">No releases tracked yet.</td></tr>'
+    cards_html = "\n".join(cards) if cards else '      <p class="empty">No releases tracked yet.</p>'
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -152,247 +177,171 @@ def build_html(models: list[dict]) -> str:
   <link rel="alternate" type="application/rss+xml" title="{SITE_TITLE}" href="{SITE_URL}/feed.xml">
   <style>
     :root {{
-      --bg: #f5f6f8;
+      --bg: #f0f2f5;
       --surface: #ffffff;
-      --surface-hover: #fafbfc;
-      --border: #e8eaed;
-      --text: #1a1d21;
-      --text-secondary: #5f6368;
-      --text-tertiary: #9aa0a6;
+      --border: #e4e6ea;
+      --text: #1c1e21;
+      --text-2: #606770;
+      --text-3: #8a8d91;
       --accent: #e88a1a;
-      --shadow-sm: 0 1px 2px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.1);
-      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
       --radius: 12px;
     }}
     * {{ margin: 0; padding: 0; box-sizing: border-box; }}
     body {{
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
-      max-width: 1000px;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 3rem 1.5rem 2rem;
+      padding: 2.5rem 1rem 2rem;
       color: var(--text);
       background: var(--bg);
       -webkit-font-smoothing: antialiased;
     }}
     header {{
+      text-align: center;
       margin-bottom: 2rem;
     }}
     h1 {{
-      font-size: 1.75rem;
+      font-size: 1.6rem;
       font-weight: 700;
       letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
     }}
     .subtitle {{
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      line-height: 1.5;
+      color: var(--text-2);
+      font-size: 0.85rem;
+      margin-top: 0.35rem;
     }}
-    .rss-link {{
+    .header-links {{
+      margin-top: 0.75rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+    }}
+    .header-link {{
       display: inline-flex;
       align-items: center;
       gap: 0.3rem;
-      color: var(--accent);
-      text-decoration: none;
+      font-size: 0.8rem;
       font-weight: 500;
-      font-size: 0.85rem;
-      margin-left: 0.5rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 6px;
-      background: rgba(232,138,26,0.08);
+      text-decoration: none;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
       transition: background 0.15s;
     }}
-    .rss-link:hover {{
-      background: rgba(232,138,26,0.15);
+    .rss-link {{
+      color: var(--accent);
+      background: rgba(232,138,26,0.08);
     }}
-    .rss-icon {{
-      width: 14px;
-      height: 14px;
-    }}
-    .table-wrapper {{
+    .rss-link:hover {{ background: rgba(232,138,26,0.15); }}
+    .rss-icon {{ width: 13px; height: 13px; }}
+    .card {{
       background: var(--surface);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      box-shadow: var(--shadow-sm);
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }}
-    table {{
-      width: 100%;
-      border-collapse: collapse;
-    }}
-    thead th {{
-      text-align: left;
-      padding: 0.75rem 1rem;
-      font-size: 0.7rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-tertiary);
-      border-bottom: 1px solid var(--border);
-      background: var(--surface);
-    }}
-    tbody tr {{
-      transition: background 0.1s;
-    }}
-    tbody tr:hover {{
-      background: var(--surface-hover);
-    }}
-    tbody td {{
-      padding: 0.85rem 1rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.9rem;
-      vertical-align: middle;
-    }}
-    tbody tr:first-child td {{
-      border-top: none;
-    }}
-    .col-date {{
-      width: 80px;
-      white-space: nowrap;
-    }}
-    .date-cell {{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      line-height: 1.1;
-    }}
-    .date-month {{
-      font-size: 0.65rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-tertiary);
-    }}
-    .date-day {{
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--text);
-    }}
-    .date-year {{
-      font-size: 0.65rem;
-      color: var(--text-tertiary);
-    }}
-    .col-providers {{
-      width: 110px;
-    }}
-    .providers-cell {{
-      display: flex;
-      gap: 0.35rem;
-      flex-wrap: wrap;
-    }}
-    .provider-badge {{
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      padding: 0.25rem 0.55rem;
-      border-radius: 6px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      font-size: 0.7rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      white-space: nowrap;
+      padding: 1.25rem;
+      margin-bottom: 0.75rem;
       transition: box-shadow 0.15s;
     }}
-    .provider-badge:hover {{
-      box-shadow: var(--shadow-sm);
+    .card:hover {{
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }}
-    .provider-icon {{
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
+    .card-header {{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
     }}
-    .provider-label {{
-      line-height: 1;
+    .card-title {{
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.4;
+      flex: 1;
     }}
-    .col-announcement {{
-      line-height: 1.5;
-    }}
-    .entry-link {{
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-    }}
-    .entry-link:hover {{
-      text-decoration: underline;
-      text-decoration-color: var(--text-tertiary);
-      text-underline-offset: 2px;
-    }}
-    .entry-title {{
-      font-weight: 500;
-    }}
-    .source-links {{
-      margin-left: 0.5rem;
-    }}
-    .source-link {{
-      display: inline-block;
+    .card-date {{
       font-size: 0.75rem;
-      color: var(--text-tertiary);
-      text-decoration: none;
-      padding: 0.1rem 0.4rem;
-      border-radius: 4px;
+      color: var(--text-3);
+      white-space: nowrap;
+      padding-top: 0.15rem;
+    }}
+    .card-desc {{
+      font-size: 0.82rem;
+      color: var(--text-2);
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }}
+    .card-providers {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }}
+    .provider-chip {{
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.65rem 0.3rem 0.35rem;
+      border-radius: 8px;
       background: var(--bg);
       border: 1px solid var(--border);
-      transition: color 0.15s, border-color 0.15s;
-    }}
-    .source-link:hover {{
-      color: var(--text-secondary);
-      border-color: var(--text-tertiary);
-    }}
-    .regions {{
-      display: block;
+      text-decoration: none;
+      color: var(--text-2);
       font-size: 0.75rem;
-      color: var(--text-tertiary);
-      margin-top: 0.25rem;
+      font-weight: 500;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }}
+    .provider-chip:hover {{
+      border-color: var(--text-3);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }}
+    .pi {{
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }}
+    .chip-label {{
+      line-height: 1;
+    }}
+    .chip-region {{
+      font-size: 0.65rem;
+      color: var(--text-3);
+      font-weight: 400;
+      margin-left: 0.15rem;
     }}
     .empty {{
       text-align: center;
-      color: var(--text-tertiary);
-      padding: 3rem 1rem !important;
+      color: var(--text-3);
+      padding: 3rem;
     }}
     footer {{
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       text-align: center;
-      font-size: 0.8rem;
-      color: var(--text-tertiary);
+      font-size: 0.75rem;
+      color: var(--text-3);
     }}
-    @media (max-width: 640px) {{
-      body {{ padding: 1.5rem 1rem; }}
-      .col-date {{ width: 60px; }}
-      .col-providers {{ width: 50px; }}
-      .provider-label {{ display: none; }}
-      .provider-badge {{ padding: 0.25rem; }}
-      .date-day {{ font-size: 1.1rem; }}
-      .source-links {{ display: block; margin-left: 0; margin-top: 0.3rem; }}
+    @media (max-width: 500px) {{
+      body {{ padding: 1.25rem 0.75rem; }}
+      .card {{ padding: 1rem; }}
+      .card-title {{ font-size: 0.9rem; }}
+      .chip-label {{ display: none; }}
+      .provider-chip {{ padding: 0.3rem; }}
     }}
   </style>
 </head>
 <body>
   <header>
     <h1>{SITE_TITLE}</h1>
-    <p class="subtitle">
-      New model releases across AWS Bedrock, Vertex AI, Azure OpenAI &amp; Anthropic
-      <a class="rss-link" href="{SITE_URL}/feed.xml">
+    <p class="subtitle">Tracking new model releases across cloud providers</p>
+    <div class="header-links">
+      <a class="header-link rss-link" href="{SITE_URL}/feed.xml">
         <svg class="rss-icon" viewBox="0 0 24 24" fill="currentColor"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
-        RSS
+        RSS Feed
       </a>
-    </p>
+    </div>
   </header>
-  <div class="table-wrapper">
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Provider</th>
-          <th>Announcement</th>
-        </tr>
-      </thead>
-      <tbody>
-{table_rows}
-      </tbody>
-    </table>
-  </div>
-  <footer>Updated {datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")} &middot; Data sourced from provider RSS feeds</footer>
+  <main>
+{cards_html}
+  </main>
+  <footer>Updated {datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")}</footer>
 </body>
 </html>
 """

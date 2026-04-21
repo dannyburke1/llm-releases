@@ -7,305 +7,441 @@
   <link rel="alternate" type="application/rss+xml" title="LLM Releases" href="https://dannyburke1.github.io/llm-releases/feed.xml">
   <style>
     :root {
-      --bg: #f5f6f8;
+      --bg: #f0f2f5;
       --surface: #ffffff;
-      --surface-hover: #fafbfc;
-      --border: #e8eaed;
-      --text: #1a1d21;
-      --text-secondary: #5f6368;
-      --text-tertiary: #9aa0a6;
+      --border: #e4e6ea;
+      --text: #1c1e21;
+      --text-2: #606770;
+      --text-3: #8a8d91;
       --accent: #e88a1a;
-      --shadow-sm: 0 1px 2px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.1);
-      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
       --radius: 12px;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
-      max-width: 1000px;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 3rem 1.5rem 2rem;
+      padding: 2.5rem 1rem 2rem;
       color: var(--text);
       background: var(--bg);
       -webkit-font-smoothing: antialiased;
     }
     header {
+      text-align: center;
       margin-bottom: 2rem;
     }
     h1 {
-      font-size: 1.75rem;
+      font-size: 1.6rem;
       font-weight: 700;
       letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
     }
     .subtitle {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      line-height: 1.5;
+      color: var(--text-2);
+      font-size: 0.85rem;
+      margin-top: 0.35rem;
     }
-    .rss-link {
+    .header-links {
+      margin-top: 0.75rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+    .header-link {
       display: inline-flex;
       align-items: center;
       gap: 0.3rem;
-      color: var(--accent);
-      text-decoration: none;
+      font-size: 0.8rem;
       font-weight: 500;
-      font-size: 0.85rem;
-      margin-left: 0.5rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 6px;
-      background: rgba(232,138,26,0.08);
+      text-decoration: none;
+      padding: 0.3rem 0.75rem;
+      border-radius: 20px;
       transition: background 0.15s;
     }
-    .rss-link:hover {
-      background: rgba(232,138,26,0.15);
+    .rss-link {
+      color: var(--accent);
+      background: rgba(232,138,26,0.08);
     }
-    .rss-icon {
-      width: 14px;
-      height: 14px;
-    }
-    .table-wrapper {
+    .rss-link:hover { background: rgba(232,138,26,0.15); }
+    .rss-icon { width: 13px; height: 13px; }
+    .card {
       background: var(--surface);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      box-shadow: var(--shadow-sm);
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    thead th {
-      text-align: left;
-      padding: 0.75rem 1rem;
-      font-size: 0.7rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-tertiary);
-      border-bottom: 1px solid var(--border);
-      background: var(--surface);
-    }
-    tbody tr {
-      transition: background 0.1s;
-    }
-    tbody tr:hover {
-      background: var(--surface-hover);
-    }
-    tbody td {
-      padding: 0.85rem 1rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.9rem;
-      vertical-align: middle;
-    }
-    tbody tr:first-child td {
-      border-top: none;
-    }
-    .col-date {
-      width: 80px;
-      white-space: nowrap;
-    }
-    .date-cell {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      line-height: 1.1;
-    }
-    .date-month {
-      font-size: 0.65rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-tertiary);
-    }
-    .date-day {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-    .date-year {
-      font-size: 0.65rem;
-      color: var(--text-tertiary);
-    }
-    .col-providers {
-      width: 110px;
-    }
-    .providers-cell {
-      display: flex;
-      gap: 0.35rem;
-      flex-wrap: wrap;
-    }
-    .provider-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      padding: 0.25rem 0.55rem;
-      border-radius: 6px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      font-size: 0.7rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      white-space: nowrap;
+      padding: 1.25rem;
+      margin-bottom: 0.75rem;
       transition: box-shadow 0.15s;
     }
-    .provider-badge:hover {
-      box-shadow: var(--shadow-sm);
+    .card:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
-    .provider-icon {
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
     }
-    .provider-label {
-      line-height: 1;
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.4;
+      flex: 1;
     }
-    .col-announcement {
-      line-height: 1.5;
-    }
-    .entry-link {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .entry-link:hover {
-      text-decoration: underline;
-      text-decoration-color: var(--text-tertiary);
-      text-underline-offset: 2px;
-    }
-    .entry-title {
-      font-weight: 500;
-    }
-    .source-links {
-      margin-left: 0.5rem;
-    }
-    .source-link {
-      display: inline-block;
+    .card-date {
       font-size: 0.75rem;
-      color: var(--text-tertiary);
-      text-decoration: none;
-      padding: 0.1rem 0.4rem;
-      border-radius: 4px;
+      color: var(--text-3);
+      white-space: nowrap;
+      padding-top: 0.15rem;
+    }
+    .card-desc {
+      font-size: 0.82rem;
+      color: var(--text-2);
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+    .card-providers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .provider-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.65rem 0.3rem 0.35rem;
+      border-radius: 8px;
       background: var(--bg);
       border: 1px solid var(--border);
-      transition: color 0.15s, border-color 0.15s;
-    }
-    .source-link:hover {
-      color: var(--text-secondary);
-      border-color: var(--text-tertiary);
-    }
-    .regions {
-      display: block;
+      text-decoration: none;
+      color: var(--text-2);
       font-size: 0.75rem;
-      color: var(--text-tertiary);
-      margin-top: 0.25rem;
+      font-weight: 500;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .provider-chip:hover {
+      border-color: var(--text-3);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .pi {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .chip-label {
+      line-height: 1;
+    }
+    .chip-region {
+      font-size: 0.65rem;
+      color: var(--text-3);
+      font-weight: 400;
+      margin-left: 0.15rem;
     }
     .empty {
       text-align: center;
-      color: var(--text-tertiary);
-      padding: 3rem 1rem !important;
+      color: var(--text-3);
+      padding: 3rem;
     }
     footer {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       text-align: center;
-      font-size: 0.8rem;
-      color: var(--text-tertiary);
+      font-size: 0.75rem;
+      color: var(--text-3);
     }
-    @media (max-width: 640px) {
-      body { padding: 1.5rem 1rem; }
-      .col-date { width: 60px; }
-      .col-providers { width: 50px; }
-      .provider-label { display: none; }
-      .provider-badge { padding: 0.25rem; }
-      .date-day { font-size: 1.1rem; }
-      .source-links { display: block; margin-left: 0; margin-top: 0.3rem; }
+    @media (max-width: 500px) {
+      body { padding: 1.25rem 0.75rem; }
+      .card { padding: 1rem; }
+      .card-title { font-size: 0.9rem; }
+      .chip-label { display: none; }
+      .provider-chip { padding: 0.3rem; }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>LLM Releases</h1>
-    <p class="subtitle">
-      New model releases across AWS Bedrock, Vertex AI, Azure OpenAI &amp; Anthropic
-      <a class="rss-link" href="https://dannyburke1.github.io/llm-releases/feed.xml">
+    <p class="subtitle">Tracking new model releases across cloud providers</p>
+    <div class="header-links">
+      <a class="header-link rss-link" href="https://dannyburke1.github.io/llm-releases/feed.xml">
         <svg class="rss-icon" viewBox="0 0 24 24" fill="currentColor"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
-        RSS
+        RSS Feed
       </a>
-    </p>
+    </div>
   </header>
-  <div class="table-wrapper">
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Provider</th>
-          <th>Announcement</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr>
-            <td class="col-date"><div class="date-cell"><span class="date-month">Apr</span><span class="date-day">17</span><span class="date-year">2026</span></div></td>
-            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="AWS Bedrock"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z" fill="#ff9900"/><path d="M12 7v10M7 9.5l10 5M17 9.5l-10 5" stroke="#fff" stroke-width="1.2"/></svg><span class="provider-label">AWS</span></span><span class="provider-badge" title="Azure OpenAI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M2 15L12 2l10 13H2z" fill="#0078d4"/><path d="M5 15l7-9 7 9" fill="#50a0e6"/><rect x="8" y="17" width="8" height="3" rx="1" fill="#0078d4"/></svg><span class="provider-label">Azure</span></span></div></td>
-            <td class="col-announcement"><span class="entry-title">[Launched] Generally available: Anthropic Claude Opus 4.7 on Azure Databricks</span><span class="source-links"><a href="https://azure.microsoft.com/updates?id=560590" class="source-link">Azure</a> <a href="https://aws.amazon.com/about-aws/whats-new/2026/04/claude-opus-4.7-amazon-bedrock/" class="source-link">AWS</a></span></td>
-          </tr>
-          <tr>
-            <td class="col-date"><div class="date-cell"><span class="date-month">Apr</span><span class="date-day">7</span><span class="date-year">2026</span></div></td>
-            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="AWS Bedrock"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z" fill="#ff9900"/><path d="M12 7v10M7 9.5l10 5M17 9.5l-10 5" stroke="#fff" stroke-width="1.2"/></svg><span class="provider-label">AWS</span></span></div></td>
-            <td class="col-announcement"><a href="https://aws.amazon.com/about-aws/whats-new/2026/04/amazon-bedrock-claude-mythos/" class="entry-link">Amazon Bedrock now offers Claude Mythos Preview (Gated Research Preview)</a><span class="regions">US East (N. Virginia)</span></td>
-          </tr>
-          <tr>
-            <td class="col-date"><div class="date-cell"><span class="date-month">Feb</span><span class="date-day">18</span><span class="date-year">2026</span></div></td>
-            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="Azure OpenAI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M2 15L12 2l10 13H2z" fill="#0078d4"/><path d="M5 15l7-9 7 9" fill="#50a0e6"/><rect x="8" y="17" width="8" height="3" rx="1" fill="#0078d4"/></svg><span class="provider-label">Azure</span></span></div></td>
-            <td class="col-announcement"><a href="https://azure.microsoft.com/updates?id=557595" class="entry-link">[Launched] Generally Available: Anthropic Claude Sonnet 4.6 is now available on Azure Databricks</a></td>
-          </tr>
-          <tr>
-            <td class="col-date"><div class="date-cell"><span class="date-month">Feb</span><span class="date-day">6</span><span class="date-year">2026</span></div></td>
-            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="Azure OpenAI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M2 15L12 2l10 13H2z" fill="#0078d4"/><path d="M5 15l7-9 7 9" fill="#50a0e6"/><rect x="8" y="17" width="8" height="3" rx="1" fill="#0078d4"/></svg><span class="provider-label">Azure</span></span></div></td>
-            <td class="col-announcement"><a href="https://azure.microsoft.com/updates?id=555981" class="entry-link">[Launched] ​Generally Available: Claude Opus 4.6 now available on Azure Databricks</a></td>
-          </tr>
-          <tr>
-            <td class="col-date"><div class="date-cell"><span class="date-month">Sep</span><span class="date-day">30</span><span class="date-year">2025</span></div></td>
-            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="Vertex AI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 19h20L12 2z" fill="#4285f4"/><path d="M12 2l4 8.5H8L12 2z" fill="#669df6"/><circle cx="12" cy="15" r="2.5" fill="#fff"/></svg><span class="provider-label">GCP</span></span></div></td>
-            <td class="col-announcement"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_30_2025" class="entry-link">DeepSeek-V3.2-Exp is available through Model Garden.</a></td>
-          </tr>
-          <tr>
-            <td class="col-date"><div class="date-cell"><span class="date-month">Sep</span><span class="date-day">22</span><span class="date-year">2025</span></div></td>
-            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="Vertex AI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 19h20L12 2z" fill="#4285f4"/><path d="M12 2l4 8.5H8L12 2z" fill="#669df6"/><circle cx="12" cy="15" r="2.5" fill="#fff"/></svg><span class="provider-label">GCP</span></span></div></td>
-            <td class="col-announcement"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_22_2025" class="entry-link">DeepSeek-V3.1-Terminus is available through Model Garden.</a></td>
-          </tr>
-          <tr>
-            <td class="col-date"><div class="date-cell"><span class="date-month">Sep</span><span class="date-day">9</span><span class="date-year">2025</span></div></td>
-            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="Vertex AI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 19h20L12 2z" fill="#4285f4"/><path d="M12 2l4 8.5H8L12 2z" fill="#669df6"/><circle cx="12" cy="15" r="2.5" fill="#fff"/></svg><span class="provider-label">GCP</span></span></div></td>
-            <td class="col-announcement"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_09_2025" class="entry-link">EmbeddingGemma and DeepSeek-V3.1 models are available through Model Garden.</a></td>
-          </tr>
-          <tr>
-            <td class="col-date"><div class="date-cell"><span class="date-month">Aug</span><span class="date-day">14</span><span class="date-year">2025</span></div></td>
-            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="Vertex AI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 19h20L12 2z" fill="#4285f4"/><path d="M12 2l4 8.5H8L12 2z" fill="#669df6"/><circle cx="12" cy="15" r="2.5" fill="#fff"/></svg><span class="provider-label">GCP</span></span></div></td>
-            <td class="col-announcement"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_14_2025" class="entry-link">Gemma 3 270M, Wan 2.2 and Wan 2.1 models are available through Model Garden.</a></td>
-          </tr>
-          <tr>
-            <td class="col-date"><div class="date-cell"><span class="date-month">Aug</span><span class="date-day">13</span><span class="date-year">2025</span></div></td>
-            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="Vertex AI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 19h20L12 2z" fill="#4285f4"/><path d="M12 2l4 8.5H8L12 2z" fill="#669df6"/><circle cx="12" cy="15" r="2.5" fill="#fff"/></svg><span class="provider-label">GCP</span></span></div></td>
-            <td class="col-announcement"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_13_2025" class="entry-link">OpenAI&#x27;s gpt-oss-120b and gpt-oss-20b are available as Model as a Service (MaaS) models in Model Garden.</a></td>
-          </tr>
-          <tr>
-            <td class="col-date"><div class="date-cell"><span class="date-month">Aug</span><span class="date-day">6</span><span class="date-year">2025</span></div></td>
-            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="Vertex AI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 19h20L12 2z" fill="#4285f4"/><path d="M12 2l4 8.5H8L12 2z" fill="#669df6"/><circle cx="12" cy="15" r="2.5" fill="#fff"/></svg><span class="provider-label">GCP</span></span></div></td>
-            <td class="col-announcement"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_06_2025" class="entry-link">OpenAI&#x27;s gpt-oss models are available through Model Garden.</a></td>
-          </tr>
-          <tr>
-            <td class="col-date"><div class="date-cell"><span class="date-month">Jul</span><span class="date-day">1</span><span class="date-year">2025</span></div></td>
-            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="Vertex AI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 19h20L12 2z" fill="#4285f4"/><path d="M12 2l4 8.5H8L12 2z" fill="#669df6"/><circle cx="12" cy="15" r="2.5" fill="#fff"/></svg><span class="provider-label">GCP</span></span></div></td>
-            <td class="col-announcement"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#July_01_2025" class="entry-link">The global endpoint is generally available (GA) for Anthropic&#x27;s Claude Opus 4. For details, see Global endpoint.</a></td>
-          </tr>
-          <tr>
-            <td class="col-date"><div class="date-cell"><span class="date-month">Jun</span><span class="date-day">27</span><span class="date-year">2025</span></div></td>
-            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="Vertex AI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 19h20L12 2z" fill="#4285f4"/><path d="M12 2l4 8.5H8L12 2z" fill="#669df6"/><circle cx="12" cy="15" r="2.5" fill="#fff"/></svg><span class="provider-label">GCP</span></span></div></td>
-            <td class="col-announcement"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#June_27_2025" class="entry-link">Gemma 3n models are available through Model Garden.</a></td>
-          </tr>
-      </tbody>
-    </table>
-  </div>
-  <footer>Updated 2026-04-21 20:24 UTC &middot; Data sourced from provider RSS feeds</footer>
+  <main>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Claude Opus 4.7 is now available in Amazon Bedrock</h2>
+          <time class="card-date" datetime="2026-04-17" title="2026-04-17">4d ago</time>
+        </div>
+        <p class="card-desc">Azure Databricks now supports Anthropic Claude Opus 4.7
+through Azure Databricks AI Model Serving. Claude Opus 4.7
+is Anthropic&#x27;s most capable hybrid reasoning model, delivering
+stronger performanc...</p>
+        <div class="card-providers"><a href="https://aws.amazon.com/about-aws/whats-new/2026/04/claude-opus-4.7-amazon-bedrock/" class="provider-chip" title="AWS Bedrock"><svg class="pi" viewBox="0 0 40 40"><path d="M20 4L4 12v16l16 8 16-8V12L20 4z" fill="#232f3e"/><path d="M20 4L4 12l16 8 16-8L20 4z" fill="#ff9900"/><path d="M20 20v16l16-8V12L20 20z" fill="#f90" opacity=".35"/></svg><span class="chip-label">AWS Bedrock</span></a> <a href="https://azure.microsoft.com/updates?id=560590" class="provider-chip" title="Azure OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#0078d4"/><path d="M10 26L20 10l10 16H10z" fill="#50e6ff" opacity=".9"/><path d="M14 26l6-10 6 10H14z" fill="#fff" opacity=".5"/></svg><span class="chip-label">Azure OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Amazon Bedrock now offers Claude Mythos Preview (Gated Research Preview)</h2>
+          <time class="card-date" datetime="2026-04-07" title="2026-04-07">2w ago</time>
+        </div>
+        <p class="card-desc">Amazon Bedrock, the platform for building generative AI applications and agents at production scale, now offers Claude Mythos Preview in gated research preview as part of Project Glasswing. Claude ...</p>
+        <div class="card-providers"><a href="https://aws.amazon.com/about-aws/whats-new/2026/04/amazon-bedrock-claude-mythos/" class="provider-chip" title="AWS Bedrock"><svg class="pi" viewBox="0 0 40 40"><path d="M20 4L4 12v16l16 8 16-8V12L20 4z" fill="#232f3e"/><path d="M20 4L4 12l16 8 16-8L20 4z" fill="#ff9900"/><path d="M20 20v16l16-8V12L20 20z" fill="#f90" opacity=".35"/></svg><span class="chip-label">AWS Bedrock</span><span class="chip-region">US East (N. Virginia)</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Introducing GPT-5.4 mini and nano</h2>
+          <time class="card-date" datetime="2026-03-17" title="2026-03-17">1mo ago</time>
+        </div>
+        <p class="card-desc">GPT-5.4 mini and nano are smaller, faster versions of GPT-5.4 optimized for coding, tool use, multimodal reasoning, and high-volume API and sub-agent workloads.</p>
+        <div class="card-providers"><a href="https://openai.com/index/introducing-gpt-5-4-mini-and-nano" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Introducing GPT-5.4</h2>
+          <time class="card-date" datetime="2026-03-05" title="2026-03-05">1mo ago</time>
+        </div>
+        <p class="card-desc">Introducing GPT-5.4, OpenAI’s most most capable and efficient frontier model for professional work, with state-of-the-art coding, computer use, tool search, and 1M-token context.</p>
+        <div class="card-providers"><a href="https://openai.com/index/introducing-gpt-5-4" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">[Launched] Generally Available: Anthropic Claude Sonnet 4.6 is now available on Azure Databricks</h2>
+          <time class="card-date" datetime="2026-02-18" title="2026-02-18">2mo ago</time>
+        </div>
+        <p class="card-desc">Azure Databricks now supports Anthropic Claude Sonnet 4.6
+through Azure Databricks AI
+Model Serving. Claude Sonnet 4.6
+delivers frontier-level performance on complex coding, agentic
+workflows, and ...</p>
+        <div class="card-providers"><a href="https://azure.microsoft.com/updates?id=557595" class="provider-chip" title="Azure OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#0078d4"/><path d="M10 26L20 10l10 16H10z" fill="#50e6ff" opacity=".9"/><path d="M14 26l6-10 6 10H14z" fill="#fff" opacity=".5"/></svg><span class="chip-label">Azure OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Introducing GPT-5.3-Codex-Spark</h2>
+          <time class="card-date" datetime="2026-02-12" title="2026-02-12">2mo ago</time>
+        </div>
+        <p class="card-desc">Introducing GPT-5.3-Codex-Spark—our first real-time coding model. 15x faster generation, 128k context, now in research preview for ChatGPT Pro users.</p>
+        <div class="card-providers"><a href="https://openai.com/index/introducing-gpt-5-3-codex-spark" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">[Launched] ​Generally Available: Claude Opus 4.6 now available on Azure Databricks</h2>
+          <time class="card-date" datetime="2026-02-06" title="2026-02-06">2mo ago</time>
+        </div>
+        <p class="card-desc">Azure Databricks now supports Anthropic Claude Opus 4.6 through Mosaic AI Model serving. Claude Opus 4.6 is Anthropic&#x27;s most advanced model, delivering state-of-the-art performance on agentic codin...</p>
+        <div class="card-providers"><a href="https://azure.microsoft.com/updates?id=555981" class="provider-chip" title="Azure OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#0078d4"/><path d="M10 26L20 10l10 16H10z" fill="#50e6ff" opacity=".9"/><path d="M14 26l6-10 6 10H14z" fill="#fff" opacity=".5"/></svg><span class="chip-label">Azure OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Introducing GPT-5.3-Codex</h2>
+          <time class="card-date" datetime="2026-02-05" title="2026-02-05">2mo ago</time>
+        </div>
+        <p class="card-desc">GPT-5.3-Codex is a Codex-native agent that pairs frontier coding performance with general reasoning to support long-horizon, real-world technical work.</p>
+        <div class="card-providers"><a href="https://openai.com/index/introducing-gpt-5-3-codex" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Introducing GPT-5.2-Codex</h2>
+          <time class="card-date" datetime="2025-12-18" title="2025-12-18">4mo ago</time>
+        </div>
+        <p class="card-desc">GPT-5.2-Codex is OpenAI’s most advanced coding model, offering long-horizon reasoning, large-scale code transformations, and enhanced cybersecurity capabilities.</p>
+        <div class="card-providers"><a href="https://openai.com/index/gpt-5-2-codex" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Introducing GPT-5.2</h2>
+          <time class="card-date" datetime="2025-12-11" title="2025-12-11">4mo ago</time>
+        </div>
+        <p class="card-desc">GPT-5.2 is our most advanced frontier model for everyday professional work, with state-of-the-art reasoning, long-context understanding, coding, and vision. Use it in ChatGPT and the OpenAI API to ...</p>
+        <div class="card-providers"><a href="https://openai.com/index/introducing-gpt-5-2" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Introducing GPT-5.1 for developers</h2>
+          <time class="card-date" datetime="2025-11-13" title="2025-11-13">5mo ago</time>
+        </div>
+        <p class="card-desc">GPT-5.1 is now available in the API, bringing faster adaptive reasoning, extended prompt caching, improved coding performance, and new apply_patch and shell tools.</p>
+        <div class="card-providers"><a href="https://openai.com/index/gpt-5-1-for-developers" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Introducing gpt-oss-safeguard</h2>
+          <time class="card-date" datetime="2025-10-29" title="2025-10-29">5mo ago</time>
+        </div>
+        <p class="card-desc">OpenAI introduces gpt-oss-safeguard—open-weight reasoning models for safety classification that let developers apply and iterate on custom policies.</p>
+        <div class="card-providers"><a href="https://openai.com/index/introducing-gpt-oss-safeguard" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">DeepSeek-V3.2-Exp is available through Model Garden.</h2>
+          <time class="card-date" datetime="2025-09-30" title="2025-09-30">6mo ago</time>
+        </div>
+        <p class="card-desc">DeepSeek-V3.2-Exp is available through Model Garden.</p>
+        <div class="card-providers"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_30_2025" class="provider-chip" title="Vertex AI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#4285f4"/><path d="M11 28l9-18 9 18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="14" r="2" fill="#fff"/></svg><span class="chip-label">Vertex AI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Sora 2 is here</h2>
+          <time class="card-date" datetime="2025-09-30" title="2025-09-30">6mo ago</time>
+        </div>
+        <p class="card-desc">Our latest video generation model is more physically accurate, realistic, and controllable than prior systems. It also features synchronized dialogue and sound effects. Create with it in the new So...</p>
+        <div class="card-providers"><a href="https://openai.com/index/sora-2" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">DeepSeek-V3.1-Terminus is available through Model Garden.</h2>
+          <time class="card-date" datetime="2025-09-22" title="2025-09-22">7mo ago</time>
+        </div>
+        <p class="card-desc">DeepSeek-V3.1-Terminus is available through Model Garden.</p>
+        <div class="card-providers"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_22_2025" class="provider-chip" title="Vertex AI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#4285f4"/><path d="M11 28l9-18 9 18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="14" r="2" fill="#fff"/></svg><span class="chip-label">Vertex AI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">EmbeddingGemma and DeepSeek-V3.1 models are available through Model Garden.</h2>
+          <time class="card-date" datetime="2025-09-09" title="2025-09-09">7mo ago</time>
+        </div>
+        <p class="card-desc">EmbeddingGemma and DeepSeek-V3.1 models are available through Model Garden.</p>
+        <div class="card-providers"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_09_2025" class="provider-chip" title="Vertex AI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#4285f4"/><path d="M11 28l9-18 9 18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="14" r="2" fill="#fff"/></svg><span class="chip-label">Vertex AI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Gemma 3 270M, Wan 2.2 and Wan 2.1 models are available through Model Garden.</h2>
+          <time class="card-date" datetime="2025-08-14" title="2025-08-14">8mo ago</time>
+        </div>
+        <p class="card-desc">Gemma 3 270M, Wan 2.2 and Wan 2.1 models are available through Model Garden.</p>
+        <div class="card-providers"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_14_2025" class="provider-chip" title="Vertex AI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#4285f4"/><path d="M11 28l9-18 9 18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="14" r="2" fill="#fff"/></svg><span class="chip-label">Vertex AI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">OpenAI&#x27;s gpt-oss-120b and gpt-oss-20b are available as Model as a Service (MaaS) models in Model Garden.</h2>
+          <time class="card-date" datetime="2025-08-13" title="2025-08-13">8mo ago</time>
+        </div>
+        <p class="card-desc">OpenAI&#x27;s gpt-oss-120b and gpt-oss-20b are available as Model as a Service (MaaS) models in Model Garden.</p>
+        <div class="card-providers"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_13_2025" class="provider-chip" title="Vertex AI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#4285f4"/><path d="M11 28l9-18 9 18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="14" r="2" fill="#fff"/></svg><span class="chip-label">Vertex AI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Introducing GPT-5 for developers</h2>
+          <time class="card-date" datetime="2025-08-07" title="2025-08-07">8mo ago</time>
+        </div>
+        <p class="card-desc">Introducing GPT-5 in our API platform—offering high reasoning performance, new controls for devs, and best-in-class results on real coding tasks.</p>
+        <div class="card-providers"><a href="https://openai.com/index/introducing-gpt-5-for-developers" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Introducing GPT-5</h2>
+          <time class="card-date" datetime="2025-08-07" title="2025-08-07">8mo ago</time>
+        </div>
+        <p class="card-desc">We are introducing GPT‑5, our best AI system yet. GPT‑5 is a significant leap in intelligence over all our previous models, featuring state-of-the-art performance across coding, math, writing, heal...</p>
+        <div class="card-providers"><a href="https://openai.com/index/introducing-gpt-5" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">OpenAI&#x27;s gpt-oss models are available through Model Garden.</h2>
+          <time class="card-date" datetime="2025-08-06" title="2025-08-06">8mo ago</time>
+        </div>
+        <p class="card-desc">OpenAI&#x27;s gpt-oss models are available through Model Garden.</p>
+        <div class="card-providers"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_06_2025" class="provider-chip" title="Vertex AI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#4285f4"/><path d="M11 28l9-18 9 18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="14" r="2" fill="#fff"/></svg><span class="chip-label">Vertex AI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Introducing gpt-oss</h2>
+          <time class="card-date" datetime="2025-08-05" title="2025-08-05">8mo ago</time>
+        </div>
+        <p class="card-desc">We’re releasing gpt-oss-120b and gpt-oss-20b—two state-of-the-art open-weight language models that deliver strong real-world performance at low cost. Available under the flexible Apache 2.0 license...</p>
+        <div class="card-providers"><a href="https://openai.com/index/introducing-gpt-oss" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">The global endpoint is generally available (GA) for Anthropic&#x27;s Claude Opus 4. For details, see Global endpoint.</h2>
+          <time class="card-date" datetime="2025-07-01" title="2025-07-01">9mo ago</time>
+        </div>
+        <p class="card-desc">The global endpoint is generally available (GA) for Anthropic&#x27;s Claude Opus 4. For details, see Global endpoint.</p>
+        <div class="card-providers"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#July_01_2025" class="provider-chip" title="Vertex AI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#4285f4"/><path d="M11 28l9-18 9 18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="14" r="2" fill="#fff"/></svg><span class="chip-label">Vertex AI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Gemma 3n models are available through Model Garden.</h2>
+          <time class="card-date" datetime="2025-06-27" title="2025-06-27">9mo ago</time>
+        </div>
+        <p class="card-desc">Gemma 3n models are available through Model Garden.</p>
+        <div class="card-providers"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#June_27_2025" class="provider-chip" title="Vertex AI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#4285f4"/><path d="M11 28l9-18 9 18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="14" r="2" fill="#fff"/></svg><span class="chip-label">Vertex AI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Introducing OpenAI o3 and o4-mini</h2>
+          <time class="card-date" datetime="2025-04-16" title="2025-04-16">Apr 2025</time>
+        </div>
+        <p class="card-desc">Our smartest and most capable models to date with full tool access</p>
+        <div class="card-providers"><a href="https://openai.com/index/introducing-o3-and-o4-mini" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Introducing GPT-4.1 in the API</h2>
+          <time class="card-date" datetime="2025-04-14" title="2025-04-14">Apr 2025</time>
+        </div>
+        <p class="card-desc">Introducing GPT-4.1 in the API—a new family of models with across-the-board improvements, including major gains in coding, instruction following, and long-context understanding. We’re also releasin...</p>
+        <div class="card-providers"><a href="https://openai.com/index/gpt-4-1" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Introducing GPT-4.5</h2>
+          <time class="card-date" datetime="2025-02-27" title="2025-02-27">Feb 2025</time>
+        </div>
+        <p class="card-desc">We’re releasing a research preview of GPT‑4.5—our largest and best model for chat yet. GPT‑4.5 is a step forward in scaling up pre-training and post-training.</p>
+        <div class="card-providers"><a href="https://openai.com/index/introducing-gpt-4-5" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Sora is here</h2>
+          <time class="card-date" datetime="2024-12-09" title="2024-12-09">Dec 2024</time>
+        </div>
+        <p class="card-desc">Our video generation model, Sora, is now available to use at sora.com. Users can generate videos up to 1080p resolution, up to 20 sec long, and in widescreen, vertical or square aspect ratios. You ...</p>
+        <div class="card-providers"><a href="https://openai.com/index/sora-is-here" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Introducing OpenAI o1</h2>
+          <time class="card-date" datetime="2024-09-12" title="2024-09-12">Sep 2024</time>
+        </div>
+        <p class="card-desc"></p>
+        <div class="card-providers"><a href="https://openai.com/index/introducing-openai-o1-preview" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Hello GPT-4o</h2>
+          <time class="card-date" datetime="2024-05-13" title="2024-05-13">May 2024</time>
+        </div>
+        <p class="card-desc">We’re announcing GPT-4 Omni, our new flagship model which can reason across audio, vision, and text in real time.</p>
+        <div class="card-providers"><a href="https://openai.com/index/hello-gpt-4o" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Introducing GPT-4o and more tools to ChatGPT free users</h2>
+          <time class="card-date" datetime="2024-05-13" title="2024-05-13">May 2024</time>
+        </div>
+        <p class="card-desc">Introducing GPT-4o and more tools to ChatGPT free users
+We are launching our newest flagship model and making more capabilities available for free in ChatGPT.</p>
+        <div class="card-providers"><a href="https://openai.com/index/gpt-4o-and-more-tools-to-chatgpt-free" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">Introducing Whisper</h2>
+          <time class="card-date" datetime="2022-09-21" title="2022-09-21">Sep 2022</time>
+        </div>
+        <p class="card-desc"></p>
+        <div class="card-providers"><a href="https://openai.com/index/whisper" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2 class="card-title">New GPT-3 capabilities: Edit &amp; insert</h2>
+          <time class="card-date" datetime="2022-03-15" title="2022-03-15">Mar 2022</time>
+        </div>
+        <p class="card-desc">We’ve released new versions of GPT-3 and Codex which can edit or insert content into existing text, rather than just completing existing text.</p>
+        <div class="card-providers"><a href="https://openai.com/index/gpt-3-edit-insert" class="provider-chip" title="OpenAI"><svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg><span class="chip-label">OpenAI</span></a></div>
+      </article>
+  </main>
+  <footer>Updated 2026-04-21 20:34 UTC</footer>
 </body>
 </html>

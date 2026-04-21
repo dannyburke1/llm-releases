@@ -29,12 +29,39 @@
     ]
   },
   {
+    "id": "9638fd5a4fec177a",
+    "provider": "OpenAI",
+    "title": "Introducing GPT-5.4 mini and nano",
+    "description": "GPT-5.4 mini and nano are smaller, faster versions of GPT-5.4 optimized for coding, tool use, multimodal reasoning, and high-volume API and sub-agent workloads.",
+    "link": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano",
+    "date": "2026-03-17",
+    "regions": []
+  },
+  {
+    "id": "c9184e3c10e778ae",
+    "provider": "OpenAI",
+    "title": "Introducing GPT-5.4",
+    "description": "Introducing GPT-5.4, OpenAI\u2019s most most capable and efficient frontier model for professional work, with state-of-the-art coding, computer use, tool search, and 1M-token context.",
+    "link": "https://openai.com/index/introducing-gpt-5-4",
+    "date": "2026-03-05",
+    "regions": []
+  },
+  {
     "id": "fc5a619d0c00b9a7",
     "provider": "Azure OpenAI",
     "title": "[Launched] Generally Available: Anthropic Claude Sonnet 4.6 is now available on Azure Databricks",
     "description": "Azure Databricks now supports Anthropic Claude Sonnet 4.6\nthrough Azure Databricks AI\nModel Serving. Claude Sonnet 4.6\ndelivers frontier-level performance on complex coding, agentic\nworkflows, and professional knowledge work including reasoning at a\nlower",
     "link": "https://azure.microsoft.com/updates?id=557595",
     "date": "2026-02-18",
+    "regions": []
+  },
+  {
+    "id": "fdbf45366e616c41",
+    "provider": "OpenAI",
+    "title": "Introducing GPT-5.3-Codex-Spark",
+    "description": "Introducing GPT-5.3-Codex-Spark\u2014our first real-time coding model. 15x faster generation, 128k context, now in research preview for ChatGPT Pro users.",
+    "link": "https://openai.com/index/introducing-gpt-5-3-codex-spark",
+    "date": "2026-02-12",
     "regions": []
   },
   {
@@ -47,11 +74,65 @@
     "regions": []
   },
   {
+    "id": "06042742e369d0fa",
+    "provider": "OpenAI",
+    "title": "Introducing GPT-5.3-Codex",
+    "description": "GPT-5.3-Codex is a Codex-native agent that pairs frontier coding performance with general reasoning to support long-horizon, real-world technical work.",
+    "link": "https://openai.com/index/introducing-gpt-5-3-codex",
+    "date": "2026-02-05",
+    "regions": []
+  },
+  {
+    "id": "08f06b68017de598",
+    "provider": "OpenAI",
+    "title": "Introducing GPT-5.2-Codex",
+    "description": "GPT-5.2-Codex is OpenAI\u2019s most advanced coding model, offering long-horizon reasoning, large-scale code transformations, and enhanced cybersecurity capabilities.",
+    "link": "https://openai.com/index/gpt-5-2-codex",
+    "date": "2025-12-18",
+    "regions": []
+  },
+  {
+    "id": "30ba96d93b3dd711",
+    "provider": "OpenAI",
+    "title": "Introducing GPT-5.2",
+    "description": "GPT-5.2 is our most advanced frontier model for everyday professional work, with state-of-the-art reasoning, long-context understanding, coding, and vision. Use it in ChatGPT and the OpenAI API to power faster, more reliable agentic workflows.",
+    "link": "https://openai.com/index/introducing-gpt-5-2",
+    "date": "2025-12-11",
+    "regions": []
+  },
+  {
+    "id": "d18d724fe0dc0989",
+    "provider": "OpenAI",
+    "title": "Introducing GPT-5.1 for developers",
+    "description": "GPT-5.1 is now available in the API, bringing faster adaptive reasoning, extended prompt caching, improved coding performance, and new apply_patch and shell tools.",
+    "link": "https://openai.com/index/gpt-5-1-for-developers",
+    "date": "2025-11-13",
+    "regions": []
+  },
+  {
+    "id": "c7ed85bffad72c1f",
+    "provider": "OpenAI",
+    "title": "Introducing gpt-oss-safeguard",
+    "description": "OpenAI introduces gpt-oss-safeguard\u2014open-weight reasoning models for safety classification that let developers apply and iterate on custom policies.",
+    "link": "https://openai.com/index/introducing-gpt-oss-safeguard",
+    "date": "2025-10-29",
+    "regions": []
+  },
+  {
     "id": "cd06a14bcc9e6bac",
     "provider": "Vertex AI",
     "title": "DeepSeek-V3.2-Exp is available through Model Garden.",
     "description": "DeepSeek-V3.2-Exp is available through Model Garden.",
     "link": "https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_30_2025",
+    "date": "2025-09-30",
+    "regions": []
+  },
+  {
+    "id": "5fb3824d1ab913ec",
+    "provider": "OpenAI",
+    "title": "Sora 2 is here",
+    "description": "Our latest video generation model is more physically accurate, realistic, and controllable than prior systems. It also features synchronized dialogue and sound effects. Create with it in the new Sora app.",
+    "link": "https://openai.com/index/sora-2",
     "date": "2025-09-30",
     "regions": []
   },
@@ -92,12 +173,39 @@
     "regions": []
   },
   {
+    "id": "e62038973cde01d3",
+    "provider": "OpenAI",
+    "title": "Introducing GPT-5 for developers",
+    "description": "Introducing GPT-5 in our API platform\u2014offering high reasoning performance, new controls for devs, and best-in-class results on real coding tasks.",
+    "link": "https://openai.com/index/introducing-gpt-5-for-developers",
+    "date": "2025-08-07",
+    "regions": []
+  },
+  {
+    "id": "942330e643c501b3",
+    "provider": "OpenAI",
+    "title": "Introducing GPT-5",
+    "description": "We are introducing GPT\u20115, our best AI system yet. GPT\u20115 is a significant leap in intelligence over all our previous models, featuring state-of-the-art performance across coding, math, writing, health, visual perception, and more.",
+    "link": "https://openai.com/index/introducing-gpt-5",
+    "date": "2025-08-07",
+    "regions": []
+  },
+  {
     "id": "1761b8b21b57b929",
     "provider": "Vertex AI",
     "title": "OpenAI's gpt-oss models are available through Model Garden.",
     "description": "OpenAI's gpt-oss models are available through Model Garden.",
     "link": "https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_06_2025",
     "date": "2025-08-06",
+    "regions": []
+  },
+  {
+    "id": "0fc398da5d412e3a",
+    "provider": "OpenAI",
+    "title": "Introducing gpt-oss",
+    "description": "We\u2019re releasing gpt-oss-120b and gpt-oss-20b\u2014two state-of-the-art open-weight language models that deliver strong real-world performance at low cost. Available under the flexible Apache 2.0 license, these models outperform similarly sized open models on reasoning tasks, demonstrate strong tool use capabilities, and are optimized for efficient deployment on consumer hardware.",
+    "link": "https://openai.com/index/introducing-gpt-oss",
+    "date": "2025-08-05",
     "regions": []
   },
   {
@@ -116,6 +224,87 @@
     "description": "Gemma 3n models are available through Model Garden.",
     "link": "https://docs.cloud.google.com/vertex-ai/docs/release-notes#June_27_2025",
     "date": "2025-06-27",
+    "regions": []
+  },
+  {
+    "id": "7926ee1da166fd54",
+    "provider": "OpenAI",
+    "title": "Introducing OpenAI o3 and o4-mini",
+    "description": "Our smartest and most capable models to date with full tool access",
+    "link": "https://openai.com/index/introducing-o3-and-o4-mini",
+    "date": "2025-04-16",
+    "regions": []
+  },
+  {
+    "id": "96216474dc10ca92",
+    "provider": "OpenAI",
+    "title": "Introducing GPT-4.1 in the API",
+    "description": "Introducing GPT-4.1 in the API\u2014a new family of models with across-the-board improvements, including major gains in coding, instruction following, and long-context understanding. We\u2019re also releasing our first nano model. Available to developers worldwide starting today.",
+    "link": "https://openai.com/index/gpt-4-1",
+    "date": "2025-04-14",
+    "regions": []
+  },
+  {
+    "id": "31ae7d0a719b3d0a",
+    "provider": "OpenAI",
+    "title": "Introducing GPT-4.5",
+    "description": "We\u2019re releasing a research preview of GPT\u20114.5\u2014our largest and best model for chat yet. GPT\u20114.5 is a step forward in scaling up pre-training and post-training.",
+    "link": "https://openai.com/index/introducing-gpt-4-5",
+    "date": "2025-02-27",
+    "regions": []
+  },
+  {
+    "id": "d9e3bf985ad08a83",
+    "provider": "OpenAI",
+    "title": "Sora is here",
+    "description": "Our video generation model, Sora, is now available to use at sora.com. Users can generate videos up to 1080p resolution, up to 20 sec long, and in widescreen, vertical or square aspect ratios. You can bring your own assets to extend, remix, and blend, or generate entirely new content from text.",
+    "link": "https://openai.com/index/sora-is-here",
+    "date": "2024-12-09",
+    "regions": []
+  },
+  {
+    "id": "d50de4573fba012c",
+    "provider": "OpenAI",
+    "title": "Introducing OpenAI o1",
+    "description": "",
+    "link": "https://openai.com/index/introducing-openai-o1-preview",
+    "date": "2024-09-12",
+    "regions": []
+  },
+  {
+    "id": "9fbece631eec80f0",
+    "provider": "OpenAI",
+    "title": "Hello GPT-4o",
+    "description": "We\u2019re announcing GPT-4 Omni, our new flagship model which can reason across audio, vision, and text in real time.",
+    "link": "https://openai.com/index/hello-gpt-4o",
+    "date": "2024-05-13",
+    "regions": []
+  },
+  {
+    "id": "e87c8290af8d9d03",
+    "provider": "OpenAI",
+    "title": "Introducing GPT-4o and more tools to ChatGPT free users",
+    "description": "Introducing GPT-4o and more tools to ChatGPT free users\nWe are launching our newest flagship model and making more capabilities available for free in ChatGPT.",
+    "link": "https://openai.com/index/gpt-4o-and-more-tools-to-chatgpt-free",
+    "date": "2024-05-13",
+    "regions": []
+  },
+  {
+    "id": "861f9b17f7913bc6",
+    "provider": "OpenAI",
+    "title": "Introducing Whisper",
+    "description": "",
+    "link": "https://openai.com/index/whisper",
+    "date": "2022-09-21",
+    "regions": []
+  },
+  {
+    "id": "0623dc9bc0004426",
+    "provider": "OpenAI",
+    "title": "New GPT-3 capabilities: Edit & insert",
+    "description": "We\u2019ve released new versions of GPT-3 and Codex\u00a0which can edit or insert content into existing text, rather than just completing existing text.",
+    "link": "https://openai.com/index/gpt-3-edit-insert",
+    "date": "2022-03-15",
     "regions": []
   }
 ]
