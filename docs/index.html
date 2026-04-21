@@ -266,7 +266,7 @@
     </div>
   </div>
   <main id="cards">
-      <article class="card" data-providers="AWS Bedrock Azure OpenAI">
+      <article class="card" data-providers="AWS Bedrock|Azure OpenAI">
         <div class="card-header">
           <h2 class="card-title">Claude Opus 4.7 is now available in Amazon Bedrock</h2>
           <time class="card-date" datetime="2026-04-17" title="2026-04-17">4d ago</time>
@@ -660,7 +660,7 @@ We are launching our newest flagship model and making more capabilities availabl
       </article>
   </main>
   <p class="no-results" id="no-results">No matching releases found.</p>
-  <footer>Updated 2026-04-21 20:48 UTC</footer>
+  <footer>Updated 2026-04-21 20:53 UTC</footer>
   <script>
   (function() {
     var btns = document.querySelectorAll('.filter-btn');
@@ -679,7 +679,7 @@ We are launching our newest flagship model and making more capabilities availabl
       var providers = activeProviders();
       var visible = 0;
       cards.forEach(function(card) {
-        var cp = card.dataset.providers.split(' ');
+        var cp = card.dataset.providers.split('|');
         var providerMatch = cp.some(function(p) { return providers.has(p); });
         var textMatch = !q || card.textContent.toLowerCase().indexOf(q) !== -1;
         var show = providerMatch && textMatch;

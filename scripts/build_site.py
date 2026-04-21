@@ -160,7 +160,7 @@ def build_html(models: list[dict]) -> str:
             desc = desc[:197] + "..."
 
         all_providers = sorted(set(e["provider"] for e in entries))
-        data_providers = " ".join(escape(p) for p in all_providers)
+        data_providers = "|".join(escape(p) for p in all_providers)
 
         cards.append(f"""      <article class="card" data-providers="{data_providers}">
         <div class="card-header">
@@ -478,7 +478,7 @@ def build_html(models: list[dict]) -> str:
       var providers = activeProviders();
       var visible = 0;
       cards.forEach(function(card) {{
-        var cp = card.dataset.providers.split(' ');
+        var cp = card.dataset.providers.split('|');
         var providerMatch = cp.some(function(p) {{ return providers.has(p); }});
         var textMatch = !q || card.textContent.toLowerCase().indexOf(q) !== -1;
         var show = providerMatch && textMatch;
