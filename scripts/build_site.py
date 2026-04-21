@@ -20,6 +20,7 @@ PROVIDER_SVGS = {
     "Vertex AI": '<svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#4285f4"/><path d="M11 28l9-18 9 18" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="14" r="2" fill="#fff"/></svg>',
     "Azure OpenAI": '<svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#0078d4"/><path d="M10 26L20 10l10 16H10z" fill="#50e6ff" opacity=".9"/><path d="M14 26l6-10 6 10H14z" fill="#fff" opacity=".5"/></svg>',
     "Anthropic": '<svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#d97757"/><path d="M20 10l-8 20h4.5l1.8-5h7.4l1.8 5H32L20 10zm0 7l2.5 6.5h-5L20 17z" fill="#fff"/></svg>',
+    "Google": '<svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#fff" stroke="#dadce0"/><circle cx="14" cy="14" r="5" fill="#4285f4"/><circle cx="26" cy="14" r="5" fill="#ea4335"/><circle cx="14" cy="26" r="5" fill="#34a853"/><circle cx="26" cy="26" r="5" fill="#fbbc05"/></svg>',
     "Google DeepMind": '<svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#fff" stroke="#dadce0"/><circle cx="14" cy="14" r="5" fill="#4285f4"/><circle cx="26" cy="14" r="5" fill="#ea4335"/><circle cx="14" cy="26" r="5" fill="#34a853"/><circle cx="26" cy="26" r="5" fill="#fbbc05"/></svg>',
     "OpenAI": '<svg class="pi" viewBox="0 0 40 40"><rect width="40" height="40" rx="8" fill="#000"/><path d="M20 8c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c2 0 3.8.7 5.3 1.8L15.8 22.3c-.2-.7-.3-1.5-.3-2.3 0-2.5 1-4.7 2.6-6.3A8.9 8.9 0 0120 11zm0 18a8.9 8.9 0 01-5.3-1.8l9.5-9.5c.2.7.3 1.5.3 2.3 0 2.5-1 4.7-2.6 6.3A8.9 8.9 0 0120 29z" fill="#fff"/></svg>',
 }
@@ -29,12 +30,13 @@ PROVIDER_LABELS = {
     "Vertex AI": "Vertex AI",
     "Azure OpenAI": "Azure OpenAI",
     "Anthropic": "Anthropic",
+    "Google": "Google",
     "Google DeepMind": "Google DeepMind",
     "OpenAI": "OpenAI",
 }
 
 # Order for display (first-party providers first, then cloud)
-PROVIDER_ORDER = ["Anthropic", "OpenAI", "Google DeepMind", "AWS Bedrock", "Vertex AI", "Azure OpenAI"]
+PROVIDER_ORDER = ["Anthropic", "OpenAI", "Google", "Google DeepMind", "AWS Bedrock", "Vertex AI", "Azure OpenAI"]
 
 
 def normalize_model_name(title: str) -> str:

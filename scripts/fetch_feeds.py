@@ -283,34 +283,57 @@ def fetch_anthropic() -> list[dict]:
     return items
 
 
-def fetch_google_deepmind() -> list[dict]:
-    data = fetch_url("https://blog.google/technology/google-deepmind/rss/")
-    root = ET.fromstring(data)
-    items = []
-    for item in root.iter("item"):
-        title = item.findtext("title", "").strip()
-        description = strip_html(item.findtext("description", ""))
-        link = item.findtext("link", "").strip()
-        pub_date = item.findtext("pubDate", "").strip()
+GEMINI_MODEL_RE = re.compile(
+    r"\b(?:gemini|gemma|imagen|veo)\s+[\d]", re.IGNORECASE
+)
 
-        if not is_model_release(title, description):
+GEMINI_ENTRY_RE = re.compile(
+    r"(\d{4})\.(\d{2})\.(\d{2})(.*?)(?=\d{4}\.\d{2}\.\d{2}|\Z)",
+    re.DOTALL,
+)
+
+GEMINI_LAUNCH_RE = re.compile(
+    r"\b(?:introducing|announcing|launching|releasing|now (?:the )?(?:new )?default|rolling out|is (?:now )?available|available to)\b",
+    re.IGNORECASE,
+)
+
+
+def fetch_google_deepmind() -> list[dict]:
+    """Scrape gemini.google/release-notes/ for model releases."""
+    data = fetch_url("https://gemini.google/release-notes/")
+    text = data.decode("utf-8", errors="replace")
+    text = strip_html(text)
+
+    items = []
+    for match in GEMINI_ENTRY_RE.finditer(text):
+        year, month, day = match.group(1), match.group(2), match.group(3)
+        date_str = f"{year}-{month}-{day}"
+        body = match.group(4).strip()
+
+        title_end = body.find("What:")
+        if title_end > 0:
+            title = body[:title_end].strip()
+            desc = body[title_end + 5:].strip()[:500]
+        else:
+            title = body[:150].split(".")[0].strip()
+            desc = body[:500]
+
+        full_text = f"{title} {desc}"
+        if not GEMINI_MODEL_RE.search(full_text):
+            continue
+        if not GEMINI_LAUNCH_RE.search(full_text):
             continue
 
-        try:
-            dt = parsedate_to_datetime(pub_date)
-            date_str = dt.strftime("%Y-%m-%d")
-        except Exception:
-            date_str = pub_date
-
         items.append({
-            "id": make_id("Google DeepMind", title),
-            "provider": "Google DeepMind",
+            "id": make_id("Google", f"{date_str}:{title}"),
+            "provider": "Google",
             "title": title,
-            "description": description[:500],
-            "link": link,
+            "description": desc,
+            "link": "https://gemini.google/release-notes/",
             "date": date_str,
             "regions": [],
         })
+
     return items
 
 

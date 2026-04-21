@@ -47,12 +47,30 @@
     "regions": []
   },
   {
+    "id": "0b67ca5adb2cdba2",
+    "provider": "Google",
+    "title": "Gemini 3.1 Pro: A smarter model for your most complex tasks",
+    "description": "Building on the Gemini 3 series, we're releasing 3.1 Pro, a smarter and more capable model for complex problem-solving. 3.1 Pro is designed for tasks where a simple answer isn't enough, taking advanced reasoning and making it useful for your hardest challenges. This improved intelligence can help in practical applications \u2013 whether you're looking for a clear, visual explanation of a complex topic, a way to synthesise data into a single view or a step-by-step plan bringing an ambitious creative p",
+    "link": "https://gemini.google/release-notes/",
+    "date": "2026-02-19",
+    "regions": []
+  },
+  {
     "id": "fc5a619d0c00b9a7",
     "provider": "Azure OpenAI",
     "title": "[Launched] Generally Available: Anthropic Claude Sonnet 4.6 is now available on Azure Databricks",
     "description": "Azure Databricks now supports Anthropic Claude Sonnet 4.6\nthrough Azure Databricks AI\nModel Serving. Claude Sonnet 4.6\ndelivers frontier-level performance on complex coding, agentic\nworkflows, and professional knowledge work including reasoning at a\nlower",
     "link": "https://azure.microsoft.com/updates?id=557595",
     "date": "2026-02-18",
+    "regions": []
+  },
+  {
+    "id": "7c39f9b3d349b357",
+    "provider": "Google",
+    "title": "Solve modern science, research and engineering challenges with Gemini 3 Deep Think",
+    "description": "We\u2019re releasing a major upgrade to Gemini 3 Deep Think, our specialized reasoning mode, built to push the frontier of intelligence and solve modern challenges across science, research, and engineering. By blending deep scientific knowledge with everyday engineering utility, Deep Think now moves beyond abstract theory to help drive practical applications.This update is available to Google AI Ultra Subscribers in the Gemini App. To access, select \u201cDeep Think\u201d in the prompt bar. Once you submit you",
+    "link": "https://gemini.google/release-notes/",
+    "date": "2026-02-12",
     "regions": []
   },
   {
@@ -92,12 +110,30 @@
     "regions": []
   },
   {
+    "id": "2e35eaf07377eaef",
+    "provider": "Google",
+    "title": "Introducing Gemini 3 Flash, a major upgrade to your everyday AI",
+    "description": "Gemini 3 Flash is now the new default model in the Gemini app. It offers next-generation intelligence at lightning speed and represents a major capability upgrade over Gemini 2.5 Flash. This model provides PhD-level reasoning comparable to larger models and delivers a significant leap in multimodal understanding, allowing you to ask questions using images, audio, text and more.Gemini 3 Flash can be accessed in the Gemini app by selecting 'Fast' for quick answers and 'Thinking' to help solve more",
+    "link": "https://gemini.google/release-notes/",
+    "date": "2025-12-17",
+    "regions": []
+  },
+  {
     "id": "30ba96d93b3dd711",
     "provider": "OpenAI",
     "title": "Introducing GPT-5.2",
     "description": "GPT-5.2 is our most advanced frontier model for everyday professional work, with state-of-the-art reasoning, long-context understanding, coding, and vision. Use it in ChatGPT and the OpenAI API to power faster, more reliable agentic workflows.",
     "link": "https://openai.com/index/introducing-gpt-5-2",
     "date": "2025-12-11",
+    "regions": []
+  },
+  {
+    "id": "e923539731d2100a",
+    "provider": "Google",
+    "title": "Gemini 3, our most intelligent model yet, is available to everyone in the app",
+    "description": "Gemini 3 Pro is rolling out to everyone in the Gemini app starting today, with higher limits for users in the Google AI Plus, Pro and Ultra plans. It brings state-of-the-art reasoning to your most complex problems, and is our best vibe coding model yet. It can also reason across text, images, audio and video better than ever before.  So whether you're uploading a video of you playing a sport to get advice on how to improve your form, or transcribing notes from a lecture that you missed, the Gemi",
+    "link": "https://gemini.google/release-notes/",
+    "date": "2025-11-18",
     "regions": []
   },
   {
@@ -134,6 +170,15 @@
     "description": "Our latest video generation model is more physically accurate, realistic, and controllable than prior systems. It also features synchronized dialogue and sound effects. Create with it in the new Sora app.",
     "link": "https://openai.com/index/sora-2",
     "date": "2025-09-30",
+    "regions": []
+  },
+  {
+    "id": "6dc0e6f4a5b8f5fb",
+    "provider": "Google",
+    "title": "Update to 2.5 Flash in Gemini",
+    "description": "An enhanced version of Gemini 2.5 Flash is now available to Gemini app users. Responses are now better organised with improved formatting. Gemini 2.5 Flash uses elements like headers, lists and tables to make even complex outputs clearer and easier to understand. We've also improved image understanding, so that Gemini can better interpret and respond to your uploads.To feel the difference, try working through a problem at school or work involving an image, like a diagram, and asking Gemini to wa",
+    "link": "https://gemini.google/release-notes/",
+    "date": "2025-09-25",
     "regions": []
   },
   {
@@ -227,6 +272,33 @@
     "regions": []
   },
   {
+    "id": "2960b9d521911724",
+    "provider": "Google",
+    "title": "2.5 Pro (experimental) got a major upgrade for coding",
+    "description": "We're rolling out an updated version of Gemini 2.5 Pro with improved capabilities for coding. This model more intuitively understands coding prompts and produces stronger outputs, enabling users to quickly create compelling web apps in Canvas. This improvement builds on the overwhelmingly positive feedback to 2.5 Pro's coding and multimodal reasoning capabilities.Why: We believe in rapid iteration and bringing the best of Gemini to the world. Your feedback helps us improve these models over time",
+    "link": "https://gemini.google/release-notes/",
+    "date": "2025-05-06",
+    "regions": []
+  },
+  {
+    "id": "688940996cbc1a89",
+    "provider": "Google",
+    "title": "Create and share videos with Veo 2 in Gemini Advanced",
+    "description": "Starting today, Gemini Advanced subscribers can generate high-quality, 8-second videos using Veo 2. Simply describe what you have in mind and watch your ideas come to life in motion - whether you're creating for fun, sharing with friends, or adding a dynamic element to your projects.How to access: Select \u2018Veo 2\u2019 from the model dropdown. How to share: Download the MP4 file, generate a public link, or share the video directly (mobile only). This feature is available globally on web and mobile to G",
+    "link": "https://gemini.google/release-notes/",
+    "date": "2025-04-22",
+    "regions": []
+  },
+  {
+    "id": "d64a661dd7c93e5a",
+    "provider": "Google",
+    "title": "Update to 2.0 Flash in Gemini",
+    "description": "An enhanced version of Gemini 2.0 Flash is now available to Gemini app users. This update enables a more natural, collaborative and adaptive conversational style, providing users with more fluid and engaging interactions that feel in tune with specific topics and tasks.Try chatting about your interests, working through a problem at school, work or home, or asking for a new, more creative perspective to feel the difference.Why: We're committed to making Gemini a more insightful, collaborative par",
+    "link": "https://gemini.google/release-notes/",
+    "date": "2025-04-19",
+    "regions": []
+  },
+  {
     "id": "7926ee1da166fd54",
     "provider": "OpenAI",
     "title": "Introducing OpenAI o3 and o4-mini",
@@ -245,12 +317,48 @@
     "regions": []
   },
   {
+    "id": "b4d9b72437b9d638",
+    "provider": "Google",
+    "title": "Priority access with Gemini Advanced: Try our latest 2.5 Pro (experimental) model",
+    "description": "Today, we're introducing Gemini 2.5, our most intelligent AI model. Our first 2.5 release is a chat-optimised version of Gemini-2.5-Pro-Exp-03-25, which is state of the art on a wide range of benchmarks and debuts at #1 on LMArena by a significant margin. This model also has thinking capabilities natively built in, with improved performance in complex tasks like coding, maths and image understanding.2.5 Pro (experimental) is now rolling out to the Gemini web and mobile app and is available to qu",
+    "link": "https://gemini.google/release-notes/",
+    "date": "2025-03-25",
+    "regions": []
+  },
+  {
+    "id": "0cfb993a3481c687",
+    "provider": "Google",
+    "title": "Update to Gemini 2.0 Flash Thinking (experimental) in Gemini",
+    "description": "Starting today, an improved version of Gemini 2.0 Flash Thinking (experimental) will become available to Gemini app users. Built on the foundation of 2.0 Flash, this model delivers improved performance and better advanced reasoning capabilities with efficiency and speed.Starting in English, 2.0 Flash Thinking (experimental) now works with your favourite Gemini features and connected apps such as YouTube, Maps, Search and more. Gemini Advanced users will also have access to a 1M token context win",
+    "link": "https://gemini.google/release-notes/",
+    "date": "2025-03-13",
+    "regions": []
+  },
+  {
     "id": "31ae7d0a719b3d0a",
     "provider": "OpenAI",
     "title": "Introducing GPT-4.5",
     "description": "We\u2019re releasing a research preview of GPT\u20114.5\u2014our largest and best model for chat yet. GPT\u20114.5 is a step forward in scaling up pre-training and post-training.",
     "link": "https://openai.com/index/introducing-gpt-4-5",
     "date": "2025-02-27",
+    "regions": []
+  },
+  {
+    "id": "c80c24bc50cb3377",
+    "provider": "Google",
+    "title": "Introducing Gemini 2.0 Flash to Gemini",
+    "description": "Gemini is now powered by 2.0 Flash, our latest model that is designed for the agentic era, delivering fast responses and stronger performance across a number of key benchmarks for everyday help with tasks like brainstorming, learning or writing.In addition to 2.0 Flash, Gemini Advanced users will continue to have access to a 1M token context window for up to 1,500 pages of file uploads, priority access to features such as Deep Research and Gems, 2 TB of storage and more.Gemini 1.5 Flash and 1.5 ",
+    "link": "https://gemini.google/release-notes/",
+    "date": "2025-01-30",
+    "regions": []
+  },
+  {
+    "id": "b11ff0bbd9c8b418",
+    "provider": "Google",
+    "title": "Introducing Gemini 2.0 Flash as an experimental model in Gemini",
+    "description": "Gemini users now have access to our latest experimental model, a chat-optimised version of 2.0 Flash Experimental with improvements on a number of key academic benchmarks and speed. This experimental model is meant to be an early preview. It can behave in unexpected ways and may make mistakes. Additionally, some Gemini features won't be compatible with this model in its experimental state.You can access this experimental model in the Gemini model drop-down.Why: We believe in rapid iteration and ",
+    "link": "https://gemini.google/release-notes/",
+    "date": "2024-12-11",
     "regions": []
   },
   {
@@ -263,12 +371,39 @@
     "regions": []
   },
   {
+    "id": "75c4303e1ec85cb3",
+    "provider": "Google",
+    "title": "Introducing Imagen 3",
+    "description": "Create stunning images in Gemini with Imagen 3, our highest quality text-to-image model yet. Simply describe what you imagine, and watch as your ideas transform into visuals, bursting with vivid details and realism, in seconds.And starting in English, Gemini Advanced subscribers unlock the added capability of generating images featuring people, empowering even more variety in your creations.Why: Your imagination is limitless, and we want to place the power of creativity in your hands. We're also",
+    "link": "https://gemini.google/release-notes/",
+    "date": "2024-10-09",
+    "regions": []
+  },
+  {
     "id": "d50de4573fba012c",
     "provider": "OpenAI",
     "title": "Introducing OpenAI o1",
     "description": "",
     "link": "https://openai.com/index/introducing-openai-o1-preview",
     "date": "2024-09-12",
+    "regions": []
+  },
+  {
+    "id": "3b6f11e23efd3aa4",
+    "provider": "Google",
+    "title": "Introducing Gemini 1.5 Flash to Gemini",
+    "description": "Gemini now gives you access to 1.5 Flash, our model optimised for speed and efficiency. 1.5 Flash provides a 4x longer context window (from 8k tokens to 32k tokens) compared to 1.0 Pro and improved overall response quality and accuracy.Why: 1.5 Flash provides a longer context window and improved performance to unlock new ways to create, interact and collaborate with Gemini.A longer context window allows Gemini to process a larger amount of content for each prompt, helping you solve more complex ",
+    "link": "https://gemini.google/release-notes/",
+    "date": "2024-07-25",
+    "regions": []
+  },
+  {
+    "id": "bdebbbe3c31c8df2",
+    "provider": "Google",
+    "title": "Introducing Gemini 1.5 Pro to Gemini Advanced",
+    "description": "Gemini Advanced gives you direct access to Google\u2019s next-generation model, 1.5 Pro. With 1.5 Pro, Gemini Advanced can process significantly more information, running up to 1 million tokens \u2013 that's 1500 pages. Gemini Advanced will also be available in 150+ countries and territories, as well as 35+ supported languages.Why: A longer context window lets you solve more complex problems than ever before, which can save you time and boost productivity when you explore and analyze information. We're al",
+    "link": "https://gemini.google/release-notes/",
+    "date": "2024-05-14",
     "regions": []
   },
   {
