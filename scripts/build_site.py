@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / "data" / "models.json"
 DOCS_DIR = ROOT / "docs"
 SITE_TITLE = "LLM Releases"
-SITE_URL = "https://llm-releases.github.io"
+SITE_URL = "https://dannyburke1.github.io/llm-releases"
 SITE_DESCRIPTION = "New model releases across AWS Bedrock, Vertex AI, and Azure OpenAI"
 
 PROVIDER_COLORS = {

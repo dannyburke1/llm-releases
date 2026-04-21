@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>LLM Releases</title>
-    <link>https://llm-releases.github.io</link>
+    <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across AWS Bedrock, Vertex AI, and Azure OpenAI</description>
-    <lastBuildDate>Tue, 21 Apr 2026 20:11:13 +0000</lastBuildDate>
-    <atom:link href="https://llm-releases.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Tue, 21 Apr 2026 20:13:57 +0000</lastBuildDate>
+    <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>SageMaker JumpStart now offers optimized deployments for foundation models</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/04/sagemaker-jumpstart-optimized-deployments/</link>
