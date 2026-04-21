@@ -6,96 +6,306 @@
   <title>LLM Releases</title>
   <link rel="alternate" type="application/rss+xml" title="LLM Releases" href="https://dannyburke1.github.io/llm-releases/feed.xml">
   <style>
+    :root {
+      --bg: #f5f6f8;
+      --surface: #ffffff;
+      --surface-hover: #fafbfc;
+      --border: #e8eaed;
+      --text: #1a1d21;
+      --text-secondary: #5f6368;
+      --text-tertiary: #9aa0a6;
+      --accent: #e88a1a;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.1);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --radius: 12px;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 960px; margin: 0 auto; padding: 2rem 1rem; color: #1a1a1a; background: #fafafa; }
-    h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
-    .subtitle { color: #666; margin-bottom: 1.5rem; font-size: 0.9rem; }
-    .rss-link { color: #e88a1a; text-decoration: none; font-size: 0.85rem; }
-    .rss-link:hover { text-decoration: underline; }
-    table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-    th { text-align: left; padding: 0.75rem 1rem; background: #f0f0f0; font-size: 0.8rem; text-transform: uppercase; color: #555; }
-    td { padding: 0.75rem 1rem; border-top: 1px solid #eee; font-size: 0.9rem; vertical-align: top; }
-    td a { color: #1a1a1a; text-decoration: none; }
-    td a:hover { text-decoration: underline; }
-    .provider { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; color: #fff; font-size: 0.75rem; font-weight: 600; white-space: nowrap; margin: 0.1rem 0; }
-    .regions { display: inline-block; font-size: 0.75rem; color: #888; margin-left: 0.25rem; }
-    footer { margin-top: 2rem; font-size: 0.8rem; color: #999; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 2rem;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      margin-bottom: 2rem;
+    }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .rss-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.85rem;
+      margin-left: 0.5rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      background: rgba(232,138,26,0.08);
+      transition: background 0.15s;
+    }
+    .rss-link:hover {
+      background: rgba(232,138,26,0.15);
+    }
+    .rss-icon {
+      width: 14px;
+      height: 14px;
+    }
+    .table-wrapper {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    thead th {
+      text-align: left;
+      padding: 0.75rem 1rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-tertiary);
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    tbody tr {
+      transition: background 0.1s;
+    }
+    tbody tr:hover {
+      background: var(--surface-hover);
+    }
+    tbody td {
+      padding: 0.85rem 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+      vertical-align: middle;
+    }
+    tbody tr:first-child td {
+      border-top: none;
+    }
+    .col-date {
+      width: 80px;
+      white-space: nowrap;
+    }
+    .date-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.1;
+    }
+    .date-month {
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-tertiary);
+    }
+    .date-day {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .date-year {
+      font-size: 0.65rem;
+      color: var(--text-tertiary);
+    }
+    .col-providers {
+      width: 110px;
+    }
+    .providers-cell {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+    .provider-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 6px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      transition: box-shadow 0.15s;
+    }
+    .provider-badge:hover {
+      box-shadow: var(--shadow-sm);
+    }
+    .provider-icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+    .provider-label {
+      line-height: 1;
+    }
+    .col-announcement {
+      line-height: 1.5;
+    }
+    .entry-link {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .entry-link:hover {
+      text-decoration: underline;
+      text-decoration-color: var(--text-tertiary);
+      text-underline-offset: 2px;
+    }
+    .entry-title {
+      font-weight: 500;
+    }
+    .source-links {
+      margin-left: 0.5rem;
+    }
+    .source-link {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .source-link:hover {
+      color: var(--text-secondary);
+      border-color: var(--text-tertiary);
+    }
+    .regions {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      margin-top: 0.25rem;
+    }
+    .empty {
+      text-align: center;
+      color: var(--text-tertiary);
+      padding: 3rem 1rem !important;
+    }
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+    }
+    @media (max-width: 640px) {
+      body { padding: 1.5rem 1rem; }
+      .col-date { width: 60px; }
+      .col-providers { width: 50px; }
+      .provider-label { display: none; }
+      .provider-badge { padding: 0.25rem; }
+      .date-day { font-size: 1.1rem; }
+      .source-links { display: block; margin-left: 0; margin-top: 0.3rem; }
+    }
   </style>
 </head>
 <body>
-  <h1>LLM Releases</h1>
-  <p class="subtitle">New model releases across AWS Bedrock, Vertex AI, Azure OpenAI &amp; Anthropic &middot; <a class="rss-link" href="https://dannyburke1.github.io/llm-releases/feed.xml">RSS Feed</a></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Provider</th>
-        <th>Announcement</th>
-      </tr>
-    </thead>
-    <tbody>
+  <header>
+    <h1>LLM Releases</h1>
+    <p class="subtitle">
+      New model releases across AWS Bedrock, Vertex AI, Azure OpenAI &amp; Anthropic
+      <a class="rss-link" href="https://dannyburke1.github.io/llm-releases/feed.xml">
+        <svg class="rss-icon" viewBox="0 0 24 24" fill="currentColor"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>
+        RSS
+      </a>
+    </p>
+  </header>
+  <div class="table-wrapper">
+    <table>
+      <thead>
         <tr>
-          <td>2026-04-17</td>
-          <td><span class="provider" style="background:#ff9900">AWS Bedrock</span> <span class="provider" style="background:#0078d4">Azure OpenAI</span></td>
-          <td>[Launched] Generally available: Anthropic Claude Opus 4.7 on Azure Databricks (<a href="https://azure.microsoft.com/updates?id=560590">Azure OpenAI</a> · <a href="https://aws.amazon.com/about-aws/whats-new/2026/04/claude-opus-4.7-amazon-bedrock/">AWS Bedrock</a>)</td>
+          <th>Date</th>
+          <th>Provider</th>
+          <th>Announcement</th>
         </tr>
-        <tr>
-          <td>2026-04-07</td>
-          <td><span class="provider" style="background:#ff9900">AWS Bedrock</span></td>
-          <td><a href="https://aws.amazon.com/about-aws/whats-new/2026/04/amazon-bedrock-claude-mythos/">Amazon Bedrock now offers Claude Mythos Preview (Gated Research Preview)</a> <span class="regions">US East (N. Virginia)</span></td>
-        </tr>
-        <tr>
-          <td>2026-02-18</td>
-          <td><span class="provider" style="background:#0078d4">Azure OpenAI</span></td>
-          <td><a href="https://azure.microsoft.com/updates?id=557595">[Launched] Generally Available: Anthropic Claude Sonnet 4.6 is now available on Azure Databricks</a></td>
-        </tr>
-        <tr>
-          <td>2026-02-06</td>
-          <td><span class="provider" style="background:#0078d4">Azure OpenAI</span></td>
-          <td><a href="https://azure.microsoft.com/updates?id=555981">[Launched] ​Generally Available: Claude Opus 4.6 now available on Azure Databricks</a></td>
-        </tr>
-        <tr>
-          <td>2025-09-30</td>
-          <td><span class="provider" style="background:#4285f4">Vertex AI</span></td>
-          <td><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_30_2025">DeepSeek-V3.2-Exp is available through Model Garden.</a></td>
-        </tr>
-        <tr>
-          <td>2025-09-22</td>
-          <td><span class="provider" style="background:#4285f4">Vertex AI</span></td>
-          <td><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_22_2025">DeepSeek-V3.1-Terminus is available through Model Garden.</a></td>
-        </tr>
-        <tr>
-          <td>2025-09-09</td>
-          <td><span class="provider" style="background:#4285f4">Vertex AI</span></td>
-          <td><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_09_2025">EmbeddingGemma and DeepSeek-V3.1 models are available through Model Garden.</a></td>
-        </tr>
-        <tr>
-          <td>2025-08-14</td>
-          <td><span class="provider" style="background:#4285f4">Vertex AI</span></td>
-          <td><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_14_2025">Gemma 3 270M, Wan 2.2 and Wan 2.1 models are available through Model Garden.</a></td>
-        </tr>
-        <tr>
-          <td>2025-08-13</td>
-          <td><span class="provider" style="background:#4285f4">Vertex AI</span></td>
-          <td><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_13_2025">OpenAI&#x27;s gpt-oss-120b and gpt-oss-20b are available as Model as a Service (MaaS) models in Model Garden.</a></td>
-        </tr>
-        <tr>
-          <td>2025-08-06</td>
-          <td><span class="provider" style="background:#4285f4">Vertex AI</span></td>
-          <td><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_06_2025">OpenAI&#x27;s gpt-oss models are available through Model Garden.</a></td>
-        </tr>
-        <tr>
-          <td>2025-07-01</td>
-          <td><span class="provider" style="background:#4285f4">Vertex AI</span></td>
-          <td><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#July_01_2025">The global endpoint is generally available (GA) for Anthropic&#x27;s Claude Opus 4. For details, see Global endpoint.</a></td>
-        </tr>
-        <tr>
-          <td>2025-06-27</td>
-          <td><span class="provider" style="background:#4285f4">Vertex AI</span></td>
-          <td><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#June_27_2025">Gemma 3n models are available through Model Garden.</a></td>
-        </tr>
-    </tbody>
-  </table>
-  <footer>Updated 2026-04-21 20:21 UTC &middot; Data sourced from provider RSS feeds</footer>
+      </thead>
+      <tbody>
+          <tr>
+            <td class="col-date"><div class="date-cell"><span class="date-month">Apr</span><span class="date-day">17</span><span class="date-year">2026</span></div></td>
+            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="AWS Bedrock"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z" fill="#ff9900"/><path d="M12 7v10M7 9.5l10 5M17 9.5l-10 5" stroke="#fff" stroke-width="1.2"/></svg><span class="provider-label">AWS</span></span><span class="provider-badge" title="Azure OpenAI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M2 15L12 2l10 13H2z" fill="#0078d4"/><path d="M5 15l7-9 7 9" fill="#50a0e6"/><rect x="8" y="17" width="8" height="3" rx="1" fill="#0078d4"/></svg><span class="provider-label">Azure</span></span></div></td>
+            <td class="col-announcement"><span class="entry-title">[Launched] Generally available: Anthropic Claude Opus 4.7 on Azure Databricks</span><span class="source-links"><a href="https://azure.microsoft.com/updates?id=560590" class="source-link">Azure</a> <a href="https://aws.amazon.com/about-aws/whats-new/2026/04/claude-opus-4.7-amazon-bedrock/" class="source-link">AWS</a></span></td>
+          </tr>
+          <tr>
+            <td class="col-date"><div class="date-cell"><span class="date-month">Apr</span><span class="date-day">7</span><span class="date-year">2026</span></div></td>
+            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="AWS Bedrock"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z" fill="#ff9900"/><path d="M12 7v10M7 9.5l10 5M17 9.5l-10 5" stroke="#fff" stroke-width="1.2"/></svg><span class="provider-label">AWS</span></span></div></td>
+            <td class="col-announcement"><a href="https://aws.amazon.com/about-aws/whats-new/2026/04/amazon-bedrock-claude-mythos/" class="entry-link">Amazon Bedrock now offers Claude Mythos Preview (Gated Research Preview)</a><span class="regions">US East (N. Virginia)</span></td>
+          </tr>
+          <tr>
+            <td class="col-date"><div class="date-cell"><span class="date-month">Feb</span><span class="date-day">18</span><span class="date-year">2026</span></div></td>
+            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="Azure OpenAI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M2 15L12 2l10 13H2z" fill="#0078d4"/><path d="M5 15l7-9 7 9" fill="#50a0e6"/><rect x="8" y="17" width="8" height="3" rx="1" fill="#0078d4"/></svg><span class="provider-label">Azure</span></span></div></td>
+            <td class="col-announcement"><a href="https://azure.microsoft.com/updates?id=557595" class="entry-link">[Launched] Generally Available: Anthropic Claude Sonnet 4.6 is now available on Azure Databricks</a></td>
+          </tr>
+          <tr>
+            <td class="col-date"><div class="date-cell"><span class="date-month">Feb</span><span class="date-day">6</span><span class="date-year">2026</span></div></td>
+            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="Azure OpenAI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M2 15L12 2l10 13H2z" fill="#0078d4"/><path d="M5 15l7-9 7 9" fill="#50a0e6"/><rect x="8" y="17" width="8" height="3" rx="1" fill="#0078d4"/></svg><span class="provider-label">Azure</span></span></div></td>
+            <td class="col-announcement"><a href="https://azure.microsoft.com/updates?id=555981" class="entry-link">[Launched] ​Generally Available: Claude Opus 4.6 now available on Azure Databricks</a></td>
+          </tr>
+          <tr>
+            <td class="col-date"><div class="date-cell"><span class="date-month">Sep</span><span class="date-day">30</span><span class="date-year">2025</span></div></td>
+            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="Vertex AI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 19h20L12 2z" fill="#4285f4"/><path d="M12 2l4 8.5H8L12 2z" fill="#669df6"/><circle cx="12" cy="15" r="2.5" fill="#fff"/></svg><span class="provider-label">GCP</span></span></div></td>
+            <td class="col-announcement"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_30_2025" class="entry-link">DeepSeek-V3.2-Exp is available through Model Garden.</a></td>
+          </tr>
+          <tr>
+            <td class="col-date"><div class="date-cell"><span class="date-month">Sep</span><span class="date-day">22</span><span class="date-year">2025</span></div></td>
+            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="Vertex AI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 19h20L12 2z" fill="#4285f4"/><path d="M12 2l4 8.5H8L12 2z" fill="#669df6"/><circle cx="12" cy="15" r="2.5" fill="#fff"/></svg><span class="provider-label">GCP</span></span></div></td>
+            <td class="col-announcement"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_22_2025" class="entry-link">DeepSeek-V3.1-Terminus is available through Model Garden.</a></td>
+          </tr>
+          <tr>
+            <td class="col-date"><div class="date-cell"><span class="date-month">Sep</span><span class="date-day">9</span><span class="date-year">2025</span></div></td>
+            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="Vertex AI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 19h20L12 2z" fill="#4285f4"/><path d="M12 2l4 8.5H8L12 2z" fill="#669df6"/><circle cx="12" cy="15" r="2.5" fill="#fff"/></svg><span class="provider-label">GCP</span></span></div></td>
+            <td class="col-announcement"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_09_2025" class="entry-link">EmbeddingGemma and DeepSeek-V3.1 models are available through Model Garden.</a></td>
+          </tr>
+          <tr>
+            <td class="col-date"><div class="date-cell"><span class="date-month">Aug</span><span class="date-day">14</span><span class="date-year">2025</span></div></td>
+            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="Vertex AI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 19h20L12 2z" fill="#4285f4"/><path d="M12 2l4 8.5H8L12 2z" fill="#669df6"/><circle cx="12" cy="15" r="2.5" fill="#fff"/></svg><span class="provider-label">GCP</span></span></div></td>
+            <td class="col-announcement"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_14_2025" class="entry-link">Gemma 3 270M, Wan 2.2 and Wan 2.1 models are available through Model Garden.</a></td>
+          </tr>
+          <tr>
+            <td class="col-date"><div class="date-cell"><span class="date-month">Aug</span><span class="date-day">13</span><span class="date-year">2025</span></div></td>
+            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="Vertex AI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 19h20L12 2z" fill="#4285f4"/><path d="M12 2l4 8.5H8L12 2z" fill="#669df6"/><circle cx="12" cy="15" r="2.5" fill="#fff"/></svg><span class="provider-label">GCP</span></span></div></td>
+            <td class="col-announcement"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_13_2025" class="entry-link">OpenAI&#x27;s gpt-oss-120b and gpt-oss-20b are available as Model as a Service (MaaS) models in Model Garden.</a></td>
+          </tr>
+          <tr>
+            <td class="col-date"><div class="date-cell"><span class="date-month">Aug</span><span class="date-day">6</span><span class="date-year">2025</span></div></td>
+            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="Vertex AI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 19h20L12 2z" fill="#4285f4"/><path d="M12 2l4 8.5H8L12 2z" fill="#669df6"/><circle cx="12" cy="15" r="2.5" fill="#fff"/></svg><span class="provider-label">GCP</span></span></div></td>
+            <td class="col-announcement"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_06_2025" class="entry-link">OpenAI&#x27;s gpt-oss models are available through Model Garden.</a></td>
+          </tr>
+          <tr>
+            <td class="col-date"><div class="date-cell"><span class="date-month">Jul</span><span class="date-day">1</span><span class="date-year">2025</span></div></td>
+            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="Vertex AI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 19h20L12 2z" fill="#4285f4"/><path d="M12 2l4 8.5H8L12 2z" fill="#669df6"/><circle cx="12" cy="15" r="2.5" fill="#fff"/></svg><span class="provider-label">GCP</span></span></div></td>
+            <td class="col-announcement"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#July_01_2025" class="entry-link">The global endpoint is generally available (GA) for Anthropic&#x27;s Claude Opus 4. For details, see Global endpoint.</a></td>
+          </tr>
+          <tr>
+            <td class="col-date"><div class="date-cell"><span class="date-month">Jun</span><span class="date-day">27</span><span class="date-year">2025</span></div></td>
+            <td class="col-providers"><div class="providers-cell"><span class="provider-badge" title="Vertex AI"><svg class="provider-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 19h20L12 2z" fill="#4285f4"/><path d="M12 2l4 8.5H8L12 2z" fill="#669df6"/><circle cx="12" cy="15" r="2.5" fill="#fff"/></svg><span class="provider-label">GCP</span></span></div></td>
+            <td class="col-announcement"><a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes#June_27_2025" class="entry-link">Gemma 3n models are available through Model Garden.</a></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+  <footer>Updated 2026-04-21 20:24 UTC &middot; Data sourced from provider RSS feeds</footer>
 </body>
 </html>

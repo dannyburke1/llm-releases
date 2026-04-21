@@ -4,7 +4,7 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across AWS Bedrock, Vertex AI, Azure OpenAI, and Anthropic</description>
-    <lastBuildDate>Tue, 21 Apr 2026 20:21:40 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Apr 2026 20:24:35 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Launched] Generally available: Anthropic Claude Opus 4.7 on Azure Databricks</title>
