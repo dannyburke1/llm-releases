@@ -101,6 +101,15 @@
     "regions": []
   },
   {
+    "id": "6859ba1d7365cc33",
+    "provider": "Google",
+    "title": "Meet your new AI browsing assistant: Gemini in Chrome",
+    "description": "We\u2019re introducing major updates to Gemini in Chrome to help you get the most out of the web. Built on Gemini 3, our most intelligent model, this update brings a new side panel experience that lets you multitask, access deeper Google apps integration, and quickly edit images with Nano Banana\u2014all without leaving your tab. We're also introducing a preview of auto browse to help you automate tasks while keeping you in control.This experience is available on Windows, MacOS, and Chromebook Plus in the",
+    "link": "https://gemini.google/release-notes/",
+    "date": "2026-01-28",
+    "regions": []
+  },
+  {
     "id": "08f06b68017de598",
     "provider": "OpenAI",
     "title": "Introducing GPT-5.2-Codex",

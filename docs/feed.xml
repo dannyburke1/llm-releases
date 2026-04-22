@@ -4,7 +4,7 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Tue, 21 Apr 2026 20:53:07 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Apr 2026 08:44:09 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>[Launched] Generally available: Anthropic Claude Opus 4.7 on Azure Databricks</title>
@@ -102,6 +102,14 @@ lower</description>
       <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
       <category>OpenAI</category>
       <guid isPermaLink="false">06042742e369d0fa</guid>
+    </item>
+    <item>
+      <title>Meet your new AI browsing assistant: Gemini in Chrome</title>
+      <link>https://gemini.google/release-notes/</link>
+      <description>We’re introducing major updates to Gemini in Chrome to help you get the most out of the web. Built on Gemini 3, our most intelligent model, this update brings a new side panel experience that lets you multitask, access deeper Google apps integration, and quickly edit images with Nano Banana—all without leaving your tab. We&#x27;re also introducing a preview of auto browse to help you automate tasks while keeping you in control.This experience is available on Windows, MacOS, and Chromebook Plus in the</description>
+      <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
+      <category>Google</category>
+      <guid isPermaLink="false">6859ba1d7365cc33</guid>
     </item>
     <item>
       <title>Introducing GPT-5.2-Codex</title>
