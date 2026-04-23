@@ -1,5 +1,19 @@
 [
   {
+    "id": "4bb36ec0bb75ff77",
+    "provider": "AWS Bedrock",
+    "title": "Amazon Bedrock AgentCore adds new features to help developers build agents faster",
+    "description": "Today, Amazon Bedrock AgentCore introduces new features to help developers go from an idea to working agent prototype faster and manage the full agent lifecycle from a single platform: a managed harness (in preview), the AgentCore CLI, and AgentCore skills for coding assistants. \nThe managed harness (preview) lets developers define an agent by specifying a model, system prompt, and tools, then run it immediately with no orchestration code required. The harness manages the full agent loop: reason",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/04/agentcore-new-features-to-build-agents-faster/",
+    "date": "2026-04-22",
+    "regions": [
+      "Asia Pacific (Sydney)",
+      "Europe (Frankfurt)",
+      "US East (N. Virginia)",
+      "US West (Oregon)"
+    ]
+  },
+  {
     "id": "8fa20c19f0261a38",
     "provider": "Azure OpenAI",
     "title": "[Launched] Generally available: Anthropic Claude Opus 4.7 on Azure Databricks",

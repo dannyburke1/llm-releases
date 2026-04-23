@@ -4,8 +4,17 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Wed, 22 Apr 2026 08:44:09 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Apr 2026 08:44:34 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Amazon Bedrock AgentCore adds new features to help developers build agents faster</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/04/agentcore-new-features-to-build-agents-faster/</link>
+      <description>Today, Amazon Bedrock AgentCore introduces new features to help developers go from an idea to working agent prototype faster and manage the full agent lifecycle from a single platform: a managed harness (in preview), the AgentCore CLI, and AgentCore skills for coding assistants. 
+The managed harness (preview) lets developers define an agent by specifying a model, system prompt, and tools, then run it immediately with no orchestration code required. The harness manages the full agent loop: reason</description>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">4bb36ec0bb75ff77</guid>
+    </item>
     <item>
       <title>[Launched] Generally available: Anthropic Claude Opus 4.7 on Azure Databricks</title>
       <link>https://azure.microsoft.com/updates?id=560590</link>
@@ -407,14 +416,6 @@ We are launching our newest flagship model and making more capabilities availabl
       <pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate>
       <category>OpenAI</category>
       <guid isPermaLink="false">861f9b17f7913bc6</guid>
-    </item>
-    <item>
-      <title>New GPT-3 capabilities: Edit &amp; insert</title>
-      <link>https://openai.com/index/gpt-3-edit-insert</link>
-      <description>We’ve released new versions of GPT-3 and Codex which can edit or insert content into existing text, rather than just completing existing text.</description>
-      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">0623dc9bc0004426</guid>
     </item>
   </channel>
 </rss>
