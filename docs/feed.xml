@@ -4,8 +4,16 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Thu, 23 Apr 2026 08:44:34 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Apr 2026 08:48:44 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Introducing GPT-5.5</title>
+      <link>https://openai.com/index/introducing-gpt-5-5</link>
+      <description>Introducing GPT-5.5, our smartest model yet—faster, more capable, and built for complex tasks like coding, research, and data analysis across tools.</description>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
+      <category>OpenAI</category>
+      <guid isPermaLink="false">447f4298d9dcf36f</guid>
+    </item>
     <item>
       <title>Amazon Bedrock AgentCore adds new features to help developers build agents faster</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/04/agentcore-new-features-to-build-agents-faster/</link>
@@ -408,14 +416,6 @@ We are launching our newest flagship model and making more capabilities availabl
       <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
       <category>OpenAI</category>
       <guid isPermaLink="false">e87c8290af8d9d03</guid>
-    </item>
-    <item>
-      <title>Introducing Whisper</title>
-      <link>https://openai.com/index/whisper</link>
-      <description></description>
-      <pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">861f9b17f7913bc6</guid>
     </item>
   </channel>
 </rss>

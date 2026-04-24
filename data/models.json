@@ -1,5 +1,14 @@
 [
   {
+    "id": "447f4298d9dcf36f",
+    "provider": "OpenAI",
+    "title": "Introducing GPT-5.5",
+    "description": "Introducing GPT-5.5, our smartest model yet\u2014faster, more capable, and built for complex tasks like coding, research, and data analysis across tools.",
+    "link": "https://openai.com/index/introducing-gpt-5-5",
+    "date": "2026-04-23",
+    "regions": []
+  },
+  {
     "id": "4bb36ec0bb75ff77",
     "provider": "AWS Bedrock",
     "title": "Amazon Bedrock AgentCore adds new features to help developers build agents faster",
