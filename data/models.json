@@ -1,5 +1,14 @@
 [
   {
+    "id": "42a78809811b5331",
+    "provider": "AWS Bedrock",
+    "title": "AWS Neuron SDK now available with Neuron Agentic Development for NKI kernel development on Trainium",
+    "description": "AWS Neuron announces the Neuron Agentic Development capabilities, an open-source collection of agents and skills that equip AI coding assistants to accelerate development on AWS Trainium and AWS Inferentia. The initial release provides agentic coding capabilities for Neuron Kernel Interface (NKI) kernel development, covering the workflow from authoring to profiling and performance analysis.  NKI gives developers direct, low-level programming access to Trainium for writing custom compute kernels ",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/04/announcing-neuron-agentic-development/",
+    "date": "2026-04-30",
+    "regions": []
+  },
+  {
     "id": "447f4298d9dcf36f",
     "provider": "OpenAI",
     "title": "Introducing GPT-5.5",

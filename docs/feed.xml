@@ -4,8 +4,16 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Thu, 30 Apr 2026 08:54:44 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2026 08:47:24 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>AWS Neuron SDK now available with Neuron Agentic Development for NKI kernel development on Trainium</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/04/announcing-neuron-agentic-development/</link>
+      <description>AWS Neuron announces the Neuron Agentic Development capabilities, an open-source collection of agents and skills that equip AI coding assistants to accelerate development on AWS Trainium and AWS Inferentia. The initial release provides agentic coding capabilities for Neuron Kernel Interface (NKI) kernel development, covering the workflow from authoring to profiling and performance analysis.  NKI gives developers direct, low-level programming access to Trainium for writing custom compute kernels </description>
+      <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">42a78809811b5331</guid>
+    </item>
     <item>
       <title>Introducing GPT-5.5</title>
       <link>https://openai.com/index/introducing-gpt-5-5</link>
@@ -407,15 +415,6 @@ lower</description>
       <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
       <category>OpenAI</category>
       <guid isPermaLink="false">9fbece631eec80f0</guid>
-    </item>
-    <item>
-      <title>Introducing GPT-4o and more tools to ChatGPT free users</title>
-      <link>https://openai.com/index/gpt-4o-and-more-tools-to-chatgpt-free</link>
-      <description>Introducing GPT-4o and more tools to ChatGPT free users
-We are launching our newest flagship model and making more capabilities available for free in ChatGPT.</description>
-      <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">e87c8290af8d9d03</guid>
     </item>
   </channel>
 </rss>
