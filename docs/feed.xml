@@ -4,7 +4,7 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Sat, 02 May 2026 08:38:05 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 May 2026 08:41:15 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>AWS Neuron SDK now available with Neuron Agentic Development for NKI kernel development on Trainium</title>
