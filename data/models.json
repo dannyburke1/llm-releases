@@ -1,5 +1,31 @@
 [
   {
+    "id": "16b3ae976f9acc90",
+    "provider": "AWS Bedrock",
+    "title": "Claude Platform on AWS is now generally available",
+    "description": "Today, AWS announced the general availability of Claude Platform on AWS, a new service that gives customers direct access to\u00a0Anthropic's\u00a0native Claude Platform experience through their existing AWS account.\u00a0AWS is the first cloud provider to offer access to the native Claude Platform experience. Developers and organizations now have the choice to access\u00a0Anthropic's\u00a0native\u00a0Claude\u00a0Platform experience, including APIs, console, and early-access beta features, directly through their existing AWS acco",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/claude-platform-aws/",
+    "date": "2026-05-11",
+    "regions": [
+      "Asia Pacific (Melbourne)",
+      "Asia Pacific (Seoul)",
+      "Asia Pacific (Sydney)",
+      "Asia Pacific (Tokyo)",
+      "Canada (Central)",
+      "Europe (Dublin)",
+      "Europe (Frankfurt)",
+      "Europe (London)",
+      "Europe (Milan)",
+      "Europe (Paris)",
+      "Europe (Stockholm)",
+      "Europe (Zurich)",
+      "South America (S\u00e3o Paulo)",
+      "US East (N. Virginia)",
+      "US East (Ohio)",
+      "US West (Oregon)"
+    ]
+  },
+  {
     "id": "42a78809811b5331",
     "provider": "AWS Bedrock",
     "title": "AWS Neuron SDK now available with Neuron Agentic Development for NKI kernel development on Trainium",

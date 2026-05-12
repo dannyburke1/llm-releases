@@ -4,8 +4,16 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Mon, 11 May 2026 09:20:29 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 May 2026 09:06:26 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Claude Platform on AWS is now generally available</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/05/claude-platform-aws/</link>
+      <description>Today, AWS announced the general availability of Claude Platform on AWS, a new service that gives customers direct access to Anthropic&#x27;s native Claude Platform experience through their existing AWS account. AWS is the first cloud provider to offer access to the native Claude Platform experience. Developers and organizations now have the choice to access Anthropic&#x27;s native Claude Platform experience, including APIs, console, and early-access beta features, directly through their existing AWS acco</description>
+      <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">16b3ae976f9acc90</guid>
+    </item>
     <item>
       <title>AWS Neuron SDK now available with Neuron Agentic Development for NKI kernel development on Trainium</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/04/announcing-neuron-agentic-development/</link>
@@ -407,14 +415,6 @@ lower</description>
       <pubDate>Tue, 14 May 2024 00:00:00 +0000</pubDate>
       <category>Google</category>
       <guid isPermaLink="false">bdebbbe3c31c8df2</guid>
-    </item>
-    <item>
-      <title>Hello GPT-4o</title>
-      <link>https://openai.com/index/hello-gpt-4o</link>
-      <description>We’re announcing GPT-4 Omni, our new flagship model which can reason across audio, vision, and text in real time.</description>
-      <pubDate>Mon, 13 May 2024 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">9fbece631eec80f0</guid>
     </item>
   </channel>
 </rss>
