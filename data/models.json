@@ -1,5 +1,14 @@
 [
   {
+    "id": "c59020b38c74faa2",
+    "provider": "AWS Bedrock",
+    "title": "Amazon Bedrock expands support for request-level usage attribution",
+    "description": "Amazon Bedrock customers can now attribute model inference usage to specific teams, applications, environments, and experiments at the individual request level on the InvokeModel and InvokeModelWithResponseStream APIs. This gives customers fine-grained visibility into how their Amazon Bedrock usage is distributed across their organization, helping them understand consumption patterns, optimize spend, and report usage back to internal stakeholders without provisioning additional resources.  This ",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/05/amazon-bedrock-request-level-usage-attribution/",
+    "date": "2026-05-20",
+    "regions": []
+  },
+  {
     "id": "16b3ae976f9acc90",
     "provider": "AWS Bedrock",
     "title": "Claude Platform on AWS is now generally available",

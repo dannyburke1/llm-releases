@@ -4,8 +4,16 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Thu, 21 May 2026 09:17:30 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2026 09:15:28 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Amazon Bedrock expands support for request-level usage attribution</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/05/amazon-bedrock-request-level-usage-attribution/</link>
+      <description>Amazon Bedrock customers can now attribute model inference usage to specific teams, applications, environments, and experiments at the individual request level on the InvokeModel and InvokeModelWithResponseStream APIs. This gives customers fine-grained visibility into how their Amazon Bedrock usage is distributed across their organization, helping them understand consumption patterns, optimize spend, and report usage back to internal stakeholders without provisioning additional resources.  This </description>
+      <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">c59020b38c74faa2</guid>
+    </item>
     <item>
       <title>Claude Platform on AWS is now generally available</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/05/claude-platform-aws/</link>
@@ -407,14 +415,6 @@ lower</description>
       <pubDate>Thu, 25 Jul 2024 00:00:00 +0000</pubDate>
       <category>Google</category>
       <guid isPermaLink="false">3b6f11e23efd3aa4</guid>
-    </item>
-    <item>
-      <title>Introducing Gemini 1.5 Pro to Gemini Advanced</title>
-      <link>https://gemini.google/release-notes/</link>
-      <description>Gemini Advanced gives you direct access to Google’s next-generation model, 1.5 Pro. With 1.5 Pro, Gemini Advanced can process significantly more information, running up to 1 million tokens – that&#x27;s 1500 pages. Gemini Advanced will also be available in 150+ countries and territories, as well as 35+ supported languages.Why: A longer context window lets you solve more complex problems than ever before, which can save you time and boost productivity when you explore and analyze information. We&#x27;re al</description>
-      <pubDate>Tue, 14 May 2024 00:00:00 +0000</pubDate>
-      <category>Google</category>
-      <guid isPermaLink="false">bdebbbe3c31c8df2</guid>
     </item>
   </channel>
 </rss>
