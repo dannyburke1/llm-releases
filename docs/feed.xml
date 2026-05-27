@@ -4,7 +4,7 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Tue, 26 May 2026 09:21:34 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2026 09:18:46 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Amazon Bedrock expands support for request-level usage attribution</title>
