@@ -4,8 +4,16 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Wed, 27 May 2026 09:18:46 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 May 2026 09:25:37 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Amazon Bedrock expands support for Service Quotas</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/5/amazon-bedrock-service-quotas/</link>
+      <description>Amazon Bedrock is a fully managed service that provides secure, enterprise-grade access to high-performing foundation models from leading AI companies, enabling you to build and scale generative AI applications. Amazon Bedrock customers can now view inference quotas for the bedrock-mantle endpoint through AWS Service Quotas. This gives customers a familiar, consistent way to track limits for this endpoint, the same way they already do for the bedrock-runtime endpoint and other AWS services, and </description>
+      <pubDate>Wed, 27 May 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">5cb92609c6823a77</guid>
+    </item>
     <item>
       <title>Amazon Bedrock expands support for request-level usage attribution</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/05/amazon-bedrock-request-level-usage-attribution/</link>
@@ -407,14 +415,6 @@ lower</description>
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
       <category>OpenAI</category>
       <guid isPermaLink="false">d50de4573fba012c</guid>
-    </item>
-    <item>
-      <title>Introducing Gemini 1.5 Flash to Gemini</title>
-      <link>https://gemini.google/release-notes/</link>
-      <description>Gemini now gives you access to 1.5 Flash, our model optimised for speed and efficiency. 1.5 Flash provides a 4x longer context window (from 8k tokens to 32k tokens) compared to 1.0 Pro and improved overall response quality and accuracy.Why: 1.5 Flash provides a longer context window and improved performance to unlock new ways to create, interact and collaborate with Gemini.A longer context window allows Gemini to process a larger amount of content for each prompt, helping you solve more complex </description>
-      <pubDate>Thu, 25 Jul 2024 00:00:00 +0000</pubDate>
-      <category>Google</category>
-      <guid isPermaLink="false">3b6f11e23efd3aa4</guid>
     </item>
   </channel>
 </rss>

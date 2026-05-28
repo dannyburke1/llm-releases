@@ -1,5 +1,20 @@
 [
   {
+    "id": "5cb92609c6823a77",
+    "provider": "AWS Bedrock",
+    "title": "Amazon Bedrock expands support for Service Quotas",
+    "description": "Amazon Bedrock is a fully managed service that provides secure, enterprise-grade access to high-performing foundation models from leading AI companies, enabling you to build and scale generative AI applications. Amazon Bedrock customers can now view inference quotas for the bedrock-mantle endpoint through AWS Service Quotas. This gives customers a familiar, consistent way to track limits for this endpoint, the same way they already do for the bedrock-runtime endpoint and other AWS services, and ",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/5/amazon-bedrock-service-quotas/",
+    "date": "2026-05-27",
+    "regions": [
+      "Asia Pacific (Mumbai, Tokyo, Sydney, Jakarta)",
+      "Europe (Frankfurt, Ireland, London, Milan, Stockholm)",
+      "South America (S\u00e3o Paulo)",
+      "US East (N. Virginia, Ohio)",
+      "US West (Oregon)"
+    ]
+  },
+  {
     "id": "c59020b38c74faa2",
     "provider": "AWS Bedrock",
     "title": "Amazon Bedrock expands support for request-level usage attribution",
