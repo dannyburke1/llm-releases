@@ -1,5 +1,29 @@
 [
   {
+    "id": "1910c2b6258c4437",
+    "provider": "AWS Bedrock",
+    "title": "Amazon Bedrock adds Amazon CloudWatch metrics for OpenAI- and Anthropic-compatible APIs",
+    "description": "Amazon Bedrock is a fully managed service that provides secure, enterprise-grade access to high-performing foundation models from leading AI companies, enabling you to build and scale generative AI applications. Amazon Bedrock customers can now monitor inference traffic to the bedrock-mantle endpoint with Amazon CloudWatch metrics, the same way they already do for the bedrock-runtime endpoint and other AWS services. The bedrock-mantle endpoint supports the OpenAI Responses API, OpenAI Chat Compl",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-supports-cloudwatch-metrics-bedrock-mantle-endpoint/",
+    "date": "2026-06-01",
+    "regions": [
+      "Asia Pacific (Jakarta, Mumbai, Sydney, Tokyo)",
+      "Europe (Frankfurt, Ireland, London, Milan, Stockholm)",
+      "South America (S\u00e3o Paulo)",
+      "US East (N. Virginia, Ohio)",
+      "US West (Oregon)"
+    ]
+  },
+  {
+    "id": "e2d121493c55da66",
+    "provider": "AWS Bedrock",
+    "title": "GPT-5.5, GPT-5.4, and Codex from OpenAI are now generally available on Amazon Bedrock",
+    "description": "You can now use GPT-5.5 and GPT-5.4 in production workloads on Amazon Bedrock and build with Codex for AI-powered software development, with the same security, governance, and operational controls you already use across AWS. \nGPT-5.5 is the most capable model from OpenAI, excelling at agentic coding, data analysis, and multi-step autonomous tasks. It runs on the Bedrock next-generation inference engine, built for high performance, reliability, and security. Codex is available through the Codex A",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-openai-models-codex-generally-available/",
+    "date": "2026-06-01",
+    "regions": []
+  },
+  {
     "id": "3e7db2cb40be9390",
     "provider": "AWS Bedrock",
     "title": "Claude Opus 4.8 is now available on AWS",

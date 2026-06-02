@@ -4,8 +4,25 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Mon, 01 Jun 2026 09:58:52 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jun 2026 09:36:22 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Amazon Bedrock adds Amazon CloudWatch metrics for OpenAI- and Anthropic-compatible APIs</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-supports-cloudwatch-metrics-bedrock-mantle-endpoint/</link>
+      <description>Amazon Bedrock is a fully managed service that provides secure, enterprise-grade access to high-performing foundation models from leading AI companies, enabling you to build and scale generative AI applications. Amazon Bedrock customers can now monitor inference traffic to the bedrock-mantle endpoint with Amazon CloudWatch metrics, the same way they already do for the bedrock-runtime endpoint and other AWS services. The bedrock-mantle endpoint supports the OpenAI Responses API, OpenAI Chat Compl</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">1910c2b6258c4437</guid>
+    </item>
+    <item>
+      <title>GPT-5.5, GPT-5.4, and Codex from OpenAI are now generally available on Amazon Bedrock</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-openai-models-codex-generally-available/</link>
+      <description>You can now use GPT-5.5 and GPT-5.4 in production workloads on Amazon Bedrock and build with Codex for AI-powered software development, with the same security, governance, and operational controls you already use across AWS. 
+GPT-5.5 is the most capable model from OpenAI, excelling at agentic coding, data analysis, and multi-step autonomous tasks. It runs on the Bedrock next-generation inference engine, built for high performance, reliability, and security. Codex is available through the Codex A</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">e2d121493c55da66</guid>
+    </item>
     <item>
       <title>Claude Opus 4.8 is now available on AWS</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/05/claude-opus-4.8-aws/</link>
@@ -400,22 +417,6 @@ lower</description>
       <pubDate>Wed, 11 Dec 2024 00:00:00 +0000</pubDate>
       <category>Google</category>
       <guid isPermaLink="false">b11ff0bbd9c8b418</guid>
-    </item>
-    <item>
-      <title>Sora is here</title>
-      <link>https://openai.com/index/sora-is-here</link>
-      <description>Our video generation model, Sora, is now available to use at sora.com. Users can generate videos up to 1080p resolution, up to 20 sec long, and in widescreen, vertical or square aspect ratios. You can bring your own assets to extend, remix, and blend, or generate entirely new content from text.</description>
-      <pubDate>Mon, 09 Dec 2024 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">d9e3bf985ad08a83</guid>
-    </item>
-    <item>
-      <title>Introducing Imagen 3</title>
-      <link>https://gemini.google/release-notes/</link>
-      <description>Create stunning images in Gemini with Imagen 3, our highest quality text-to-image model yet. Simply describe what you imagine, and watch as your ideas transform into visuals, bursting with vivid details and realism, in seconds.And starting in English, Gemini Advanced subscribers unlock the added capability of generating images featuring people, empowering even more variety in your creations.Why: Your imagination is limitless, and we want to place the power of creativity in your hands. We&#x27;re also</description>
-      <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
-      <category>Google</category>
-      <guid isPermaLink="false">75c4303e1ec85cb3</guid>
     </item>
   </channel>
 </rss>
