@@ -4,8 +4,17 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Wed, 03 Jun 2026 09:46:13 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Jun 2026 09:27:42 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>OpenAI GPT-5.4 generally available on Amazon Bedrock in AWS GovCloud (US-West)</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/06/GPT54-available-in-aws-govcloud-us-west/</link>
+      <description>Amazon Bedrock now supports GPT‑5.4 from OpenAI in AWS GovCloud (US-West) — giving government and regulated industry customers access to OpenAI&#x27;s most capable frontier model for professional work, backed by the enterprise-grade security and goverment compliance scope of AWS GovCloud (US).  
+GPT‑5.4 supports native computer-use capabilities, and deep reasoning across coding, documents, and multi-step agentic tasks — all running on Bedrock&#x27;s high-performance inference engine with isolated queues a</description>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">4df4cc22994d3f9d</guid>
+    </item>
     <item>
       <title>Amazon Bedrock adds Amazon CloudWatch metrics for OpenAI- and Anthropic-compatible APIs</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-supports-cloudwatch-metrics-bedrock-mantle-endpoint/</link>
@@ -409,14 +418,6 @@ lower</description>
       <pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate>
       <category>Google</category>
       <guid isPermaLink="false">c80c24bc50cb3377</guid>
-    </item>
-    <item>
-      <title>Introducing Gemini 2.0 Flash as an experimental model in Gemini</title>
-      <link>https://gemini.google/release-notes/</link>
-      <description>Gemini users now have access to our latest experimental model, a chat-optimised version of 2.0 Flash Experimental with improvements on a number of key academic benchmarks and speed. This experimental model is meant to be an early preview. It can behave in unexpected ways and may make mistakes. Additionally, some Gemini features won&#x27;t be compatible with this model in its experimental state.You can access this experimental model in the Gemini model drop-down.Why: We believe in rapid iteration and </description>
-      <pubDate>Wed, 11 Dec 2024 00:00:00 +0000</pubDate>
-      <category>Google</category>
-      <guid isPermaLink="false">b11ff0bbd9c8b418</guid>
     </item>
   </channel>
 </rss>

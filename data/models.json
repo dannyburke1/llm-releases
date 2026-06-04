@@ -1,5 +1,14 @@
 [
   {
+    "id": "4df4cc22994d3f9d",
+    "provider": "AWS Bedrock",
+    "title": "OpenAI GPT-5.4 generally available on Amazon Bedrock in AWS GovCloud (US-West)",
+    "description": "Amazon Bedrock now supports GPT\u20115.4 from OpenAI in AWS GovCloud (US-West) \u2014 giving government and regulated industry customers access to OpenAI's most capable frontier model for professional work, backed by the enterprise-grade security and goverment compliance scope of AWS GovCloud (US).\u00a0 \nGPT\u20115.4 supports native computer-use capabilities, and deep reasoning across coding, documents, and multi-step agentic tasks \u2014 all running on Bedrock's high-performance inference engine with isolated queues a",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/GPT54-available-in-aws-govcloud-us-west/",
+    "date": "2026-06-03",
+    "regions": []
+  },
+  {
     "id": "1910c2b6258c4437",
     "provider": "AWS Bedrock",
     "title": "Amazon Bedrock adds Amazon CloudWatch metrics for OpenAI- and Anthropic-compatible APIs",
