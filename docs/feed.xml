@@ -4,8 +4,16 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Thu, 04 Jun 2026 09:27:42 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 05 Jun 2026 09:18:04 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Amazon Bedrock launches a redesigned console optimized for OpenAI- and Anthropic-compatible APIs</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-redesigned-console-optimized-openai-anthropic-compatible-apis/</link>
+      <description>Amazon Bedrock is a fully managed service that provides secure, enterprise-grade access to high-performing foundation models from leading AI companies, enabling you to build and scale generative AI applications. Today, Amazon Bedrock introduces a console experience designed for how customers actually build with foundation models: experiment, iterate, and scale. This is the same Amazon Bedrock service customers already use, with a refreshed workflow optimized for the bedrock-mantle endpoint, whic</description>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">9292700f04e64fb3</guid>
+    </item>
     <item>
       <title>OpenAI GPT-5.4 generally available on Amazon Bedrock in AWS GovCloud (US-West)</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/06/GPT54-available-in-aws-govcloud-us-west/</link>
@@ -410,14 +418,6 @@ lower</description>
       <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
       <category>OpenAI</category>
       <guid isPermaLink="false">31ae7d0a719b3d0a</guid>
-    </item>
-    <item>
-      <title>Introducing Gemini 2.0 Flash to Gemini</title>
-      <link>https://gemini.google/release-notes/</link>
-      <description>Gemini is now powered by 2.0 Flash, our latest model that is designed for the agentic era, delivering fast responses and stronger performance across a number of key benchmarks for everyday help with tasks like brainstorming, learning or writing.In addition to 2.0 Flash, Gemini Advanced users will continue to have access to a 1M token context window for up to 1,500 pages of file uploads, priority access to features such as Deep Research and Gems, 2 TB of storage and more.Gemini 1.5 Flash and 1.5 </description>
-      <pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate>
-      <category>Google</category>
-      <guid isPermaLink="false">c80c24bc50cb3377</guid>
     </item>
   </channel>
 </rss>

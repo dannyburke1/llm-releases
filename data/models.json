@@ -1,5 +1,20 @@
 [
   {
+    "id": "9292700f04e64fb3",
+    "provider": "AWS Bedrock",
+    "title": "Amazon Bedrock launches a redesigned console optimized for OpenAI- and Anthropic-compatible APIs",
+    "description": "Amazon Bedrock is a fully managed service that provides secure, enterprise-grade access to high-performing foundation models from leading AI companies, enabling you to build and scale generative AI applications. Today, Amazon Bedrock introduces a console experience designed for how customers actually build with foundation models: experiment, iterate, and scale. This is the same Amazon Bedrock service customers already use, with a refreshed workflow optimized for the bedrock-mantle endpoint, whic",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-redesigned-console-optimized-openai-anthropic-compatible-apis/",
+    "date": "2026-06-04",
+    "regions": [
+      "Asia Pacific (Jakarta, Mumbai, Sydney, Tokyo)",
+      "Europe (Frankfurt, Ireland, London, Milan, Stockholm)",
+      "South America (S\u00e3o Paulo)",
+      "US East (N. Virginia, Ohio)",
+      "US West (Oregon)"
+    ]
+  },
+  {
     "id": "4df4cc22994d3f9d",
     "provider": "AWS Bedrock",
     "title": "OpenAI GPT-5.4 generally available on Amazon Bedrock in AWS GovCloud (US-West)",
