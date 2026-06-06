@@ -1,5 +1,14 @@
 [
   {
+    "id": "71d19c11bf7ceb19",
+    "provider": "AWS Bedrock",
+    "title": "Amazon Bedrock AgentCore Runtime introduces interactive shells for terminal access into agent sessions",
+    "description": "Amazon Bedrock AgentCore Runtime now supports interactive shells through a new InvokeAgentRuntimeCommandShell API, opening a persistent, PTY-backed terminal directly into a running agent session over WebSocket. This complements the existing InvokeAgentRuntimeCommand API for one-shot execution, giving developers a full terminal experience inside an isolated microVM with colors, tab completion, Ctrl+C, terminal resize, and automatic reconnect on network drop.  This is particularly important for de",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-agentcore-runtime/",
+    "date": "2026-06-05",
+    "regions": []
+  },
+  {
     "id": "9292700f04e64fb3",
     "provider": "AWS Bedrock",
     "title": "Amazon Bedrock launches a redesigned console optimized for OpenAI- and Anthropic-compatible APIs",

@@ -4,8 +4,16 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Fri, 05 Jun 2026 09:18:04 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jun 2026 09:00:12 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Amazon Bedrock AgentCore Runtime introduces interactive shells for terminal access into agent sessions</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-agentcore-runtime/</link>
+      <description>Amazon Bedrock AgentCore Runtime now supports interactive shells through a new InvokeAgentRuntimeCommandShell API, opening a persistent, PTY-backed terminal directly into a running agent session over WebSocket. This complements the existing InvokeAgentRuntimeCommand API for one-shot execution, giving developers a full terminal experience inside an isolated microVM with colors, tab completion, Ctrl+C, terminal resize, and automatic reconnect on network drop.  This is particularly important for de</description>
+      <pubDate>Fri, 05 Jun 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">71d19c11bf7ceb19</guid>
+    </item>
     <item>
       <title>Amazon Bedrock launches a redesigned console optimized for OpenAI- and Anthropic-compatible APIs</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-redesigned-console-optimized-openai-anthropic-compatible-apis/</link>
@@ -410,14 +418,6 @@ lower</description>
       <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
       <category>Google</category>
       <guid isPermaLink="false">0cfb993a3481c687</guid>
-    </item>
-    <item>
-      <title>Introducing GPT-4.5</title>
-      <link>https://openai.com/index/introducing-gpt-4-5</link>
-      <description>We’re releasing a research preview of GPT‑4.5—our largest and best model for chat yet. GPT‑4.5 is a step forward in scaling up pre-training and post-training.</description>
-      <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">31ae7d0a719b3d0a</guid>
     </item>
   </channel>
 </rss>
