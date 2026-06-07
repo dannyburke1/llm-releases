@@ -4,7 +4,7 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Sat, 06 Jun 2026 09:00:12 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 07 Jun 2026 09:10:26 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Amazon Bedrock AgentCore Runtime introduces interactive shells for terminal access into agent sessions</title>
