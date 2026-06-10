@@ -1,5 +1,14 @@
 [
   {
+    "id": "135616b294cd578b",
+    "provider": "AWS Bedrock",
+    "title": "AWS announces Claude Fable 5, the first generally available Mythos-class model",
+    "description": "Claude Fable 5 is generally available on AWS and makes Mythos-level capabilities available to all customers, with strong safeguards designed to make it safe for broader use. Fable 5 is state-of-the-art on nearly all tested benchmarks and delivers a step-change in autonomous knowledge work and coding for developers and enterprises building production AI applications. Claude Mythos 5, the same model without those safety classifiers, is available to a small group of customers who currently have acc",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/claude-fable-5-aws/",
+    "date": "2026-06-09",
+    "regions": []
+  },
+  {
     "id": "71d19c11bf7ceb19",
     "provider": "AWS Bedrock",
     "title": "Amazon Bedrock AgentCore Runtime introduces interactive shells for terminal access into agent sessions",

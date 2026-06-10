@@ -4,8 +4,16 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Tue, 09 Jun 2026 09:17:54 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jun 2026 09:23:52 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>AWS announces Claude Fable 5, the first generally available Mythos-class model</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/06/claude-fable-5-aws/</link>
+      <description>Claude Fable 5 is generally available on AWS and makes Mythos-level capabilities available to all customers, with strong safeguards designed to make it safe for broader use. Fable 5 is state-of-the-art on nearly all tested benchmarks and delivers a step-change in autonomous knowledge work and coding for developers and enterprises building production AI applications. Claude Mythos 5, the same model without those safety classifiers, is available to a small group of customers who currently have acc</description>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">135616b294cd578b</guid>
+    </item>
     <item>
       <title>Amazon Bedrock AgentCore Runtime introduces interactive shells for terminal access into agent sessions</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-agentcore-runtime/</link>
@@ -410,14 +418,6 @@ lower</description>
       <pubDate>Tue, 25 Mar 2025 00:00:00 +0000</pubDate>
       <category>Google</category>
       <guid isPermaLink="false">b4d9b72437b9d638</guid>
-    </item>
-    <item>
-      <title>Update to Gemini 2.0 Flash Thinking (experimental) in Gemini</title>
-      <link>https://gemini.google/release-notes/</link>
-      <description>Starting today, an improved version of Gemini 2.0 Flash Thinking (experimental) will become available to Gemini app users. Built on the foundation of 2.0 Flash, this model delivers improved performance and better advanced reasoning capabilities with efficiency and speed.Starting in English, 2.0 Flash Thinking (experimental) now works with your favourite Gemini features and connected apps such as YouTube, Maps, Search and more. Gemini Advanced users will also have access to a 1M token context win</description>
-      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
-      <category>Google</category>
-      <guid isPermaLink="false">0cfb993a3481c687</guid>
     </item>
   </channel>
 </rss>
