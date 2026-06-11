@@ -4,8 +4,16 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Wed, 10 Jun 2026 09:23:52 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 09:39:00 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Amazon OpenSearch Service launches MCP Apps for agentic observability</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/06/opensearch-agentic-observability-mcp-app</link>
+      <description>Amazon OpenSearch Service now supports MCP Apps, bringing observability workflows directly into compatible agentic IDEs such as Claude Desktop and VS Code. With this capability, your AI agent in local environment can investigate incidents using logs, traces, metrics, and alerts stored in OpenSearch domains, collections and Amazon Managed Service for Prometheus. You can easily review and verify the results in interactive MCP App visualizations without leaving your local environment.  Each MCP App</description>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">3790fe9ea0a2f3b4</guid>
+    </item>
     <item>
       <title>AWS announces Claude Fable 5, the first generally available Mythos-class model</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/06/claude-fable-5-aws/</link>
@@ -410,14 +418,6 @@ lower</description>
       <pubDate>Mon, 14 Apr 2025 00:00:00 +0000</pubDate>
       <category>OpenAI</category>
       <guid isPermaLink="false">96216474dc10ca92</guid>
-    </item>
-    <item>
-      <title>Priority access with Gemini Advanced: Try our latest 2.5 Pro (experimental) model</title>
-      <link>https://gemini.google/release-notes/</link>
-      <description>Today, we&#x27;re introducing Gemini 2.5, our most intelligent AI model. Our first 2.5 release is a chat-optimised version of Gemini-2.5-Pro-Exp-03-25, which is state of the art on a wide range of benchmarks and debuts at #1 on LMArena by a significant margin. This model also has thinking capabilities natively built in, with improved performance in complex tasks like coding, maths and image understanding.2.5 Pro (experimental) is now rolling out to the Gemini web and mobile app and is available to qu</description>
-      <pubDate>Tue, 25 Mar 2025 00:00:00 +0000</pubDate>
-      <category>Google</category>
-      <guid isPermaLink="false">b4d9b72437b9d638</guid>
     </item>
   </channel>
 </rss>
