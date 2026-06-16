@@ -4,8 +4,16 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Mon, 15 Jun 2026 10:15:42 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2026 09:54:06 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>AWS DevOps Agent expands with custom SRE agents and MCP/A2A protocols</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/06/aws-devops-agent-custom-agents/</link>
+      <description>AWS DevOps Agent now supports custom SRE agents, bring-your-own sub-agents, and headless access via MCP and A2A protocols. These capabilities enable teams to automate recurring SRE workflows, extend DevOps Agent by connecting it to other agents, and access its capabilities from the tools they already use, including Kiro, Claude, and other coding assistants.  With custom SRE agents, teams can create and schedule agents within Agent Spaces that run on a cadence. For example, create a daily databas</description>
+      <pubDate>Mon, 15 Jun 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">be8919c80968b4b4</guid>
+    </item>
     <item>
       <title>Amazon OpenSearch Service launches MCP Apps for agentic observability</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/06/opensearch-agentic-observability-mcp-app</link>
@@ -410,14 +418,6 @@ lower</description>
       <pubDate>Wed, 16 Apr 2025 00:00:00 +0000</pubDate>
       <category>OpenAI</category>
       <guid isPermaLink="false">7926ee1da166fd54</guid>
-    </item>
-    <item>
-      <title>Introducing GPT-4.1 in the API</title>
-      <link>https://openai.com/index/gpt-4-1</link>
-      <description>Introducing GPT-4.1 in the API—a new family of models with across-the-board improvements, including major gains in coding, instruction following, and long-context understanding. We’re also releasing our first nano model. Available to developers worldwide starting today.</description>
-      <pubDate>Mon, 14 Apr 2025 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">96216474dc10ca92</guid>
     </item>
   </channel>
 </rss>

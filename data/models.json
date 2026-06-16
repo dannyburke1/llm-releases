@@ -1,5 +1,14 @@
 [
   {
+    "id": "be8919c80968b4b4",
+    "provider": "AWS Bedrock",
+    "title": "AWS DevOps Agent expands with custom SRE agents and MCP/A2A protocols",
+    "description": "AWS DevOps Agent now supports custom SRE agents, bring-your-own sub-agents, and headless access via MCP and A2A protocols. These capabilities enable teams to automate recurring SRE workflows, extend DevOps Agent by connecting it to other agents, and access its capabilities from the tools they already use, including Kiro, Claude, and other coding assistants.  With custom SRE agents, teams can create and schedule agents within Agent Spaces that run on a cadence. For example, create a daily databas",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/aws-devops-agent-custom-agents/",
+    "date": "2026-06-15",
+    "regions": []
+  },
+  {
     "id": "3790fe9ea0a2f3b4",
     "provider": "AWS Bedrock",
     "title": "Amazon OpenSearch Service launches MCP Apps for agentic observability",
