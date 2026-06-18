@@ -4,8 +4,16 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Wed, 17 Jun 2026 09:46:01 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jun 2026 09:38:50 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>AgentCore harness in now generally available</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-agentcore-harness-generally-available</link>
+      <description>Today, AWS announces the general availability of the managed agent harness in Amazon Bedrock AgentCore, taking teams from idea to working agents in minutes. An agent is more than a model. If the model is the brain, the harness is the body: everything the brain needs to get work done. It runs the orchestration loop, executes tools, manages the context window, persists state across turns, recovers from failures, and isolates each session. The harness shapes how well an agent performs as much as th</description>
+      <pubDate>Wed, 17 Jun 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">2a18c0b644eaccf4</guid>
+    </item>
     <item>
       <title>AWS DevOps Agent expands with custom SRE agents and MCP/A2A protocols</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/06/aws-devops-agent-custom-agents/</link>
@@ -410,14 +418,6 @@ lower</description>
       <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
       <category>Google</category>
       <guid isPermaLink="false">d64a661dd7c93e5a</guid>
-    </item>
-    <item>
-      <title>Introducing OpenAI o3 and o4-mini</title>
-      <link>https://openai.com/index/introducing-o3-and-o4-mini</link>
-      <description>Our smartest and most capable models to date with full tool access</description>
-      <pubDate>Wed, 16 Apr 2025 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">7926ee1da166fd54</guid>
     </item>
   </channel>
 </rss>

@@ -1,5 +1,14 @@
 [
   {
+    "id": "2a18c0b644eaccf4",
+    "provider": "AWS Bedrock",
+    "title": "AgentCore harness in now generally available",
+    "description": "Today, AWS announces the general availability of the managed agent harness in Amazon Bedrock AgentCore, taking teams from idea to working agents in minutes. An agent is more than a model. If the model is the brain, the harness is the body: everything the brain needs to get work done. It runs the orchestration loop, executes tools, manages the context window, persists state across turns, recovers from failures, and isolates each session. The harness shapes how well an agent performs as much as th",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-agentcore-harness-generally-available",
+    "date": "2026-06-17",
+    "regions": []
+  },
+  {
     "id": "be8919c80968b4b4",
     "provider": "AWS Bedrock",
     "title": "AWS DevOps Agent expands with custom SRE agents and MCP/A2A protocols",
