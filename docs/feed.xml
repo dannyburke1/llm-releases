@@ -4,7 +4,7 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Thu, 18 Jun 2026 09:38:50 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jun 2026 09:41:53 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>AgentCore harness in now generally available</title>
@@ -13,6 +13,14 @@
       <pubDate>Wed, 17 Jun 2026 00:00:00 +0000</pubDate>
       <category>AWS Bedrock</category>
       <guid isPermaLink="false">2a18c0b644eaccf4</guid>
+    </item>
+    <item>
+      <title>AgentCore harness is now generally available</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-agentcore-harness-generally-available</link>
+      <description>Today, AWS announces the general availability of the managed agent harness in Amazon Bedrock AgentCore, taking teams from idea to working agents in minutes. An agent is more than a model. If the model is the brain, the harness is the body: everything the brain needs to get work done. It runs the orchestration loop, executes tools, manages the context window, persists state across turns, recovers from failures, and isolates each session. The harness shapes how well an agent performs as much as th</description>
+      <pubDate>Wed, 17 Jun 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">5296b2d537c7bc06</guid>
     </item>
     <item>
       <title>AWS DevOps Agent expands with custom SRE agents and MCP/A2A protocols</title>
@@ -410,14 +418,6 @@ lower</description>
       <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
       <category>Google</category>
       <guid isPermaLink="false">688940996cbc1a89</guid>
-    </item>
-    <item>
-      <title>Update to 2.0 Flash in Gemini</title>
-      <link>https://gemini.google/release-notes/</link>
-      <description>An enhanced version of Gemini 2.0 Flash is now available to Gemini app users. This update enables a more natural, collaborative and adaptive conversational style, providing users with more fluid and engaging interactions that feel in tune with specific topics and tasks.Try chatting about your interests, working through a problem at school, work or home, or asking for a new, more creative perspective to feel the difference.Why: We&#x27;re committed to making Gemini a more insightful, collaborative par</description>
-      <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
-      <category>Google</category>
-      <guid isPermaLink="false">d64a661dd7c93e5a</guid>
     </item>
   </channel>
 </rss>
