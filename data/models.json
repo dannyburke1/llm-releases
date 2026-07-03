@@ -1,5 +1,14 @@
 [
   {
+    "id": "d7997256db8629ae",
+    "provider": "Azure OpenAI",
+    "title": "[Launched] Generally available: Anthropic Claude Sonnet 5 on Azure Databricks",
+    "description": "Azure Databricks now supports Anthropic Claude Sonnet 5 through Azure Databricks AI Model Serving. Claude Sonnet 5 is Anthropic's most agentic Sonnet model to date, delivering near-Opus-level intelligence with Sonnet's cost efficiency and speed. Designed",
+    "link": "https://azure.microsoft.com/updates?id=567194",
+    "date": "2026-07-02",
+    "regions": []
+  },
+  {
     "id": "031d4382f01a71d2",
     "provider": "AWS Bedrock",
     "title": "Claude Sonnet 5 is now available on AWS",

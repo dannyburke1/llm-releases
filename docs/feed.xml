@@ -4,8 +4,16 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Thu, 02 Jul 2026 09:11:09 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2026 09:10:06 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Launched] Generally available: Anthropic Claude Sonnet 5 on Azure Databricks</title>
+      <link>https://azure.microsoft.com/updates?id=567194</link>
+      <description>Azure Databricks now supports Anthropic Claude Sonnet 5 through Azure Databricks AI Model Serving. Claude Sonnet 5 is Anthropic&#x27;s most agentic Sonnet model to date, delivering near-Opus-level intelligence with Sonnet&#x27;s cost efficiency and speed. Designed</description>
+      <pubDate>Thu, 02 Jul 2026 00:00:00 +0000</pubDate>
+      <category>Azure OpenAI</category>
+      <guid isPermaLink="false">d7997256db8629ae</guid>
+    </item>
     <item>
       <title>Claude Sonnet 5 is now available on AWS</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/06/claude-sonnet-5-now-available-on-aws</link>
@@ -412,14 +420,6 @@ lower</description>
       <pubDate>Tue, 05 Aug 2025 00:00:00 +0000</pubDate>
       <category>OpenAI</category>
       <guid isPermaLink="false">0fc398da5d412e3a</guid>
-    </item>
-    <item>
-      <title>The global endpoint is generally available (GA) for Anthropic&#x27;s Claude Opus 4. For details, see Global endpoint.</title>
-      <link>https://docs.cloud.google.com/vertex-ai/docs/release-notes#July_01_2025</link>
-      <description>The global endpoint is generally available (GA) for Anthropic&#x27;s Claude Opus 4. For details, see Global endpoint.</description>
-      <pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
-      <category>Vertex AI</category>
-      <guid isPermaLink="false">c47c0bde17ad2fb3</guid>
     </item>
   </channel>
 </rss>
