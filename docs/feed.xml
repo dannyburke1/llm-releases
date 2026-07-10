@@ -4,8 +4,25 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Thu, 09 Jul 2026 09:12:49 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jul 2026 09:12:44 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>[Launched] Generally Available: Open AI GPT-5.6 on Azure Databricks</title>
+      <link>https://azure.microsoft.com/updates?id=567431</link>
+      <description>Open AI GPT-5.6 is now available on Azure Databricks. You can use GPT 5.6 (purchased on Microsoft Foundry) via Model Serving Endpoint in Azure Databricks. Through integrations across Foundry and Azure Databricks, you can securely build, deploy, and manage</description>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
+      <category>Azure OpenAI</category>
+      <guid isPermaLink="false">c8df5a1ec5a6763c</guid>
+    </item>
+    <item>
+      <title>AWS Neuron 2.31.0 now available with NKI 0.5.0 and UltraServer Operator</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/07/aws-announce-neuron-2-31-0</link>
+      <description>AWS Neuron 2.31.0 is now available, introducing NKI 0.5.0 with new MX FP8 scale dtype support, tensor indirection on compute operations for fewer instructions in indexed access patterns, and new NkiTensor view APIs for zero-cost tensor layout transformations. This release also introduces the Neuron UltraServer Operator for Amazon EKS in public beta, automating UltraServer discovery, workload allocation, and resource claim generation for Trainium UltraServer workloads on Amazon EKS. 
+The Neuron C</description>
+      <pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">e5d940996f131385</guid>
+    </item>
     <item>
       <title>[Launched] Generally available: Anthropic Claude Sonnet 5 on Azure Databricks</title>
       <link>https://azure.microsoft.com/updates?id=567194</link>
@@ -404,22 +421,6 @@ lower</description>
       <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
       <category>OpenAI</category>
       <guid isPermaLink="false">942330e643c501b3</guid>
-    </item>
-    <item>
-      <title>OpenAI&#x27;s gpt-oss models are available through Model Garden.</title>
-      <link>https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_06_2025</link>
-      <description>OpenAI&#x27;s gpt-oss models are available through Model Garden.</description>
-      <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
-      <category>Vertex AI</category>
-      <guid isPermaLink="false">1761b8b21b57b929</guid>
-    </item>
-    <item>
-      <title>Introducing gpt-oss</title>
-      <link>https://openai.com/index/introducing-gpt-oss</link>
-      <description>We’re releasing gpt-oss-120b and gpt-oss-20b—two state-of-the-art open-weight language models that deliver strong real-world performance at low cost. Available under the flexible Apache 2.0 license, these models outperform similarly sized open models on reasoning tasks, demonstrate strong tool use capabilities, and are optimized for efficient deployment on consumer hardware.</description>
-      <pubDate>Tue, 05 Aug 2025 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">0fc398da5d412e3a</guid>
     </item>
   </channel>
 </rss>

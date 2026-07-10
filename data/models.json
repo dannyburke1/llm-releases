@@ -1,5 +1,23 @@
 [
   {
+    "id": "c8df5a1ec5a6763c",
+    "provider": "Azure OpenAI",
+    "title": "[Launched] Generally Available: Open AI GPT-5.6 on Azure Databricks",
+    "description": "Open AI GPT-5.6 is now available on Azure Databricks. You can use GPT 5.6 (purchased on Microsoft Foundry) via Model Serving Endpoint in Azure Databricks. Through integrations across Foundry and Azure Databricks, you can securely build, deploy, and manage",
+    "link": "https://azure.microsoft.com/updates?id=567431",
+    "date": "2026-07-09",
+    "regions": []
+  },
+  {
+    "id": "e5d940996f131385",
+    "provider": "AWS Bedrock",
+    "title": "AWS Neuron 2.31.0 now available with NKI 0.5.0 and UltraServer Operator",
+    "description": "AWS Neuron 2.31.0 is now available, introducing NKI 0.5.0 with new MX FP8 scale dtype support, tensor indirection on compute operations for fewer instructions in indexed access patterns, and new NkiTensor view APIs for zero-cost tensor layout transformations. This release also introduces the Neuron UltraServer Operator for Amazon EKS in public beta, automating UltraServer discovery, workload allocation, and resource claim generation for Trainium UltraServer workloads on Amazon EKS. \nThe Neuron C",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-announce-neuron-2-31-0",
+    "date": "2026-07-08",
+    "regions": []
+  },
+  {
     "id": "d7997256db8629ae",
     "provider": "Azure OpenAI",
     "title": "[Launched] Generally available: Anthropic Claude Sonnet 5 on Azure Databricks",
