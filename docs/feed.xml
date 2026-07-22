@@ -4,8 +4,22 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Tue, 21 Jul 2026 08:59:29 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 08:58:06 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>3.6 Flash: An upgraded model for your daily life</title>
+      <link>https://gemini.google/release-notes/</link>
+      <description>We’re introducing Gemini 3.6 Flash, an upgraded version of our Flash model, to help you tackle everyday tasks. Try using it for quick tasks like analyzing several documents or multi-step projects like building a working prototype with the Canvas tool.
+We&#x27;re excited to bring this model to all Gemini app users globally. To access, select &quot;3.6 Flash&quot; in the model drop down.
+
+
+
+
+Why: We want to make Gemini the most helpful AI assistant for everyone. With Gemini 3.6 Flash, you can now tackle your eve</description>
+      <pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
+      <category>Google</category>
+      <guid isPermaLink="false">e8d859db79d00c46</guid>
+    </item>
     <item>
       <title>[Launched] Generally Available: Open AI GPT-5.6 on Azure Databricks</title>
       <link>https://azure.microsoft.com/updates?id=567431</link>
@@ -413,14 +427,6 @@ lower</description>
       <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
       <category>OpenAI</category>
       <guid isPermaLink="false">e62038973cde01d3</guid>
-    </item>
-    <item>
-      <title>Introducing GPT-5</title>
-      <link>https://openai.com/index/introducing-gpt-5</link>
-      <description>We are introducing GPT‑5, our best AI system yet. GPT‑5 is a significant leap in intelligence over all our previous models, featuring state-of-the-art performance across coding, math, writing, health, visual perception, and more.</description>
-      <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">942330e643c501b3</guid>
     </item>
   </channel>
 </rss>

@@ -1,5 +1,14 @@
 [
   {
+    "id": "e8d859db79d00c46",
+    "provider": "Google",
+    "title": "3.6 Flash: An upgraded model for your daily life",
+    "description": "We\u2019re introducing Gemini 3.6 Flash, an upgraded version of our Flash model, to help you tackle everyday tasks. Try using it for quick tasks like analyzing several documents or multi-step projects like building a working prototype with the Canvas tool.\nWe're excited to bring this model to all Gemini app users globally. To access, select \"3.6 Flash\" in the model drop down.\n\n\n\n\nWhy: We want to make Gemini the most helpful AI assistant for everyone. With Gemini 3.6 Flash, you can now tackle your eve",
+    "link": "https://gemini.google/release-notes/",
+    "date": "2026-07-21",
+    "regions": []
+  },
+  {
     "id": "c8df5a1ec5a6763c",
     "provider": "Azure OpenAI",
     "title": "[Launched] Generally Available: Open AI GPT-5.6 on Azure Databricks",
