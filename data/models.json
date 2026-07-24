@@ -1,5 +1,14 @@
 [
   {
+    "id": "e7624f53d04ea0c6",
+    "provider": "AWS Bedrock",
+    "title": "Claude Sonnet 5 is now available on Amazon Bedrock in AWS GovCloud (US)",
+    "description": "AWS GovCloud (US) now offers Claude Sonnet 5 on Amazon Bedrock. Claude Sonnet 5 delivers strong performance across coding, professional work, and agentic tasks while maintaining the balance of capability, cost, and speed. For coding, it navigates large codebases, lands multi-file changes, and carries debugging and refactoring tasks through to completion with fewer rounds of correction. For agents, it calls tools precisely, holds state across many steps, and recovers from errors so more runs fini",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/07/claude-sonnet-5-govcloud/",
+    "date": "2026-07-23",
+    "regions": []
+  },
+  {
     "id": "e8d859db79d00c46",
     "provider": "Google",
     "title": "3.6 Flash: An upgraded model for your daily life",

@@ -4,8 +4,16 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Thu, 23 Jul 2026 08:58:32 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2026 08:56:55 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Claude Sonnet 5 is now available on Amazon Bedrock in AWS GovCloud (US)</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/07/claude-sonnet-5-govcloud/</link>
+      <description>AWS GovCloud (US) now offers Claude Sonnet 5 on Amazon Bedrock. Claude Sonnet 5 delivers strong performance across coding, professional work, and agentic tasks while maintaining the balance of capability, cost, and speed. For coding, it navigates large codebases, lands multi-file changes, and carries debugging and refactoring tasks through to completion with fewer rounds of correction. For agents, it calls tools precisely, holds state across many steps, and recovers from errors so more runs fini</description>
+      <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">e7624f53d04ea0c6</guid>
+    </item>
     <item>
       <title>3.6 Flash: An upgraded model for your daily life</title>
       <link>https://gemini.google/release-notes/</link>
@@ -419,14 +427,6 @@ lower</description>
       <pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate>
       <category>Vertex AI</category>
       <guid isPermaLink="false">4d43fbb3e27b9eea</guid>
-    </item>
-    <item>
-      <title>Introducing GPT-5 for developers</title>
-      <link>https://openai.com/index/introducing-gpt-5-for-developers</link>
-      <description>Introducing GPT-5 in our API platform—offering high reasoning performance, new controls for devs, and best-in-class results on real coding tasks.</description>
-      <pubDate>Thu, 07 Aug 2025 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">e62038973cde01d3</guid>
     </item>
   </channel>
 </rss>
