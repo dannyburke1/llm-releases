@@ -4,8 +4,25 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Fri, 24 Jul 2026 08:56:55 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2026 08:45:40 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Claude Opus 5 is now available on AWS</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/07/claude-opus-5-aws/</link>
+      <description>AWS now offers Claude Opus 5 — the most advanced Opus model yet, and compatible with zero data retention (ZDR) — bringing a step-change in coding, long-running agents, and complex professional work to teams building at the highest level.  
+Claude Opus 5 delivers advances in coding, understanding and navigating codebases like an experienced engineer and writing production-quality code while adapting its strategy as it works. It powers dependable agents that run for hours and even overnight, findi</description>
+      <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">6c5106b53475d3c9</guid>
+    </item>
+    <item>
+      <title>Opus 4.8, Sonnet 5, and User Activity Monitoring now available on Kiro in AWS GovCloud (US)</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/07/kiro-opus-sonnet-monitoring-launch-aws-govcloud-us/</link>
+      <description>Two new models are now available in the Kiro IDE and CLI for the AWS GovCloud (US) Regions.  Claude Opus 4.8 is the most intelligent Opus model, delivering stronger self-verification, more efficient tool calling, and better follow-through on long-horizon projects. It plans before it edits, catches its own mistakes, and finds creative paths around obstacles instead of stalling, making it well suited for complex multi-step tasks that previously required close supervision. Available with a 1M conte</description>
+      <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">7558dd126cb0d960</guid>
+    </item>
     <item>
       <title>Claude Sonnet 5 is now available on Amazon Bedrock in AWS GovCloud (US)</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/07/claude-sonnet-5-govcloud/</link>
@@ -411,22 +428,6 @@ lower</description>
       <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
       <category>Vertex AI</category>
       <guid isPermaLink="false">61122dccb8d9ed8b</guid>
-    </item>
-    <item>
-      <title>Gemma 3 270M, Wan 2.2 and Wan 2.1 models are available through Model Garden.</title>
-      <link>https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_14_2025</link>
-      <description>Gemma 3 270M, Wan 2.2 and Wan 2.1 models are available through Model Garden.</description>
-      <pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate>
-      <category>Vertex AI</category>
-      <guid isPermaLink="false">9f1df194449a4375</guid>
-    </item>
-    <item>
-      <title>OpenAI&#x27;s gpt-oss-120b and gpt-oss-20b are available as Model as a Service (MaaS) models in Model Garden.</title>
-      <link>https://docs.cloud.google.com/vertex-ai/docs/release-notes#August_13_2025</link>
-      <description>OpenAI&#x27;s gpt-oss-120b and gpt-oss-20b are available as Model as a Service (MaaS) models in Model Garden.</description>
-      <pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate>
-      <category>Vertex AI</category>
-      <guid isPermaLink="false">4d43fbb3e27b9eea</guid>
     </item>
   </channel>
 </rss>

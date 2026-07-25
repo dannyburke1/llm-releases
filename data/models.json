@@ -1,5 +1,23 @@
 [
   {
+    "id": "6c5106b53475d3c9",
+    "provider": "AWS Bedrock",
+    "title": "Claude Opus 5 is now available on AWS",
+    "description": "AWS now offers Claude Opus 5 \u2014 the most advanced Opus model yet, and compatible with zero data retention (ZDR) \u2014 bringing a step-change in coding, long-running agents, and complex professional work to teams building at the highest level.\u00a0 \nClaude Opus 5 delivers advances in coding, understanding and navigating codebases like an experienced engineer and writing production-quality code while adapting its strategy as it works. It powers dependable agents that run for hours and even overnight, findi",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/07/claude-opus-5-aws/",
+    "date": "2026-07-24",
+    "regions": []
+  },
+  {
+    "id": "7558dd126cb0d960",
+    "provider": "AWS Bedrock",
+    "title": "Opus 4.8, Sonnet 5, and User Activity Monitoring now available on Kiro in AWS GovCloud (US)",
+    "description": "Two new models are now available in the Kiro IDE and CLI for the AWS GovCloud (US) Regions.  Claude Opus 4.8 is the most intelligent Opus model, delivering stronger self-verification, more efficient tool calling, and better follow-through on long-horizon projects. It plans before it edits, catches its own mistakes, and finds creative paths around obstacles instead of stalling, making it well suited for complex multi-step tasks that previously required close supervision. Available with a 1M conte",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/07/kiro-opus-sonnet-monitoring-launch-aws-govcloud-us/",
+    "date": "2026-07-24",
+    "regions": []
+  },
+  {
     "id": "e7624f53d04ea0c6",
     "provider": "AWS Bedrock",
     "title": "Claude Sonnet 5 is now available on Amazon Bedrock in AWS GovCloud (US)",
