@@ -1,5 +1,23 @@
 [
   {
+    "id": "757d7488b04bdd8f",
+    "provider": "AWS Bedrock",
+    "title": "AWS Security Hub MCP App brings exposure findings into your AI-assisted workflow (Preview)",
+    "description": "AWS announces the preview of the AWS Security Hub MCP App, a local Model Context Protocol (MCP) server that brings your Security Hub exposure findings directly into Claude Desktop.\u00a0\u00a0This capability can help accelerates your security investigations by reducing context switching and manual triage, letting you explore and act on your exposures without leaving your AI-assisted workflow. \nWith the Security Hub MCP App, you can investigate your security posture in natural language: view your top expos",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/07/aws-security-hub-mcp-app/",
+    "date": "2026-07-27",
+    "regions": []
+  },
+  {
+    "id": "cd04fea31cecfdc5",
+    "provider": "Azure OpenAI",
+    "title": "[Launched] Generally Available: Claude Opus 5 on Azure Databricks",
+    "description": "Azure Databricks now supports Anthropic Claude Opus 5 through AI Model Serving. Claude Opus 5 is Anthropic's latest model for advanced reasoning, coding, agentic workflows, and professional knowledge work. Claude Opus 5 is designed for complex tasks requi",
+    "link": "https://azure.microsoft.com/updates?id=568316",
+    "date": "2026-07-27",
+    "regions": []
+  },
+  {
     "id": "6c5106b53475d3c9",
     "provider": "AWS Bedrock",
     "title": "Claude Opus 5 is now available on AWS",

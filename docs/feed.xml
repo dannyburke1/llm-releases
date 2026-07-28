@@ -4,8 +4,25 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Mon, 27 Jul 2026 09:13:52 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jul 2026 09:00:22 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>AWS Security Hub MCP App brings exposure findings into your AI-assisted workflow (Preview)</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/07/aws-security-hub-mcp-app/</link>
+      <description>AWS announces the preview of the AWS Security Hub MCP App, a local Model Context Protocol (MCP) server that brings your Security Hub exposure findings directly into Claude Desktop.  This capability can help accelerates your security investigations by reducing context switching and manual triage, letting you explore and act on your exposures without leaving your AI-assisted workflow. 
+With the Security Hub MCP App, you can investigate your security posture in natural language: view your top expos</description>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">757d7488b04bdd8f</guid>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Claude Opus 5 on Azure Databricks</title>
+      <link>https://azure.microsoft.com/updates?id=568316</link>
+      <description>Azure Databricks now supports Anthropic Claude Opus 5 through AI Model Serving. Claude Opus 5 is Anthropic&#x27;s latest model for advanced reasoning, coding, agentic workflows, and professional knowledge work. Claude Opus 5 is designed for complex tasks requi</description>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 +0000</pubDate>
+      <category>Azure OpenAI</category>
+      <guid isPermaLink="false">cd04fea31cecfdc5</guid>
+    </item>
     <item>
       <title>Claude Opus 5 is now available on AWS</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/07/claude-opus-5-aws/</link>
@@ -412,22 +429,6 @@ lower</description>
       <pubDate>Thu, 25 Sep 2025 00:00:00 +0000</pubDate>
       <category>Google</category>
       <guid isPermaLink="false">6dc0e6f4a5b8f5fb</guid>
-    </item>
-    <item>
-      <title>DeepSeek-V3.1-Terminus is available through Model Garden.</title>
-      <link>https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_22_2025</link>
-      <description>DeepSeek-V3.1-Terminus is available through Model Garden.</description>
-      <pubDate>Mon, 22 Sep 2025 00:00:00 +0000</pubDate>
-      <category>Vertex AI</category>
-      <guid isPermaLink="false">d89bc2bdd33fddfb</guid>
-    </item>
-    <item>
-      <title>EmbeddingGemma and DeepSeek-V3.1 models are available through Model Garden.</title>
-      <link>https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_09_2025</link>
-      <description>EmbeddingGemma and DeepSeek-V3.1 models are available through Model Garden.</description>
-      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
-      <category>Vertex AI</category>
-      <guid isPermaLink="false">61122dccb8d9ed8b</guid>
     </item>
   </channel>
 </rss>
