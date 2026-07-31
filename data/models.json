@@ -1,5 +1,14 @@
 [
   {
+    "id": "e063e68dca733c44",
+    "provider": "AWS Bedrock",
+    "title": "Gemma 4 models are now available on Amazon Bedrock in AWS GovCloud (US-West)",
+    "description": "The Gemma 4 family of open-weight models from Google DeepMind on Amazon Bedrock in AWS GovCloud (US-West). With Gemma 4, you can build generative AI applications across reasoning, multimodal understanding, agentic, and software engineering workflows. \nThe Gemma 4 family on Amazon Bedrock includes three variants - Gemma 4 31B, Gemma 4 26B-A4B, and Gemma 4 E2B - spanning dense and mixture-of-experts (MoE) architectures with built-in reasoning, native function calling, support for 35+ languages and",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/07/gemma-4-bedrock-govcloud/",
+    "date": "2026-07-30",
+    "regions": []
+  },
+  {
     "id": "757d7488b04bdd8f",
     "provider": "AWS Bedrock",
     "title": "AWS Security Hub MCP App brings exposure findings into your AI-assisted workflow (Preview)",
