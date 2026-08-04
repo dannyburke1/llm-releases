@@ -4,8 +4,17 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Mon, 03 Aug 2026 09:13:43 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 09:01:40 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>OpenAI GPT-5.6 Sol, Terra, and Luna now support 1 million token context windows on Amazon Bedrock</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/08/gpt-sol-terra-luna-long-context-bedrock</link>
+      <description>GPT-5.6 Sol, Terra, and Luna now support 1 million token context windows on Amazon Bedrock, enabling you to process full codebases, lengthy documents, and multi-turn agent histories in a single request. Models reason over broader context and return more accurate, coherent responses without chunking or information loss. 
+ With a context window size of 1 million tokens, you can analyze entire repositories in a single pass for code review and migration, process long-form legal or regulatory documen</description>
+      <pubDate>Mon, 03 Aug 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">1122305c17711b01</guid>
+    </item>
     <item>
       <title>Gemma 4 models are now available on Amazon Bedrock in AWS GovCloud (US-West)</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/07/gemma-4-bedrock-govcloud/</link>
@@ -422,14 +431,6 @@ lower</description>
       <pubDate>Tue, 30 Sep 2025 00:00:00 +0000</pubDate>
       <category>Vertex AI</category>
       <guid isPermaLink="false">cd06a14bcc9e6bac</guid>
-    </item>
-    <item>
-      <title>Sora 2 is here</title>
-      <link>https://openai.com/index/sora-2</link>
-      <description>Our latest video generation model is more physically accurate, realistic, and controllable than prior systems. It also features synchronized dialogue and sound effects. Create with it in the new Sora app.</description>
-      <pubDate>Tue, 30 Sep 2025 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">5fb3824d1ab913ec</guid>
     </item>
   </channel>
 </rss>

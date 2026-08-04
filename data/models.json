@@ -1,5 +1,18 @@
 [
   {
+    "id": "1122305c17711b01",
+    "provider": "AWS Bedrock",
+    "title": "OpenAI GPT-5.6 Sol, Terra, and Luna now support 1 million token context windows on Amazon Bedrock",
+    "description": "GPT-5.6 Sol, Terra, and Luna now support 1 million token context windows on Amazon Bedrock, enabling you to process full codebases, lengthy documents, and multi-turn agent histories in a single request. Models reason over broader context and return more accurate, coherent responses without chunking or information loss. \n With a context window size of 1 million tokens, you can analyze entire repositories in a single pass for code review and migration, process long-form legal or regulatory documen",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/08/gpt-sol-terra-luna-long-context-bedrock",
+    "date": "2026-08-03",
+    "regions": [
+      "US East (N. Virginia)",
+      "US East (Ohio)",
+      "US West (Oregon)"
+    ]
+  },
+  {
     "id": "e063e68dca733c44",
     "provider": "AWS Bedrock",
     "title": "Gemma 4 models are now available on Amazon Bedrock in AWS GovCloud (US-West)",
