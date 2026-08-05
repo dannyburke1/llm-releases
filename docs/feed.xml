@@ -4,8 +4,16 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Tue, 04 Aug 2026 09:01:40 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2026 09:00:22 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Amazon Bedrock launches Web Search for OpenAI GPT models</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-bedrock-web/</link>
+      <description>Today, we are announcing the general availability of Web Search on Amazon Bedrock, a built-in server side tool that performs web search entirely within AWS, enabling OpenAI models (GPT-5.4, GPT-5.5, and GPT-5.6 Sol/Terra/Luna) to ground responses with current web knowledge while maintaining data residency within your secured AWS environment with zero data egress. Previously, adding web grounding required onboarding a third-party search provider, managing separate API keys and billing, building c</description>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">e6fad48fda058bf9</guid>
+    </item>
     <item>
       <title>OpenAI GPT-5.6 Sol, Terra, and Luna now support 1 million token context windows on Amazon Bedrock</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/08/gpt-sol-terra-luna-long-context-bedrock</link>
@@ -423,14 +431,6 @@ lower</description>
       <pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate>
       <category>OpenAI</category>
       <guid isPermaLink="false">c7ed85bffad72c1f</guid>
-    </item>
-    <item>
-      <title>DeepSeek-V3.2-Exp is available through Model Garden.</title>
-      <link>https://docs.cloud.google.com/vertex-ai/docs/release-notes#September_30_2025</link>
-      <description>DeepSeek-V3.2-Exp is available through Model Garden.</description>
-      <pubDate>Tue, 30 Sep 2025 00:00:00 +0000</pubDate>
-      <category>Vertex AI</category>
-      <guid isPermaLink="false">cd06a14bcc9e6bac</guid>
     </item>
   </channel>
 </rss>
