@@ -4,8 +4,35 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Thu, 13 Aug 2026 09:15:55 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2026 09:10:42 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Claude Opus 5 is now available in AWS GovCloud (US)</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/07/claude-opus-5-aws-govcloud/</link>
+      <description>AWS GovCloud (US) now offers Claude Opus 5 — the most advanced Opus model yet, and compatible with zero data retention (ZDR) — bringing a step-change in coding, long-running agents, and complex professional work to teams building at the highest level. Claude Opus 5 is available via the bedrock-runtime endpoint in both AWS GovCloud (US) regions, and available via the bedrock-mantle endpoint in AWS GovCloud (US-West) 
+Claude Opus 5 delivers advances in coding, understanding and navigating codebase</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">9cadc61502cf9166</guid>
+    </item>
+    <item>
+      <title>Daybreak Red and Daybreak Blue from OpenAI are now available to eligible customers on Amazon Bedrock</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/08/openai-daybreak-red-and-blue-on-amazon-bedrock/</link>
+      <description>Security teams can now access Daybreak Red and Daybreak Blue from OpenAI on Amazon Bedrock. Both are part of Daybreak, the cyber defense initiative from OpenAI that gives defenders governed access to frontier AI for cybersecurity work. 
+Daybreak Blue is the starting point for most security teams across defensive workflows including vulnerability discovery, detection engineering, and incident response. Daybreak Red is designed for advanced, authorized tasks such as vulnerability research, exploit</description>
+      <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">7b1a9ee7eae3e079</guid>
+    </item>
+    <item>
+      <title>Amazon Nova Multimodal Embeddings is now available in AWS GovCloud (US-West)</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-nova-mme-govcloud/</link>
+      <description>We are excited to announce the general availability of Amazon Nova Multimodal Embeddings, a state-of-the-art embedding model for agentic RAG and semantic search, in AWS GovCloud (US-West). It is the first unified embedding model that supports text, documents, images, video, and audio through a single model, to enable cross-modal retrieval with leading accuracy.  
+Managing and searching across different content types traditionally required multiple specialized embedding models, leading to complex</description>
+      <pubDate>Wed, 12 Aug 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">08c41dad64fe798f</guid>
+    </item>
     <item>
       <title>Amazon Bedrock launches Web Search for OpenAI GPT models</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-bedrock-web/</link>
@@ -407,30 +434,6 @@ lower</description>
       <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
       <category>OpenAI</category>
       <guid isPermaLink="false">30ba96d93b3dd711</guid>
-    </item>
-    <item>
-      <title>Gemini 3, our most intelligent model yet, is available to everyone in the app</title>
-      <link>https://gemini.google/release-notes/</link>
-      <description>Gemini 3 Pro is rolling out to everyone in the Gemini app starting today, with higher limits for users in the Google AI Plus, Pro and Ultra plans. It brings state-of-the-art reasoning to your most complex problems, and is our best vibe coding model yet. It can also reason across text, images, audio and video better than ever before.  So whether you&#x27;re uploading a video of you playing a sport to get advice on how to improve your form, or transcribing notes from a lecture that you missed, the Gemi</description>
-      <pubDate>Tue, 18 Nov 2025 00:00:00 +0000</pubDate>
-      <category>Google</category>
-      <guid isPermaLink="false">e923539731d2100a</guid>
-    </item>
-    <item>
-      <title>Introducing GPT-5.1 for developers</title>
-      <link>https://openai.com/index/gpt-5-1-for-developers</link>
-      <description>GPT-5.1 is now available in the API, bringing faster adaptive reasoning, extended prompt caching, improved coding performance, and new apply_patch and shell tools.</description>
-      <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">d18d724fe0dc0989</guid>
-    </item>
-    <item>
-      <title>Introducing gpt-oss-safeguard</title>
-      <link>https://openai.com/index/introducing-gpt-oss-safeguard</link>
-      <description>OpenAI introduces gpt-oss-safeguard—open-weight reasoning models for safety classification that let developers apply and iterate on custom policies.</description>
-      <pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">c7ed85bffad72c1f</guid>
     </item>
   </channel>
 </rss>

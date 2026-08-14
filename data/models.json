@@ -1,5 +1,34 @@
 [
   {
+    "id": "9cadc61502cf9166",
+    "provider": "AWS Bedrock",
+    "title": "Claude Opus 5 is now available in AWS GovCloud (US)",
+    "description": "AWS GovCloud (US) now offers Claude Opus 5 \u2014 the most advanced Opus model yet, and compatible with zero data retention (ZDR) \u2014 bringing a step-change in coding, long-running agents, and complex professional work to teams building at the highest level.\u00a0Claude Opus 5 is available via the bedrock-runtime endpoint in both AWS GovCloud (US) regions, and available via the\u00a0bedrock-mantle\u00a0endpoint in AWS GovCloud (US-West) \nClaude Opus 5 delivers advances in coding, understanding and navigating codebase",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/07/claude-opus-5-aws-govcloud/",
+    "date": "2026-08-13",
+    "regions": []
+  },
+  {
+    "id": "7b1a9ee7eae3e079",
+    "provider": "AWS Bedrock",
+    "title": "Daybreak Red and Daybreak Blue from OpenAI are now available to eligible customers on Amazon Bedrock",
+    "description": "Security teams can now access Daybreak Red and Daybreak Blue from OpenAI on Amazon Bedrock. Both are part of Daybreak, the cyber defense initiative from OpenAI that gives defenders governed access to frontier AI for cybersecurity work. \nDaybreak Blue is the starting point for most security teams across defensive workflows including vulnerability discovery, detection engineering, and incident response. Daybreak Red is designed for advanced, authorized tasks such as vulnerability research, exploit",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/08/openai-daybreak-red-and-blue-on-amazon-bedrock/",
+    "date": "2026-08-13",
+    "regions": [
+      "US East (N. Virginia)"
+    ]
+  },
+  {
+    "id": "08c41dad64fe798f",
+    "provider": "AWS Bedrock",
+    "title": "Amazon Nova Multimodal Embeddings is now available in AWS GovCloud (US-West)",
+    "description": "We are excited to announce the general availability of Amazon Nova Multimodal Embeddings, a state-of-the-art embedding model for agentic RAG and semantic search, in AWS GovCloud (US-West). It is the first unified embedding model that supports text, documents, images, video, and audio through a single model, to enable cross-modal retrieval with leading accuracy.\u00a0 \nManaging and searching across different content types traditionally required multiple specialized embedding models, leading to complex",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-nova-mme-govcloud/",
+    "date": "2026-08-12",
+    "regions": []
+  },
+  {
     "id": "e6fad48fda058bf9",
     "provider": "AWS Bedrock",
     "title": "Amazon Bedrock launches Web Search for OpenAI GPT models",
