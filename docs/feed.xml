@@ -4,8 +4,17 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Tue, 18 Aug 2026 08:40:39 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2026 08:42:59 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>AgentCore payments is now generally available in Amazon Bedrock AgentCore</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/08/bedrock-agentcore-payments-ga/</link>
+      <description>Today, AWS announces the general availability of AgentCore payments, a capability within Amazon Bedrock AgentCore that enables AI agents to autonomously discover, access, and pay for paid APIs, MCPs, and content with just a few lines of code. AgentCore payments provides the security, guardrails, and observability enterprises need to deploy transacting agents in production at scale. 
+AgentCore payments integrates with Coinbase and Stripe Privy wallets for microtransactions, provides payment orche</description>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">523b97ed452b53a8</guid>
+    </item>
     <item>
       <title>Claude Opus 5 is now available in AWS GovCloud (US)</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/07/claude-opus-5-aws-govcloud/</link>
@@ -426,14 +435,6 @@ lower</description>
       <pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate>
       <category>Google</category>
       <guid isPermaLink="false">2e35eaf07377eaef</guid>
-    </item>
-    <item>
-      <title>Introducing GPT-5.2</title>
-      <link>https://openai.com/index/introducing-gpt-5-2</link>
-      <description>GPT-5.2 is our most advanced frontier model for everyday professional work, with state-of-the-art reasoning, long-context understanding, coding, and vision. Use it in ChatGPT and the OpenAI API to power faster, more reliable agentic workflows.</description>
-      <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">30ba96d93b3dd711</guid>
     </item>
   </channel>
 </rss>

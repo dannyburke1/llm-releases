@@ -1,5 +1,14 @@
 [
   {
+    "id": "523b97ed452b53a8",
+    "provider": "AWS Bedrock",
+    "title": "AgentCore payments is now generally available in Amazon Bedrock AgentCore",
+    "description": "Today, AWS announces the general availability of AgentCore payments, a capability within Amazon Bedrock AgentCore that enables AI agents to autonomously discover, access, and pay for paid APIs, MCPs, and content with just a few lines of code. AgentCore payments provides the security, guardrails, and observability enterprises need to deploy transacting agents in production at scale. \nAgentCore payments integrates with Coinbase and Stripe Privy wallets for microtransactions, provides payment orche",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/08/bedrock-agentcore-payments-ga/",
+    "date": "2026-08-18",
+    "regions": []
+  },
+  {
     "id": "9cadc61502cf9166",
     "provider": "AWS Bedrock",
     "title": "Claude Opus 5 is now available in AWS GovCloud (US)",
