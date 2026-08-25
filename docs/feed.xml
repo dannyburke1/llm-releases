@@ -4,8 +4,25 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Mon, 24 Aug 2026 08:52:28 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 08:47:42 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>OpenAI GPT-5.6 Terra and Luna now available on Amazon Bedrock in AWS GovCloud (US)</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/08/openai-gpt-terra-luna-govcloud/</link>
+      <description>GPT-5.6 Terra and Luna are now generally available on Amazon Bedrock in AWS GovCloud (US-West) and AWS GovCloud (US-East), bringing the smartest family of models from OpenAI yet to Bedrock&#x27;s next-generation inference engine built for high-performance, security and reliability. GPT-5.6 sets a new standard for intelligence and efficiency, allowing you to solve harder problems in less time and with more intelligence per token. The two models span capability tiers from balanced performance (Terra) t</description>
+      <pubDate>Mon, 24 Aug 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">19603fca6c76995b</guid>
+    </item>
+    <item>
+      <title>AWS Neuron 2.32 introduces expanded NKI programming, MXFP8 training kernels, and variable-size collectives for Trn2 and Trn</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/08/aws-announce-neuron-2-32-0</link>
+      <description>AWS Neuron 2.32.0 is now available, introducing NKI 0.6.0 with an on-device top-K instruction, a variable-length `all-gather `for kernels whose ranks hold differently sized tensors, and new loop constructs for data-dependent iteration.   
+This release also introduces 13 new NKI Library kernels for Mixture of Experts (MoE) training and sparse attention, and a new Neuron Agentic Development skill that ports transformer models to the vLLM Neuron plugin. The NKI Library kernels cover context encodin</description>
+      <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">96d88b56378f7b7f</guid>
+    </item>
     <item>
       <title>AgentCore payments is now generally available in Amazon Bedrock AgentCore</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/08/bedrock-agentcore-payments-ga/</link>
@@ -419,22 +436,6 @@ lower</description>
       <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
       <category>Google</category>
       <guid isPermaLink="false">6859ba1d7365cc33</guid>
-    </item>
-    <item>
-      <title>Introducing GPT-5.2-Codex</title>
-      <link>https://openai.com/index/gpt-5-2-codex</link>
-      <description>GPT-5.2-Codex is OpenAI’s most advanced coding model, offering long-horizon reasoning, large-scale code transformations, and enhanced cybersecurity capabilities.</description>
-      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">08f06b68017de598</guid>
-    </item>
-    <item>
-      <title>Introducing Gemini 3 Flash, a major upgrade to your everyday AI</title>
-      <link>https://gemini.google/release-notes/</link>
-      <description>Gemini 3 Flash is now the new default model in the Gemini app. It offers next-generation intelligence at lightning speed and represents a major capability upgrade over Gemini 2.5 Flash. This model provides PhD-level reasoning comparable to larger models and delivers a significant leap in multimodal understanding, allowing you to ask questions using images, audio, text and more.Gemini 3 Flash can be accessed in the Gemini app by selecting &#x27;Fast&#x27; for quick answers and &#x27;Thinking&#x27; to help solve more</description>
-      <pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate>
-      <category>Google</category>
-      <guid isPermaLink="false">2e35eaf07377eaef</guid>
     </item>
   </channel>
 </rss>

@@ -1,5 +1,23 @@
 [
   {
+    "id": "19603fca6c76995b",
+    "provider": "AWS Bedrock",
+    "title": "OpenAI GPT-5.6 Terra and Luna now available on Amazon Bedrock in AWS GovCloud (US)",
+    "description": "GPT-5.6 Terra and Luna are now generally available on Amazon Bedrock in AWS GovCloud (US-West) and AWS GovCloud (US-East), bringing the smartest family of models from OpenAI yet to Bedrock's next-generation inference engine built for high-performance, security and reliability. GPT-5.6 sets a new standard for intelligence and efficiency, allowing you to solve harder problems in less time and with more intelligence per token. The two models span capability tiers from balanced performance (Terra) t",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/08/openai-gpt-terra-luna-govcloud/",
+    "date": "2026-08-24",
+    "regions": []
+  },
+  {
+    "id": "96d88b56378f7b7f",
+    "provider": "AWS Bedrock",
+    "title": "AWS Neuron 2.32 introduces expanded NKI programming, MXFP8 training kernels, and variable-size collectives for Trn2 and Trn",
+    "description": "AWS Neuron 2.32.0 is now available, introducing NKI 0.6.0 with an on-device top-K instruction, a variable-length `all-gather `for kernels whose ranks hold differently sized tensors, and new loop constructs for data-dependent iteration. \u00a0 \nThis release also introduces 13 new NKI Library kernels for Mixture of Experts (MoE) training and sparse attention, and a new Neuron Agentic Development skill that ports transformer models to the vLLM Neuron plugin. The NKI Library kernels cover context encodin",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/08/aws-announce-neuron-2-32-0",
+    "date": "2026-08-21",
+    "regions": []
+  },
+  {
     "id": "523b97ed452b53a8",
     "provider": "AWS Bedrock",
     "title": "AgentCore payments is now generally available in Amazon Bedrock AgentCore",
