@@ -1,5 +1,14 @@
 [
   {
+    "id": "0ea0e221fde2d580",
+    "provider": "AWS Bedrock",
+    "title": "Claude Fable 5.1, Anthropic's new frontier model is now available on AWS",
+    "description": "Claude Fable 5.1 is generally available on AWS and brings Anthropic's most capable frontier model to all customers. Fable 5.1 delivers frontier intelligence for ambitious tasks across coding, scientific research, and enterprise workflows. A clear improvement over Claude Fable 5, Fable 5.1 is a step up in intelligence on the hardest reasoning tasks, providing better judgement on ambiguous work and fewer confident wrong answers. Claude Mythos 5.1, the same underlying model as Claude Fable 5.1 with",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/09/claude-fable-5-1-aws/",
+    "date": "2026-09-01",
+    "regions": []
+  },
+  {
     "id": "19603fca6c76995b",
     "provider": "AWS Bedrock",
     "title": "OpenAI GPT-5.6 Terra and Luna now available on Amazon Bedrock in AWS GovCloud (US)",
