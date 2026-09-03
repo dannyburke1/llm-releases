@@ -4,8 +4,16 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Wed, 02 Sep 2026 12:39:03 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 12:41:59 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Web Search on Amazon Bedrock is now available in AWS GovCloud (US-West)</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-bedrock-web-aws-govcloud/</link>
+      <description>The Web Search built-in server-side tool on Amazon Bedrock is now available in AWS GovCloud (US-West), helping bring grounded web results to compliance-sensitive government and public-sector workloads. Web Search helps supported OpenAI GPT models ground responses with information from the web. Responses include citations to the sources the model used so users can trace each claim back to its web origin. This can be especially valuable whenever an answer depends on information that changes over t</description>
+      <pubDate>Wed, 02 Sep 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">53081687880227f2</guid>
+    </item>
     <item>
       <title>Claude Fable 5.1, Anthropic&#x27;s new frontier model is now available on AWS</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/09/claude-fable-5-1-aws/</link>
@@ -13,6 +21,15 @@
       <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
       <category>AWS Bedrock</category>
       <guid isPermaLink="false">0ea0e221fde2d580</guid>
+    </item>
+    <item>
+      <title>Claude Fable 5.1, Anthropic&#x27;s new frontier model is now available on AWS GovCloud (US)</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/09/claude-fable-5-1-aws-govcloud/</link>
+      <description>Claude Fable 5.1 is generally available on Amazon Bedrock in AWS GovCloud (US) and brings Anthropic&#x27;s most capable frontier model to regulated industry customers. Fable 5.1 delivers frontier intelligence for ambitious tasks across coding, scientific research, and enterprise workflows.   
+Claude Fable 5.1 is built for long-running, high-stakes work that runs for hours and spans many applications. It can own more of a software project on its own, handling features across an entire codebase, code r</description>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">8151cb712c389798</guid>
     </item>
     <item>
       <title>OpenAI GPT-5.6 Terra and Luna now available on Amazon Bedrock in AWS GovCloud (US)</title>
@@ -420,22 +437,6 @@ lower</description>
       <pubDate>Thu, 12 Feb 2026 00:00:00 +0000</pubDate>
       <category>OpenAI</category>
       <guid isPermaLink="false">fdbf45366e616c41</guid>
-    </item>
-    <item>
-      <title>[Launched] ​Generally Available: Claude Opus 4.6 now available on Azure Databricks</title>
-      <link>https://azure.microsoft.com/updates?id=555981</link>
-      <description>Azure Databricks now supports Anthropic Claude Opus 4.6 through Mosaic AI Model serving. Claude Opus 4.6 is Anthropic&#x27;s most advanced model, delivering state-of-the-art performance on agentic coding, complex reasoning, and knowledge work tasks. The model</description>
-      <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
-      <category>Azure OpenAI</category>
-      <guid isPermaLink="false">50f48388e546fdab</guid>
-    </item>
-    <item>
-      <title>Introducing GPT-5.3-Codex</title>
-      <link>https://openai.com/index/introducing-gpt-5-3-codex</link>
-      <description>GPT-5.3-Codex is a Codex-native agent that pairs frontier coding performance with general reasoning to support long-horizon, real-world technical work.</description>
-      <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">06042742e369d0fa</guid>
     </item>
   </channel>
 </rss>

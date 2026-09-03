@@ -1,10 +1,32 @@
 [
   {
+    "id": "53081687880227f2",
+    "provider": "AWS Bedrock",
+    "title": "Web Search on Amazon Bedrock is now available in AWS GovCloud (US-West)",
+    "description": "The Web Search built-in server-side tool on Amazon Bedrock is now available in AWS GovCloud (US-West), helping bring grounded web results to compliance-sensitive government and public-sector workloads. Web Search helps supported OpenAI GPT models ground responses with information from the web. Responses include citations to the sources the model used so users can trace each claim back to its web origin. This can be especially valuable whenever an answer depends on information that changes over t",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-bedrock-web-aws-govcloud/",
+    "date": "2026-09-02",
+    "regions": [
+      "US East (N. Virginia)",
+      "US East (Ohio)",
+      "US West (Oregon)"
+    ]
+  },
+  {
     "id": "0ea0e221fde2d580",
     "provider": "AWS Bedrock",
     "title": "Claude Fable 5.1, Anthropic's new frontier model is now available on AWS",
     "description": "Claude Fable 5.1 is generally available on AWS and brings Anthropic's most capable frontier model to all customers. Fable 5.1 delivers frontier intelligence for ambitious tasks across coding, scientific research, and enterprise workflows. A clear improvement over Claude Fable 5, Fable 5.1 is a step up in intelligence on the hardest reasoning tasks, providing better judgement on ambiguous work and fewer confident wrong answers. Claude Mythos 5.1, the same underlying model as Claude Fable 5.1 with",
     "link": "https://aws.amazon.com/about-aws/whats-new/2026/09/claude-fable-5-1-aws/",
+    "date": "2026-09-01",
+    "regions": []
+  },
+  {
+    "id": "8151cb712c389798",
+    "provider": "AWS Bedrock",
+    "title": "Claude Fable 5.1, Anthropic's new frontier model is now available on AWS GovCloud (US)",
+    "description": "Claude Fable 5.1 is generally available on Amazon Bedrock in AWS GovCloud (US) and brings Anthropic's most capable frontier model to regulated industry customers. Fable 5.1 delivers frontier intelligence for ambitious tasks across coding, scientific research, and enterprise workflows. \u00a0 \nClaude Fable 5.1 is built for\u00a0long-running, high-stakes work that runs for hours and spans many applications. It can own more of a software project on its own, handling features across an entire codebase, code r",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/09/claude-fable-5-1-aws-govcloud/",
     "date": "2026-09-01",
     "regions": []
   },
