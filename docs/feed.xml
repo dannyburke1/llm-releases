@@ -4,7 +4,7 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Sat, 05 Sep 2026 11:43:54 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 12:01:48 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Web Search on Amazon Bedrock is now available in AWS GovCloud (US-West)</title>
