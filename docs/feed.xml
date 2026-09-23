@@ -4,8 +4,34 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Tue, 22 Sep 2026 13:13:40 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 13:28:30 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>OpenAI GPT-6 Sol and GPT-6 Luna are now generally available on Amazon Bedrock</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/09/openai-gpt-6-sol-luna-on-amazon-bedrock/</link>
+      <description>Today, AWS announces the general availability of GPT-6 Sol and GPT-6 Luna from OpenAI on Amazon Bedrock. Expanding the GPT-6 family alongside Astra, these two models give teams more ways to balance intelligence, speed, and cost across every workload. Sol is the daily model for recurring complex tasks and software development. On an internal OpenAI factuality evaluation, it makes roughly half as many mistakes as GPT-5.6 Sol. Luna is the family&#x27;s most efficient model for focused, high-volume tasks</description>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">dc6ffe17a26d4f82</guid>
+    </item>
+    <item>
+      <title>Claude Opus 5.5 is now available on AWS GovCloud (US)</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/09/claude-opus-5-5-aws-govcloud/</link>
+      <description>AWS GovCloud (US) now offers Claude Opus 5.5, Anthropic’s most capable Opus model yet and, the first of the Claude 5.5 model family, a better collaborator that handles long-running coding and knowledge work, reporting back clearly on what it did, what it found, and what it needs next.
+According to Anthropic, Claude Opus 5.5 completes tasks using fewer tokens than Claude Opus 5, at a lower price per token, with cheaper cache reads stacking on top of the efficiency gain. Claude Opus 5.5 is the ent</description>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">ffa02675ae002a22</guid>
+    </item>
+    <item>
+      <title>Claude Opus 5.5 is now available on AWS</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/09/claude-opus-5-5-aws/</link>
+      <description>AWS now offers Claude Opus 5.5, Anthropic’s most capable Opus model yet and, the first of the Claude 5.5 model family, a better collaborator that handles long-running coding and knowledge work, reporting back clearly on what it did, what it found, and what it needs next.
+According to Anthropic, Claude Opus 5.5 completes tasks using fewer tokens than Claude Opus 5, at a lower price per token, with cheaper cache reads stacking on top of the efficiency gain. Claude Opus 5.5 is the enterprise workho</description>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">f6759ddecafe4b4b</guid>
+    </item>
     <item>
       <title>Web Search on Amazon Bedrock is now available in AWS GovCloud (US-West)</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-bedrock-web-aws-govcloud/</link>
@@ -408,35 +434,6 @@ Claude Opus 4.7 is an upgrade from Claude Opus 4.6, with stronger performance a
       <pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate>
       <category>Google</category>
       <guid isPermaLink="false">0b67ca5adb2cdba2</guid>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Anthropic Claude Sonnet 4.6 is now available on Azure Databricks</title>
-      <link>https://azure.microsoft.com/updates?id=557595</link>
-      <description>Azure Databricks now supports Anthropic Claude Sonnet 4.6
-through Azure Databricks AI
-Model Serving. Claude Sonnet 4.6
-delivers frontier-level performance on complex coding, agentic
-workflows, and professional knowledge work including reasoning at a
-lower</description>
-      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
-      <category>Azure OpenAI</category>
-      <guid isPermaLink="false">fc5a619d0c00b9a7</guid>
-    </item>
-    <item>
-      <title>Solve modern science, research and engineering challenges with Gemini 3 Deep Think</title>
-      <link>https://gemini.google/release-notes/</link>
-      <description>We’re releasing a major upgrade to Gemini 3 Deep Think, our specialized reasoning mode, built to push the frontier of intelligence and solve modern challenges across science, research, and engineering. By blending deep scientific knowledge with everyday engineering utility, Deep Think now moves beyond abstract theory to help drive practical applications.This update is available to Google AI Ultra Subscribers in the Gemini App. To access, select “Deep Think” in the prompt bar. Once you submit you</description>
-      <pubDate>Thu, 12 Feb 2026 00:00:00 +0000</pubDate>
-      <category>Google</category>
-      <guid isPermaLink="false">7c39f9b3d349b357</guid>
-    </item>
-    <item>
-      <title>Introducing GPT-5.3-Codex-Spark</title>
-      <link>https://openai.com/index/introducing-gpt-5-3-codex-spark</link>
-      <description>Introducing GPT-5.3-Codex-Spark—our first real-time coding model. 15x faster generation, 128k context, now in research preview for ChatGPT Pro users.</description>
-      <pubDate>Thu, 12 Feb 2026 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">fdbf45366e616c41</guid>
     </item>
   </channel>
 </rss>

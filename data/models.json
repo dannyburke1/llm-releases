@@ -1,5 +1,32 @@
 [
   {
+    "id": "dc6ffe17a26d4f82",
+    "provider": "AWS Bedrock",
+    "title": "OpenAI GPT-6 Sol and GPT-6 Luna are now generally available on Amazon Bedrock",
+    "description": "Today, AWS announces the general availability of GPT-6 Sol and GPT-6 Luna from OpenAI on Amazon Bedrock. Expanding the GPT-6 family alongside Astra, these two models give teams more ways to balance intelligence, speed, and cost across every workload. Sol is the daily model for recurring complex tasks and software development. On an internal OpenAI factuality evaluation, it makes roughly half as many mistakes as GPT-5.6 Sol. Luna is the family's most efficient model for focused, high-volume tasks",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/09/openai-gpt-6-sol-luna-on-amazon-bedrock/",
+    "date": "2026-09-22",
+    "regions": []
+  },
+  {
+    "id": "ffa02675ae002a22",
+    "provider": "AWS Bedrock",
+    "title": "Claude Opus 5.5 is now available on AWS GovCloud (US)",
+    "description": "AWS GovCloud (US) now offers Claude Opus 5.5, Anthropic\u2019s most capable Opus model yet and, the first of the Claude 5.5 model family, a better collaborator that handles long-running coding and knowledge work, reporting back clearly on what it did, what it found, and what it needs next.\nAccording to Anthropic, Claude Opus 5.5 completes tasks using fewer tokens than Claude Opus 5, at a lower price per token, with cheaper cache reads stacking on top of the efficiency gain. Claude Opus 5.5 is the ent",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/09/claude-opus-5-5-aws-govcloud/",
+    "date": "2026-09-22",
+    "regions": []
+  },
+  {
+    "id": "f6759ddecafe4b4b",
+    "provider": "AWS Bedrock",
+    "title": "Claude Opus 5.5 is now available on AWS",
+    "description": "AWS now offers Claude Opus 5.5, Anthropic\u2019s most capable Opus model yet and, the first of the Claude 5.5 model family, a better collaborator that handles long-running coding and knowledge work, reporting back clearly on what it did, what it found, and what it needs next.\nAccording to Anthropic, Claude Opus 5.5 completes tasks using fewer tokens than Claude Opus 5, at a lower price per token, with cheaper cache reads stacking on top of the efficiency gain. Claude Opus 5.5 is the enterprise workho",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/09/claude-opus-5-5-aws/",
+    "date": "2026-09-22",
+    "regions": []
+  },
+  {
     "id": "53081687880227f2",
     "provider": "AWS Bedrock",
     "title": "Web Search on Amazon Bedrock is now available in AWS GovCloud (US-West)",
