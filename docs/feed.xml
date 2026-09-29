@@ -4,8 +4,26 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Mon, 28 Sep 2026 16:36:08 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 14:43:06 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Claude Sonnet 5.5 now available on AWS</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/09/claude-sonnet-5-5-aws/</link>
+      <description>AWS now offers Claude Sonnet 5.5, a smarter and more efficient Sonnet that delivers a clear leap forward on coding and knowledge work with at a lower cost per task for most work at faster speed.
+Claude Sonnet 5.5 is a smarter, more efficient Sonnet and a step up from Sonnet 5, making it a natural upgrade for teams already building on Sonnet. It&#x27;s stronger for coding, completing well-scoped tasks as part of a larger coding strategy such as building and fixing features with Claude in the same sess</description>
+      <pubDate>Mon, 28 Sep 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">b9a383d19b6c5a11</guid>
+    </item>
+    <item>
+      <title>Claude Sonnet 5.5 now available on AWS GovCloud (US)</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/09/claude-sonnet-5-5-aws-govcloud-us/</link>
+      <description>AWS GovCloud (US) now offers Claude Sonnet 5.5, a smarter and more efficient Sonnet that delivers a clear leap forward on coding and knowledge work with at a lower cost per task for most work ag faster speed.
+Claude Sonnet 5.5 is a smarter, more efficient Sonnet and a step up from Sonnet 5, making it a natural upgrade for teams already building on Sonnet. It&#x27;s stronger for coding, completing well-scoped tasks as part of a larger coding strategy such as building and fixing features with Claude in</description>
+      <pubDate>Mon, 28 Sep 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">6962388bcbc23095</guid>
+    </item>
     <item>
       <title>OpenAI GPT-6 Sol and GPT-6 Luna are now generally available on Amazon Bedrock</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/09/openai-gpt-6-sol-luna-on-amazon-bedrock/</link>
@@ -418,22 +436,6 @@ Claude Opus 4.7 is an upgrade from Claude Opus 4.6, with stronger performance a
       <pubDate>Tue, 17 Mar 2026 00:00:00 +0000</pubDate>
       <category>OpenAI</category>
       <guid isPermaLink="false">9638fd5a4fec177a</guid>
-    </item>
-    <item>
-      <title>Introducing GPT-5.4</title>
-      <link>https://openai.com/index/introducing-gpt-5-4</link>
-      <description>Introducing GPT-5.4, OpenAI’s most most capable and efficient frontier model for professional work, with state-of-the-art coding, computer use, tool search, and 1M-token context.</description>
-      <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">c9184e3c10e778ae</guid>
-    </item>
-    <item>
-      <title>Gemini 3.1 Pro: A smarter model for your most complex tasks</title>
-      <link>https://gemini.google/release-notes/</link>
-      <description>Building on the Gemini 3 series, we&#x27;re releasing 3.1 Pro, a smarter and more capable model for complex problem-solving. 3.1 Pro is designed for tasks where a simple answer isn&#x27;t enough, taking advanced reasoning and making it useful for your hardest challenges. This improved intelligence can help in practical applications – whether you&#x27;re looking for a clear, visual explanation of a complex topic, a way to synthesise data into a single view or a step-by-step plan bringing an ambitious creative p</description>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate>
-      <category>Google</category>
-      <guid isPermaLink="false">0b67ca5adb2cdba2</guid>
     </item>
   </channel>
 </rss>

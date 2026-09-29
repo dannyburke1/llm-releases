@@ -1,5 +1,23 @@
 [
   {
+    "id": "b9a383d19b6c5a11",
+    "provider": "AWS Bedrock",
+    "title": "Claude Sonnet 5.5 now available on AWS",
+    "description": "AWS now offers Claude Sonnet 5.5, a smarter and more efficient Sonnet that delivers a clear leap forward on coding and knowledge work with at a lower cost per task for most work at faster speed.\nClaude Sonnet 5.5 is a smarter, more efficient Sonnet and a step up from Sonnet 5, making it a natural upgrade for teams already building on Sonnet. It's stronger for coding, completing well-scoped tasks as part of a larger coding strategy such as building and fixing features with Claude in the same sess",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/09/claude-sonnet-5-5-aws/",
+    "date": "2026-09-28",
+    "regions": []
+  },
+  {
+    "id": "6962388bcbc23095",
+    "provider": "AWS Bedrock",
+    "title": "Claude Sonnet 5.5 now available on AWS GovCloud (US)",
+    "description": "AWS GovCloud (US) now offers Claude Sonnet 5.5, a smarter and more efficient Sonnet that delivers a clear leap forward on coding and knowledge work with at a lower cost per task for most work ag faster speed.\nClaude Sonnet 5.5 is a smarter, more efficient Sonnet and a step up from Sonnet 5, making it a natural upgrade for teams already building on Sonnet. It's stronger for coding, completing well-scoped tasks as part of a larger coding strategy such as building and fixing features with Claude in",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/09/claude-sonnet-5-5-aws-govcloud-us/",
+    "date": "2026-09-28",
+    "regions": []
+  },
+  {
     "id": "dc6ffe17a26d4f82",
     "provider": "AWS Bedrock",
     "title": "OpenAI GPT-6 Sol and GPT-6 Luna are now generally available on Amazon Bedrock",
