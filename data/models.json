@@ -1,5 +1,17 @@
 [
   {
+    "id": "fd24608a42fb99c6",
+    "provider": "AWS Bedrock",
+    "title": "Amazon Bedrock expands Claude model availability to India, South Korea, and Singapore",
+    "description": "We're excited to announce the availability of Anthropic's Claude Opus 5, Claude Sonnet 5, and Claude Haiku 4.5 on Amazon Bedrock in India, Claude Opus 5 and Claude Sonnet 5 in South Korea, as well as Claude Sonnet 5 in Singapore. Customers who need to process data within a specific geography, including those in financial services, healthcare, and the public sector, can now use these models at scale while keeping inference in-country.\nIn India, the regional endpoint is served through geographic c",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/09/claude-region-expansion-in-sk/",
+    "date": "2026-09-29",
+    "regions": [
+      "ap-northeast-2",
+      "ap-southeast-1"
+    ]
+  },
+  {
     "id": "b9a383d19b6c5a11",
     "provider": "AWS Bedrock",
     "title": "Claude Sonnet 5.5 now available on AWS",

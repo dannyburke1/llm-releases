@@ -4,8 +4,17 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Tue, 29 Sep 2026 14:43:06 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 14:45:18 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Amazon Bedrock expands Claude model availability to India, South Korea, and Singapore</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/09/claude-region-expansion-in-sk/</link>
+      <description>We&#x27;re excited to announce the availability of Anthropic&#x27;s Claude Opus 5, Claude Sonnet 5, and Claude Haiku 4.5 on Amazon Bedrock in India, Claude Opus 5 and Claude Sonnet 5 in South Korea, as well as Claude Sonnet 5 in Singapore. Customers who need to process data within a specific geography, including those in financial services, healthcare, and the public sector, can now use these models at scale while keeping inference in-country.
+In India, the regional endpoint is served through geographic c</description>
+      <pubDate>Tue, 29 Sep 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">fd24608a42fb99c6</guid>
+    </item>
     <item>
       <title>Claude Sonnet 5.5 now available on AWS</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/09/claude-sonnet-5-5-aws/</link>
@@ -428,14 +437,6 @@ Claude Opus 4.7 is an upgrade from Claude Opus 4.6, with stronger performance a
       <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
       <category>AWS Bedrock</category>
       <guid isPermaLink="false">7755760c6304663b</guid>
-    </item>
-    <item>
-      <title>Introducing GPT-5.4 mini and nano</title>
-      <link>https://openai.com/index/introducing-gpt-5-4-mini-and-nano</link>
-      <description>GPT-5.4 mini and nano are smaller, faster versions of GPT-5.4 optimized for coding, tool use, multimodal reasoning, and high-volume API and sub-agent workloads.</description>
-      <pubDate>Tue, 17 Mar 2026 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">9638fd5a4fec177a</guid>
     </item>
   </channel>
 </rss>
