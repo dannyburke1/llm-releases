@@ -4,8 +4,19 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Wed, 30 Sep 2026 14:45:18 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 15:15:15 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Amazon Bedrock expands Claude models in-region support in the UK (London)</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/09/claude-region-expansion-lhr/</link>
+      <description>We&#x27;re excited to announce in-region support for Anthropic&#x27;s Claude Opus 5.5 and Claude Sonnet 5 on Amazon Bedrock in the UK (London) Region. Customers who need to process data within the United Kingdom, including those in financial services, healthcare, and the public sector, can now use these models at scale while keeping inference in-country.
+ 
+ 
+ In the UK, Amazon Bedrock supports Claude Opus 5.5 and Claude Sonnet 5 with in-region inference on the bedrock-runtime endpoint in the London (eu-we</description>
+      <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">8ed9fa252e20d677</guid>
+    </item>
     <item>
       <title>Amazon Bedrock expands Claude model availability to India, South Korea, and Singapore</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/09/claude-region-expansion-in-sk/</link>
@@ -429,14 +440,6 @@ Claude Opus 4.7 is an upgrade from Claude Opus 4.6, with stronger performance a
       <pubDate>Thu, 16 Apr 2026 00:00:00 +0000</pubDate>
       <category>AWS Bedrock</category>
       <guid isPermaLink="false">33e6927a7e586c29</guid>
-    </item>
-    <item>
-      <title>Amazon Bedrock now offers Claude Mythos Preview (Gated Research Preview)</title>
-      <link>https://aws.amazon.com/about-aws/whats-new/2026/04/amazon-bedrock-claude-mythos/</link>
-      <description>Amazon Bedrock, the platform for building generative AI applications and agents at production scale, now offers Claude Mythos Preview in gated research preview as part of Project Glasswing. Claude Mythos Preview is Anthropic&#x27;s most advanced AI model to date, representing a fundamentally new model class with state-of-the-art capabilities across cybersecurity, software coding, and complex reasoning tasks. The model can identify sophisticated security vulnerabilities in software and demonstrate exp</description>
-      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
-      <category>AWS Bedrock</category>
-      <guid isPermaLink="false">7755760c6304663b</guid>
     </item>
   </channel>
 </rss>

@@ -1,5 +1,16 @@
 [
   {
+    "id": "8ed9fa252e20d677",
+    "provider": "AWS Bedrock",
+    "title": "Amazon Bedrock expands Claude models in-region support in the UK (London)",
+    "description": "We're excited to announce in-region support for Anthropic's Claude Opus 5.5 and Claude Sonnet 5 on Amazon Bedrock in the UK (London) Region. Customers who need to process data within the United Kingdom, including those in financial services, healthcare, and the public sector, can now use these models at scale while keeping inference in-country.\n \n \n In the UK, Amazon Bedrock supports Claude Opus 5.5 and Claude Sonnet 5 with in-region inference on the bedrock-runtime endpoint in the London (eu-we",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/09/claude-region-expansion-lhr/",
+    "date": "2026-09-30",
+    "regions": [
+      "eu-west-2"
+    ]
+  },
+  {
     "id": "fd24608a42fb99c6",
     "provider": "AWS Bedrock",
     "title": "Amazon Bedrock expands Claude model availability to India, South Korea, and Singapore",
