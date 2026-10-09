@@ -1,5 +1,14 @@
 [
   {
+    "id": "b92cb1088983f182",
+    "provider": "AWS Bedrock",
+    "title": "AWS Cost Explorer, Budgets, and Dashboards now support Amazon Bedrock product attributes",
+    "description": "AWS Cost Explorer, AWS Budgets, and AWS Cost Management Dashboards now let you analyze Amazon Bedrock costs by product attributes, a new dimension that breaks down Bedrock cost by model, model provider, inference type, and feature. In Cost Explorer and Dashboards, you can group and filter costs by these attributes. In Budgets, you can filter budgets by the same attributes.\nWith this launch, finance and platform teams get a direct view of which models and workloads drive their Bedrock spend, and ",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-bedrock-attributes-in-cost-explorer/",
+    "date": "2026-10-08",
+    "regions": []
+  },
+  {
     "id": "dc5d374df9026ea7",
     "provider": "AWS Bedrock",
     "title": "Claude Haiku 5.5 is now available on AWS",

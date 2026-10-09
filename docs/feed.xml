@@ -4,8 +4,17 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Thu, 08 Oct 2026 15:23:39 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 15:06:13 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>AWS Cost Explorer, Budgets, and Dashboards now support Amazon Bedrock product attributes</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/10/aws-bedrock-attributes-in-cost-explorer/</link>
+      <description>AWS Cost Explorer, AWS Budgets, and AWS Cost Management Dashboards now let you analyze Amazon Bedrock costs by product attributes, a new dimension that breaks down Bedrock cost by model, model provider, inference type, and feature. In Cost Explorer and Dashboards, you can group and filter costs by these attributes. In Budgets, you can filter budgets by the same attributes.
+With this launch, finance and platform teams get a direct view of which models and workloads drive their Bedrock spend, and </description>
+      <pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">b92cb1088983f182</guid>
+    </item>
     <item>
       <title>Claude Haiku 5.5 is now available on AWS</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/10/claude-haiku-5-5-aws/</link>
@@ -429,15 +438,6 @@ Claude Opus 4.8 can perform longer autonomous runs, deeper reasoning, and consis
       <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
       <category>OpenAI</category>
       <guid isPermaLink="false">447f4298d9dcf36f</guid>
-    </item>
-    <item>
-      <title>Amazon Bedrock AgentCore adds new features to help developers build agents faster</title>
-      <link>https://aws.amazon.com/about-aws/whats-new/2026/04/agentcore-new-features-to-build-agents-faster/</link>
-      <description>Today, Amazon Bedrock AgentCore introduces new features to help developers go from an idea to working agent prototype faster and manage the full agent lifecycle from a single platform: a managed harness (in preview), the AgentCore CLI, and AgentCore skills for coding assistants. 
-The managed harness (preview) lets developers define an agent by specifying a model, system prompt, and tools, then run it immediately with no orchestration code required. The harness manages the full agent loop: reason</description>
-      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
-      <category>AWS Bedrock</category>
-      <guid isPermaLink="false">4bb36ec0bb75ff77</guid>
     </item>
   </channel>
 </rss>
