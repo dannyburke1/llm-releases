@@ -1,5 +1,14 @@
 [
   {
+    "id": "557728210ed9a65c",
+    "provider": "Google",
+    "title": "Introducing Gemini 4 Argon: our frontier model for complex tasks",
+    "description": "Starting today, Gemini 4 Argon is rolling out globally for Google AI Pro & Ultra subscribers in the Gemini app. 4 Argon is our newest frontier model, built to take your most complex tasks from start to finish. Whether you are analyzing a complex financial report, creating a deck from scattered sources, or building an interactive 3D model, Argon brings frontier intelligence to your everyday workflow, turning your ideas into outputs you can use.\n\n\n\n\nWhy: We want to make Gemini the most helpful AI ",
+    "link": "https://gemini.google/release-notes/",
+    "date": "2026-10-13",
+    "regions": []
+  },
+  {
     "id": "b92cb1088983f182",
     "provider": "AWS Bedrock",
     "title": "AWS Cost Explorer, Budgets, and Dashboards now support Amazon Bedrock product attributes",

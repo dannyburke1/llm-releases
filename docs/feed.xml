@@ -4,8 +4,21 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Tue, 13 Oct 2026 15:43:41 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 13:26:50 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Introducing Gemini 4 Argon: our frontier model for complex tasks</title>
+      <link>https://gemini.google/release-notes/</link>
+      <description>Starting today, Gemini 4 Argon is rolling out globally for Google AI Pro &amp; Ultra subscribers in the Gemini app. 4 Argon is our newest frontier model, built to take your most complex tasks from start to finish. Whether you are analyzing a complex financial report, creating a deck from scattered sources, or building an interactive 3D model, Argon brings frontier intelligence to your everyday workflow, turning your ideas into outputs you can use.
+
+
+
+
+Why: We want to make Gemini the most helpful AI </description>
+      <pubDate>Tue, 13 Oct 2026 00:00:00 +0000</pubDate>
+      <category>Google</category>
+      <guid isPermaLink="false">557728210ed9a65c</guid>
+    </item>
     <item>
       <title>AWS Cost Explorer, Budgets, and Dashboards now support Amazon Bedrock product attributes</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/10/aws-bedrock-attributes-in-cost-explorer/</link>
@@ -430,14 +443,6 @@ Claude Opus 4.8 can perform longer autonomous runs, deeper reasoning, and consis
       <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
       <category>AWS Bedrock</category>
       <guid isPermaLink="false">42a78809811b5331</guid>
-    </item>
-    <item>
-      <title>Introducing GPT-5.5</title>
-      <link>https://openai.com/index/introducing-gpt-5-5</link>
-      <description>Introducing GPT-5.5, our smartest model yet—faster, more capable, and built for complex tasks like coding, research, and data analysis across tools.</description>
-      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
-      <category>OpenAI</category>
-      <guid isPermaLink="false">447f4298d9dcf36f</guid>
     </item>
   </channel>
 </rss>
