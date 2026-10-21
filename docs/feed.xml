@@ -4,8 +4,17 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Tue, 20 Oct 2026 13:25:50 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 13:35:22 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Structured outputs for Claude models available on Amazon Bedrock</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/10/claude-structured-outputs-bedrock/</link>
+      <description>Amazon Bedrock now supports structured outputs for all Anthropic Claude models across both the bedrock-runtime and the bedrock-mantle endpoint. Whether you call Claude through boto3 and the bedrock-runtime APIs or through the Messages API and the bedrock-mantle endpoint, you can now receive schema-compliant JSON responses that conform to a defined structure, without custom parsing, retry logic, or post-processing. 
+With structured outputs for Claude on Amazon Bedrock, you can automate reliable, </description>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">3685d27cfb6d485f</guid>
+    </item>
     <item>
       <title>Introducing Gemini 4 Argon: our frontier model for complex tasks</title>
       <link>https://gemini.google/release-notes/</link>
@@ -435,14 +444,6 @@ Claude Opus 4.8 can perform longer autonomous runs, deeper reasoning, and consis
       <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
       <category>AWS Bedrock</category>
       <guid isPermaLink="false">16b3ae976f9acc90</guid>
-    </item>
-    <item>
-      <title>AWS Neuron SDK now available with Neuron Agentic Development for NKI kernel development on Trainium</title>
-      <link>https://aws.amazon.com/about-aws/whats-new/2026/04/announcing-neuron-agentic-development/</link>
-      <description>AWS Neuron announces the Neuron Agentic Development capabilities, an open-source collection of agents and skills that equip AI coding assistants to accelerate development on AWS Trainium and AWS Inferentia. The initial release provides agentic coding capabilities for Neuron Kernel Interface (NKI) kernel development, covering the workflow from authoring to profiling and performance analysis.  NKI gives developers direct, low-level programming access to Trainium for writing custom compute kernels </description>
-      <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
-      <category>AWS Bedrock</category>
-      <guid isPermaLink="false">42a78809811b5331</guid>
     </item>
   </channel>
 </rss>

@@ -1,5 +1,14 @@
 [
   {
+    "id": "3685d27cfb6d485f",
+    "provider": "AWS Bedrock",
+    "title": "Structured outputs for Claude models available on Amazon Bedrock",
+    "description": "Amazon Bedrock now supports structured outputs for all Anthropic Claude models across both the bedrock-runtime and the bedrock-mantle endpoint. Whether you call Claude through boto3 and the bedrock-runtime APIs or through the Messages API and the bedrock-mantle endpoint, you can now receive schema-compliant JSON responses that conform to a defined structure, without custom parsing, retry logic, or post-processing. \nWith structured outputs for Claude on Amazon Bedrock, you can automate reliable, ",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/10/claude-structured-outputs-bedrock/",
+    "date": "2026-10-20",
+    "regions": []
+  },
+  {
     "id": "557728210ed9a65c",
     "provider": "Google",
     "title": "Introducing Gemini 4 Argon: our frontier model for complex tasks",
