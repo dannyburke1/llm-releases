@@ -4,8 +4,17 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Wed, 21 Oct 2026 13:35:22 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 13:37:03 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>AWS Neuron 2.33 adds native PyTorch support, Neuron Observer, and other new features</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/10/aws-announce-neuron-2-33-0</link>
+      <description>AWS Neuron 2.33 is now available, introducing TorchNeuron, the native PyTorch backend for AWS Trainium, in public beta. You can run models written with the standard PyTorch APIs on Amazon EC2 Trn2 and Trn3 instances, in eager mode or with torch.compile. This release also introduces Neuron Observer in public beta, which detects Trainium health issues in under a second and identifies the affected node or device. 
+The vLLM Neuron plugin upgrades to vLLM 0.29.0, and the vLLM Omni Neuron plugin for W</description>
+      <pubDate>Wed, 21 Oct 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">793b64cc7f8139d0</guid>
+    </item>
     <item>
       <title>Structured outputs for Claude models available on Amazon Bedrock</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/10/claude-structured-outputs-bedrock/</link>
@@ -436,14 +445,6 @@ Claude Opus 4.8 can perform longer autonomous runs, deeper reasoning, and consis
       <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
       <category>AWS Bedrock</category>
       <guid isPermaLink="false">c59020b38c74faa2</guid>
-    </item>
-    <item>
-      <title>Claude Platform on AWS is now generally available</title>
-      <link>https://aws.amazon.com/about-aws/whats-new/2026/05/claude-platform-aws/</link>
-      <description>Today, AWS announced the general availability of Claude Platform on AWS, a new service that gives customers direct access to Anthropic&#x27;s native Claude Platform experience through their existing AWS account. AWS is the first cloud provider to offer access to the native Claude Platform experience. Developers and organizations now have the choice to access Anthropic&#x27;s native Claude Platform experience, including APIs, console, and early-access beta features, directly through their existing AWS acco</description>
-      <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
-      <category>AWS Bedrock</category>
-      <guid isPermaLink="false">16b3ae976f9acc90</guid>
     </item>
   </channel>
 </rss>

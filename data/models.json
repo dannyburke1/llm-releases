@@ -1,5 +1,14 @@
 [
   {
+    "id": "793b64cc7f8139d0",
+    "provider": "AWS Bedrock",
+    "title": "AWS Neuron 2.33 adds native PyTorch support, Neuron Observer, and other new features",
+    "description": "AWS Neuron 2.33 is now available, introducing TorchNeuron, the native PyTorch backend for AWS Trainium, in public beta. You can run models written with the standard PyTorch APIs on Amazon EC2 Trn2 and Trn3 instances, in eager mode or with torch.compile. This release also introduces Neuron Observer in public beta, which detects Trainium health issues in under a second and identifies the affected node or device. \nThe vLLM Neuron plugin upgrades to vLLM 0.29.0, and the vLLM Omni Neuron plugin for W",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-announce-neuron-2-33-0",
+    "date": "2026-10-21",
+    "regions": []
+  },
+  {
     "id": "3685d27cfb6d485f",
     "provider": "AWS Bedrock",
     "title": "Structured outputs for Claude models available on Amazon Bedrock",
