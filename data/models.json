@@ -1,5 +1,14 @@
 [
   {
+    "id": "32f769bb81c99ec6",
+    "provider": "AWS Bedrock",
+    "title": "OpenAI GPT-6.1 Terra is now generally available on Amazon Bedrock",
+    "description": "Today, AWS announces the general availability of OpenAI GPT-6.1 Terra on Amazon Bedrock. GPT-6.1 Terra expands the GPT-6 family with a balance of capability, speed, and cost efficiency for everyday workloads.\u00a0 \nAs the newest model in the Terra line, GPT-6.1 Terra combines detailed visual reasoning, accurate computer use, and improved factuality and natural writing over GPT-5.6 Terra, for complex workflows. In OpenAI\u2019s Agents\u2019 Last Exam evaluation, it scored 15 percentage points higher than GPT-5",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/10/openai-gpt-6-1-terra-on-amazon-bedrock/",
+    "date": "2026-10-26",
+    "regions": []
+  },
+  {
     "id": "793b64cc7f8139d0",
     "provider": "AWS Bedrock",
     "title": "AWS Neuron 2.33 adds native PyTorch support, Neuron Observer, and other new features",

@@ -4,8 +4,17 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Mon, 26 Oct 2026 14:58:50 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 14:11:40 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>OpenAI GPT-6.1 Terra is now generally available on Amazon Bedrock</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/10/openai-gpt-6-1-terra-on-amazon-bedrock/</link>
+      <description>Today, AWS announces the general availability of OpenAI GPT-6.1 Terra on Amazon Bedrock. GPT-6.1 Terra expands the GPT-6 family with a balance of capability, speed, and cost efficiency for everyday workloads.  
+As the newest model in the Terra line, GPT-6.1 Terra combines detailed visual reasoning, accurate computer use, and improved factuality and natural writing over GPT-5.6 Terra, for complex workflows. In OpenAI’s Agents’ Last Exam evaluation, it scored 15 percentage points higher than GPT-5</description>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">32f769bb81c99ec6</guid>
+    </item>
     <item>
       <title>AWS Neuron 2.33 adds native PyTorch support, Neuron Observer, and other new features</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/10/aws-announce-neuron-2-33-0</link>
@@ -437,14 +446,6 @@ Claude Opus 4.8 can perform longer autonomous runs, deeper reasoning, and consis
       <pubDate>Wed, 27 May 2026 00:00:00 +0000</pubDate>
       <category>AWS Bedrock</category>
       <guid isPermaLink="false">5cb92609c6823a77</guid>
-    </item>
-    <item>
-      <title>Amazon Bedrock expands support for request-level usage attribution</title>
-      <link>https://aws.amazon.com/about-aws/whats-new/2026/05/amazon-bedrock-request-level-usage-attribution/</link>
-      <description>Amazon Bedrock customers can now attribute model inference usage to specific teams, applications, environments, and experiments at the individual request level on the InvokeModel and InvokeModelWithResponseStream APIs. This gives customers fine-grained visibility into how their Amazon Bedrock usage is distributed across their organization, helping them understand consumption patterns, optimize spend, and report usage back to internal stakeholders without provisioning additional resources.  This </description>
-      <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
-      <category>AWS Bedrock</category>
-      <guid isPermaLink="false">c59020b38c74faa2</guid>
     </item>
   </channel>
 </rss>
