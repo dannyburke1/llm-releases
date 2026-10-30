@@ -4,8 +4,17 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Thu, 29 Oct 2026 15:02:51 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 14:55:23 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Amazon Bedrock now offers Canada cross-Region inference for Claude Haiku 5.5</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/10/claude-haiku-5-5-canada-cris/</link>
+      <description>Amazon Bedrock now offers Canada cross-Region inference (CRIS) for Anthropic&#x27;s Claude Haiku 5.5. Customers with strict data residency requirements can now keep inference processing entirely within Canada. Canada CRIS routes requests only between ca-central-1 (Canada Central) and ca-west-1 (Canada West, Calgary). This helps organizations in financial services, healthcare, the public sector, and other regulated industries meet federal and provincial data residency requirements.
+Canada CRIS adds to</description>
+      <pubDate>Tue, 27 Oct 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">962bd852c4b2d06b</guid>
+    </item>
     <item>
       <title>OpenAI GPT-6.1 Terra is now generally available on Amazon Bedrock</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/10/openai-gpt-6-1-terra-on-amazon-bedrock/</link>
@@ -438,14 +447,6 @@ Claude Opus 4.8 can perform longer autonomous runs, deeper reasoning, and consis
       <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
       <category>AWS Bedrock</category>
       <guid isPermaLink="false">3e7db2cb40be9390</guid>
-    </item>
-    <item>
-      <title>Amazon Bedrock expands support for Service Quotas</title>
-      <link>https://aws.amazon.com/about-aws/whats-new/2026/5/amazon-bedrock-service-quotas/</link>
-      <description>Amazon Bedrock is a fully managed service that provides secure, enterprise-grade access to high-performing foundation models from leading AI companies, enabling you to build and scale generative AI applications. Amazon Bedrock customers can now view inference quotas for the bedrock-mantle endpoint through AWS Service Quotas. This gives customers a familiar, consistent way to track limits for this endpoint, the same way they already do for the bedrock-runtime endpoint and other AWS services, and </description>
-      <pubDate>Wed, 27 May 2026 00:00:00 +0000</pubDate>
-      <category>AWS Bedrock</category>
-      <guid isPermaLink="false">5cb92609c6823a77</guid>
     </item>
   </channel>
 </rss>
