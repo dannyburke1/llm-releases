@@ -1,5 +1,25 @@
 [
   {
+    "id": "b814141dbca69857",
+    "provider": "AWS Bedrock",
+    "title": "Amazon Bedrock expands API support and introduces Cross-Region Inferencing for OpenAI models in AWS GovCloud (US)",
+    "description": "Amazon Bedrock now supports the OpenAI GPT-5.6 models (Terra and Luna) on the bedrock-runtime endpoint, with support for the Responses, Converse, and Chat Completions APIs in AWS GovCloud (US). It also adds support for Cross-Region Inference, allowing customers to use Cross-Region Inference within AWS GovCloud (US) regions to access higher throughput and increased redundancy.\u00a0\u00a0 \nCross-Region Inference automatically routes inference requests across both AWS GovCloud (US) Regions to give you highe",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/10/bedrock-openai-runtime-govcloud/",
+    "date": "2026-10-30",
+    "regions": []
+  },
+  {
+    "id": "f6af597613e87199",
+    "provider": "AWS Bedrock",
+    "title": "Daybreak Red from OpenAI now available to eligible customers on Amazon Bedrock in AWS GovCloud (US-East)",
+    "description": "Security teams need powerful tools to find vulnerabilities, test exploits, and build defenses. Daybreak Red from OpenAI is now available to eligible customers on Amazon Bedrock in AWS GovCloud (US-East), bringing advanced AI to this work. \n\u00a0 \nPart of OpenAI\u2019s Daybreak cyber defense initiative, Daybreak Red: GPT-5.6 Cyber is built for authorized vulnerability research, exploit reproduction, and mitigation development. It gives verified defenders more room to investigate complex security problems,",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/10/openai-daybreak-red-govcloud-east/",
+    "date": "2026-10-30",
+    "regions": [
+      "US East (Ohio)"
+    ]
+  },
+  {
     "id": "962bd852c4b2d06b",
     "provider": "AWS Bedrock",
     "title": "Amazon Bedrock now offers Canada cross-Region inference for Claude Haiku 5.5",
