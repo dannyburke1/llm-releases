@@ -1,5 +1,32 @@
 [
   {
+    "id": "7b0a72f440770dad",
+    "provider": "AWS Bedrock",
+    "title": "Claude Fable 5.2 is now available on AWS GovCloud (US)",
+    "description": "Claude Fable 5.2 is now available on AWS GovCloud (US) and brings Anthropic's most capable generally available model for technical work\u00a0to regulated customers. Fable 5.2 sets a new standard on the hardest projects in coding, math, and science, and Anthropic recommends it for fields like software engineering, scientific research, and finance, where judgment, iteration, and accuracy are critical. Claude Mythos 5.2, the same underlying model as Claude Fable 5.2, with its full cyber and bio capabili",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/claude-fable-5-2-aws-govcloud/",
+    "date": "2026-11-09",
+    "regions": []
+  },
+  {
+    "id": "695ee9e6addf9af0",
+    "provider": "AWS Bedrock",
+    "title": "Amazon Bedrock now offers Claude Mythos 5.2 to Eligible Customers in AWS GovCloud (US)",
+    "description": "Amazon Bedrock, the platform for building generative AI applications and agents at production scale, now offers Claude Mythos 5.2 to eligible customers in AWS GovCloud (US). Claude Mythos 5.2 is Anthropic's most advanced AI model to date for use cases across cybersecurity, software coding, and complex reasoning tasks. The model can identify sophisticated security vulnerabilities in software and demonstrate exploitability. It can also comprehend large codebases and deliver actionable findings wit",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/bedrock-claude-mythos-5-2-govcloud/",
+    "date": "2026-11-09",
+    "regions": []
+  },
+  {
+    "id": "1dbb0d6e815cfddb",
+    "provider": "AWS Bedrock",
+    "title": "Claude Fable 5.2 is now available on AWS",
+    "description": "Claude Fable 5.2 is now available on AWS and brings Anthropic's most capable generally available model for technical work\u00a0to all customers. Fable 5.2 sets a new standard on the hardest projects in coding, math, and science, and Anthropic recommends it for fields like software engineering, scientific research, and finance, where judgment, iteration, and accuracy are critical. Claude Mythos 5.2, the same underlying model as Claude Fable 5.2 with its full cyber and bio capabilities retained for cyb",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/claude-fable-5-2-aws/",
+    "date": "2026-11-09",
+    "regions": []
+  },
+  {
     "id": "b814141dbca69857",
     "provider": "AWS Bedrock",
     "title": "Amazon Bedrock expands API support and introduces Cross-Region Inferencing for OpenAI models in AWS GovCloud (US)",

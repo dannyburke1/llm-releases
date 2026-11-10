@@ -4,8 +4,32 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Mon, 09 Nov 2026 18:30:53 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 16:15:02 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Claude Fable 5.2 is now available on AWS GovCloud (US)</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/11/claude-fable-5-2-aws-govcloud/</link>
+      <description>Claude Fable 5.2 is now available on AWS GovCloud (US) and brings Anthropic&#x27;s most capable generally available model for technical work to regulated customers. Fable 5.2 sets a new standard on the hardest projects in coding, math, and science, and Anthropic recommends it for fields like software engineering, scientific research, and finance, where judgment, iteration, and accuracy are critical. Claude Mythos 5.2, the same underlying model as Claude Fable 5.2, with its full cyber and bio capabili</description>
+      <pubDate>Mon, 09 Nov 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">7b0a72f440770dad</guid>
+    </item>
+    <item>
+      <title>Amazon Bedrock now offers Claude Mythos 5.2 to Eligible Customers in AWS GovCloud (US)</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/11/bedrock-claude-mythos-5-2-govcloud/</link>
+      <description>Amazon Bedrock, the platform for building generative AI applications and agents at production scale, now offers Claude Mythos 5.2 to eligible customers in AWS GovCloud (US). Claude Mythos 5.2 is Anthropic&#x27;s most advanced AI model to date for use cases across cybersecurity, software coding, and complex reasoning tasks. The model can identify sophisticated security vulnerabilities in software and demonstrate exploitability. It can also comprehend large codebases and deliver actionable findings wit</description>
+      <pubDate>Mon, 09 Nov 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">695ee9e6addf9af0</guid>
+    </item>
+    <item>
+      <title>Claude Fable 5.2 is now available on AWS</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/11/claude-fable-5-2-aws/</link>
+      <description>Claude Fable 5.2 is now available on AWS and brings Anthropic&#x27;s most capable generally available model for technical work to all customers. Fable 5.2 sets a new standard on the hardest projects in coding, math, and science, and Anthropic recommends it for fields like software engineering, scientific research, and finance, where judgment, iteration, and accuracy are critical. Claude Mythos 5.2, the same underlying model as Claude Fable 5.2 with its full cyber and bio capabilities retained for cyb</description>
+      <pubDate>Mon, 09 Nov 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">1dbb0d6e815cfddb</guid>
+    </item>
     <item>
       <title>Amazon Bedrock expands API support and introduces Cross-Region Inferencing for OpenAI models in AWS GovCloud (US)</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/10/bedrock-openai-runtime-govcloud/</link>
@@ -423,31 +447,6 @@ Claude Opus 4.8 can perform longer autonomous runs, deeper reasoning, and consis
       <pubDate>Fri, 05 Jun 2026 00:00:00 +0000</pubDate>
       <category>AWS Bedrock</category>
       <guid isPermaLink="false">71d19c11bf7ceb19</guid>
-    </item>
-    <item>
-      <title>Amazon Bedrock launches a redesigned console optimized for OpenAI- and Anthropic-compatible APIs</title>
-      <link>https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-redesigned-console-optimized-openai-anthropic-compatible-apis/</link>
-      <description>Amazon Bedrock is a fully managed service that provides secure, enterprise-grade access to high-performing foundation models from leading AI companies, enabling you to build and scale generative AI applications. Today, Amazon Bedrock introduces a console experience designed for how customers actually build with foundation models: experiment, iterate, and scale. This is the same Amazon Bedrock service customers already use, with a refreshed workflow optimized for the bedrock-mantle endpoint, whic</description>
-      <pubDate>Thu, 04 Jun 2026 00:00:00 +0000</pubDate>
-      <category>AWS Bedrock</category>
-      <guid isPermaLink="false">9292700f04e64fb3</guid>
-    </item>
-    <item>
-      <title>OpenAI GPT-5.4 generally available on Amazon Bedrock in AWS GovCloud (US-West)</title>
-      <link>https://aws.amazon.com/about-aws/whats-new/2026/06/GPT54-available-in-aws-govcloud-us-west/</link>
-      <description>Amazon Bedrock now supports GPT‑5.4 from OpenAI in AWS GovCloud (US-West) — giving government and regulated industry customers access to OpenAI&#x27;s most capable frontier model for professional work, backed by the enterprise-grade security and goverment compliance scope of AWS GovCloud (US).  
-GPT‑5.4 supports native computer-use capabilities, and deep reasoning across coding, documents, and multi-step agentic tasks — all running on Bedrock&#x27;s high-performance inference engine with isolated queues a</description>
-      <pubDate>Wed, 03 Jun 2026 00:00:00 +0000</pubDate>
-      <category>AWS Bedrock</category>
-      <guid isPermaLink="false">4df4cc22994d3f9d</guid>
-    </item>
-    <item>
-      <title>Amazon Bedrock adds Amazon CloudWatch metrics for OpenAI- and Anthropic-compatible APIs</title>
-      <link>https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-supports-cloudwatch-metrics-bedrock-mantle-endpoint/</link>
-      <description>Amazon Bedrock is a fully managed service that provides secure, enterprise-grade access to high-performing foundation models from leading AI companies, enabling you to build and scale generative AI applications. Amazon Bedrock customers can now monitor inference traffic to the bedrock-mantle endpoint with Amazon CloudWatch metrics, the same way they already do for the bedrock-runtime endpoint and other AWS services. The bedrock-mantle endpoint supports the OpenAI Responses API, OpenAI Chat Compl</description>
-      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
-      <category>AWS Bedrock</category>
-      <guid isPermaLink="false">1910c2b6258c4437</guid>
     </item>
   </channel>
 </rss>
