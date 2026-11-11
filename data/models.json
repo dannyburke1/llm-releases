@@ -1,5 +1,14 @@
 [
   {
+    "id": "9fd64743fda9a7bb",
+    "provider": "AWS Bedrock",
+    "title": "Amazon Bedrock adds bedrock-runtime endpoint support for Daybreak models",
+    "description": "Eligible customers can now access OpenAI\u2019s specialized cybersecurity models Daybreak Red: GPT-5.6 Cyber and Daybreak Blue: GPT-5.6 Sol through the bedrock-runtime endpoint on Amazon Bedrock.  Daybreak Blue is the starting point for most security teams across defensive workflows, including vulnerability discovery, detection engineering, and incident response. Daybreak Red is designed for advanced, authorized tasks such as vulnerability research, exploit reproduction, and mitigation development. F",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/openai-gpt-daybreak-on-amazon-bedrock-runtime/",
+    "date": "2026-11-10",
+    "regions": []
+  },
+  {
     "id": "7b0a72f440770dad",
     "provider": "AWS Bedrock",
     "title": "Claude Fable 5.2 is now available on AWS GovCloud (US)",

@@ -4,8 +4,16 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Tue, 10 Nov 2026 16:15:02 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 15:57:27 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Amazon Bedrock adds bedrock-runtime endpoint support for Daybreak models</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/11/openai-gpt-daybreak-on-amazon-bedrock-runtime/</link>
+      <description>Eligible customers can now access OpenAI’s specialized cybersecurity models Daybreak Red: GPT-5.6 Cyber and Daybreak Blue: GPT-5.6 Sol through the bedrock-runtime endpoint on Amazon Bedrock.  Daybreak Blue is the starting point for most security teams across defensive workflows, including vulnerability discovery, detection engineering, and incident response. Daybreak Red is designed for advanced, authorized tasks such as vulnerability research, exploit reproduction, and mitigation development. F</description>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">9fd64743fda9a7bb</guid>
+    </item>
     <item>
       <title>Claude Fable 5.2 is now available on AWS GovCloud (US)</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/11/claude-fable-5-2-aws-govcloud/</link>
@@ -439,14 +447,6 @@ Claude Opus 4.8 can perform longer autonomous runs, deeper reasoning, and consis
       <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
       <category>AWS Bedrock</category>
       <guid isPermaLink="false">135616b294cd578b</guid>
-    </item>
-    <item>
-      <title>Amazon Bedrock AgentCore Runtime introduces interactive shells for terminal access into agent sessions</title>
-      <link>https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-agentcore-runtime/</link>
-      <description>Amazon Bedrock AgentCore Runtime now supports interactive shells through a new InvokeAgentRuntimeCommandShell API, opening a persistent, PTY-backed terminal directly into a running agent session over WebSocket. This complements the existing InvokeAgentRuntimeCommand API for one-shot execution, giving developers a full terminal experience inside an isolated microVM with colors, tab completion, Ctrl+C, terminal resize, and automatic reconnect on network drop.  This is particularly important for de</description>
-      <pubDate>Fri, 05 Jun 2026 00:00:00 +0000</pubDate>
-      <category>AWS Bedrock</category>
-      <guid isPermaLink="false">71d19c11bf7ceb19</guid>
     </item>
   </channel>
 </rss>
