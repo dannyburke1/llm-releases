@@ -4,8 +4,17 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Thu, 19 Nov 2026 17:11:05 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 16:49:25 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>AWS Revenue Measurement now supports closed-source models in Amazon Bedrock</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/11/revenue-measurement-bedrock/</link>
+      <description>AWS Revenue Measurement (previously Partner Revenue Measurement) provides measurement of AWS consumption driven by Partner solutions. Today, AWS announces expanded Amazon Bedrock support in AWS Revenue Measurement. Partners can now gain attributed revenue visibility for their solutions&#x27; use of closed-source models in Amazon Bedrock, giving them a more complete view of the revenue their solutions drive. 
+Until now, only Amazon models (such as Amazon Nova) and open-weight models in Amazon Bedrock </description>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">3f2922831558d994</guid>
+    </item>
     <item>
       <title>Amazon Bedrock adds bedrock-runtime endpoint support for Daybreak models</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/11/openai-gpt-daybreak-on-amazon-bedrock-runtime/</link>
@@ -439,14 +448,6 @@ Claude Opus 4.8 can perform longer autonomous runs, deeper reasoning, and consis
       <pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate>
       <category>AWS Bedrock</category>
       <guid isPermaLink="false">3790fe9ea0a2f3b4</guid>
-    </item>
-    <item>
-      <title>AWS announces Claude Fable 5, the first generally available Mythos-class model</title>
-      <link>https://aws.amazon.com/about-aws/whats-new/2026/06/claude-fable-5-aws/</link>
-      <description>Claude Fable 5 is generally available on AWS and makes Mythos-level capabilities available to all customers, with strong safeguards designed to make it safe for broader use. Fable 5 is state-of-the-art on nearly all tested benchmarks and delivers a step-change in autonomous knowledge work and coding for developers and enterprises building production AI applications. Claude Mythos 5, the same model without those safety classifiers, is available to a small group of customers who currently have acc</description>
-      <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
-      <category>AWS Bedrock</category>
-      <guid isPermaLink="false">135616b294cd578b</guid>
     </item>
   </channel>
 </rss>

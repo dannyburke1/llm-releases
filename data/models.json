@@ -1,5 +1,14 @@
 [
   {
+    "id": "3f2922831558d994",
+    "provider": "AWS Bedrock",
+    "title": "AWS Revenue Measurement now supports closed-source models in Amazon Bedrock",
+    "description": "AWS Revenue Measurement (previously Partner Revenue Measurement) provides measurement of AWS consumption driven by Partner solutions. Today, AWS announces expanded Amazon Bedrock support in AWS Revenue Measurement. Partners can now gain attributed revenue visibility for their solutions' use of closed-source models in Amazon Bedrock, giving them a more complete view of the revenue their solutions drive. \nUntil now, only Amazon models (such as Amazon Nova) and open-weight models in Amazon Bedrock ",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/revenue-measurement-bedrock/",
+    "date": "2026-11-19",
+    "regions": []
+  },
+  {
     "id": "9fd64743fda9a7bb",
     "provider": "AWS Bedrock",
     "title": "Amazon Bedrock adds bedrock-runtime endpoint support for Daybreak models",
