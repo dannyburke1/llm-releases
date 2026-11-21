@@ -4,8 +4,16 @@
     <title>LLM Releases</title>
     <link>https://dannyburke1.github.io/llm-releases</link>
     <description>New model releases across cloud providers</description>
-    <lastBuildDate>Fri, 20 Nov 2026 16:49:25 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 15:58:30 +0000</lastBuildDate>
     <atom:link href="https://dannyburke1.github.io/llm-releases/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Announcing a new skill for AI agents in Amazon Textract Core</title>
+      <link>https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-textract-core-skill-ai-agents/</link>
+      <description>Amazon Textract Core now lets AI agents extract text, tables, forms, and other data from documents through a skill, with no server to run or infrastructure to deploy. The skill guides an agent to the right Amazon Textract Core API for each document and includes a tested parser that converts the output into reading-order text and structured fields, such as answers to questions, receipt and invoice details, and identity document fields. Previously, teams that connected an agent to Amazon Textract </description>
+      <pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
+      <category>AWS Bedrock</category>
+      <guid isPermaLink="false">de7b86c35f9fd820</guid>
+    </item>
     <item>
       <title>AWS Revenue Measurement now supports closed-source models in Amazon Bedrock</title>
       <link>https://aws.amazon.com/about-aws/whats-new/2026/11/revenue-measurement-bedrock/</link>
@@ -440,14 +448,6 @@ Claude Opus 4.8 can perform longer autonomous runs, deeper reasoning, and consis
       <pubDate>Mon, 15 Jun 2026 00:00:00 +0000</pubDate>
       <category>AWS Bedrock</category>
       <guid isPermaLink="false">be8919c80968b4b4</guid>
-    </item>
-    <item>
-      <title>Amazon OpenSearch Service launches MCP Apps for agentic observability</title>
-      <link>https://aws.amazon.com/about-aws/whats-new/2026/06/opensearch-agentic-observability-mcp-app</link>
-      <description>Amazon OpenSearch Service now supports MCP Apps, bringing observability workflows directly into compatible agentic IDEs such as Claude Desktop and VS Code. With this capability, your AI agent in local environment can investigate incidents using logs, traces, metrics, and alerts stored in OpenSearch domains, collections and Amazon Managed Service for Prometheus. You can easily review and verify the results in interactive MCP App visualizations without leaving your local environment.  Each MCP App</description>
-      <pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate>
-      <category>AWS Bedrock</category>
-      <guid isPermaLink="false">3790fe9ea0a2f3b4</guid>
     </item>
   </channel>
 </rss>

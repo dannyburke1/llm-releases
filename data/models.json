@@ -1,5 +1,31 @@
 [
   {
+    "id": "de7b86c35f9fd820",
+    "provider": "AWS Bedrock",
+    "title": "Announcing a new skill for AI agents in Amazon Textract Core",
+    "description": "Amazon Textract Core now lets AI agents extract text, tables, forms, and other data from documents through a skill, with no server to run or infrastructure to deploy. The skill guides an agent to the right Amazon Textract Core API for each document and includes a tested parser that converts the output into reading-order text and structured fields, such as answers to questions, receipt and invoice details, and identity document fields. Previously, teams that connected an agent to Amazon Textract ",
+    "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-textract-core-skill-ai-agents/",
+    "date": "2026-11-20",
+    "regions": [
+      "Asia Pacific (Mumbai)",
+      "Asia Pacific (Seoul)",
+      "Asia Pacific (Singapore)",
+      "Asia Pacific (Sydney)",
+      "Asia Pacific (Tokyo)",
+      "Canada (Central)",
+      "Europe (Frankfurt)",
+      "Europe (Ireland)",
+      "Europe (London)",
+      "Europe (Paris)",
+      "Europe (Spain)",
+      "Europe (Zurich)",
+      "US East (N. Virginia)",
+      "US East (Ohio)",
+      "US West (N. California)",
+      "US West (Oregon)"
+    ]
+  },
+  {
     "id": "3f2922831558d994",
     "provider": "AWS Bedrock",
     "title": "AWS Revenue Measurement now supports closed-source models in Amazon Bedrock",
